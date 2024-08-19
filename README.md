@@ -1,0 +1,104 @@
+# xfox111.net website
+
+[![Website status](https://img.shields.io/website?url=http%3A//xfox111.net/)](https://xfox111.net)
+[![GitHub last commit](https://img.shields.io/github/last-commit/xfox111/my-website?label=Last+update)](https://github.com/XFox111/my-website/commits/main)
+[![Docker Image Size](https://img.shields.io/docker/image-size/xfox111/my-website?logo=docker&logoColor=white)](https://hub.docker.com/r/xfox111/my-website/)
+
+<picture>
+	<source media="(prefers-color-scheme: dark)" srcset="https://cdn.xfox111.net/personal/website-dark.webp">
+	<source media="(prefers-color-scheme: light)" srcset="https://cdn.xfox111.net/personal/website-light.webp">
+	<img alt="xfox111.net website">
+</picture>
+
+This repository contains the source code for my personal website, built using Next.js. The website serves as a portfolio, showcasing my projects skills. Feel free to use this code as a base or a template for your own personal website.
+
+## Features
+
+- **Responsive Design:** Optimized for desktop and mobile devices.
+- **Dark Mode:** Automatic light and dark themes based on your browser preferences.
+- **Accessibility:** Full keyboard navigation and screen reader support.
+- **Customizable:** You can use this website as a template for your own personal website.
+- **Docker and Dev Containers:** Containerized development and deployment.
+
+## Technologies
+
+- [Next.js](https://nextjs.org/) framework for server-side rendering and static site generation.
+- [React](https://reactjs.org/) library for building user interfaces.
+- [SASS](https://sass-lang.com/) preprocessor.
+- [TypeScript](https://www.typescriptlang.org/).
+
+## Development
+
+### Prerequisites
+
+For development you can use [Dev Containers](https://devcontainers.io/) or [GitHub Codespaces](https://github.com/features/codespaces). Otherwise you will need to install following tools:
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [Docker](https://www.docker.com/)
+
+
+### Building and debugging
+
+Here're some commonly used commands:
+```bash
+yarn install		# Install dependencies
+yarn dev			# Start the development server at http://localhost:3000
+yarn lint			# Lint the project with ESLint
+yarn build			# Build the project for production
+```
+
+To build a Docker image, run:
+
+```bash
+docker build -t <tag_name> .
+```
+
+> [!TIP]
+> If you use VS Code, you can also use pre-defined tasks for building and debugging.
+
+## Customization
+You can customize the website by modifying its components and styles.
+
+Here's a general checklist of things you need to change:
+
+### Environment
+- [ ] `package.json` (URLs and author information)
+- [ ] `.env.*` (required for website to function)
+
+### Assets
+- [ ] `/app/favicon.ico`
+- [ ] `/app/icon.svg`
+- [ ] `/app/apple-icon.png`
+- [ ] `/app/opengraph-image.png`
+- [ ] `/app/opengraph-image.alt.txt`
+- [ ] `/app/_assets`
+
+### Content
+- [ ] `app/_data` (text information and some page elements)
+- [ ] (optional) `app/attribution/page.tsx` (license and attribution information)
+- [ ] (optional) `app/theme.[light|dark].scss` (color schemes)
+- [ ] (optional) Files marked with `[SPECIAL]` tag (these contain custom elements, which may be not suitable for your needs)
+
+> [!IMPORTANT]
+> Some of the files are copyrighted and should not be used without permission. See [COPYING](/COPYING).
+
+## Contributing
+Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+
+> [!NOTE]
+> Please make sure to follow the [contributing guidelines](/CONTRIBUTING.md)
+
+## License
+
+This repository is partially licensed under [MIT license](/LICENSE).
+
+> [!IMPORTANT]
+> Some content of this repository is exempt from MIT license coverage and is subject to general copyright law. See [COPYING](/COPYING) for more information.
+
+---
+
+[![Twitter Follow](https://img.shields.io/twitter/follow/xfox111?style=social)](https://twitter.com/xfox111)
+[![GitHub followers](https://img.shields.io/github/followers/xfox111?label=Follow%20@xfox111&style=social)](https://github.com/xfox111)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%40xfox111-orange)](https://buymeacoffee.com/xfox111)
+
+> ©2024 Eugene Fox. Some rights reserved

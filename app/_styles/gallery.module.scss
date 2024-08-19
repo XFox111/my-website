@@ -1,0 +1,51 @@
+@import "../theme.scss";
+
+.list
+{
+	@include flex(column);
+	gap: $spacingM;
+
+	.listItem
+	{
+		padding: $spacingS $spacingL;
+		gap: $spacingSNudge;
+		justify-content: flex-start;
+		border: $strokeWidthThin solid $colorNeutralForeground1;
+
+		> svg:first-child
+		{
+			width: 32px;
+			height: 32px;
+		}
+
+		.content
+		{
+			@include flex(column);
+			text-align: left;
+			color: $colorNeutralForeground3;
+
+			.title
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+				color: $colorNeutralForeground1;
+			}
+		}
+
+		&[data-selected=true]
+		{
+			background-size: $spacingMNudge 100%;
+
+			&:hover,
+			&:focus-visible
+			{
+				background-size: 100% 100%;
+
+				.title,
+				.content
+				{
+					color: $colorNeutralForegroundInverted;
+				}
+			}
+		}
+	}
+}

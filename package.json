@@ -1,0 +1,49 @@
+{
+	"name": "my-website",
+	"version": "1.0.0",
+	"private": true,
+	"homepage": "https://xfox111.net",
+	"license": "(MIT with exception)",
+	"description": "My personal website",
+	"author": {
+		"email": "eugene@xfox111.net",
+		"name": "Eugene Fox",
+		"url": "https://github.com/xfox111/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/xfox111/my-website/"
+	},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@fluentui/react-icons": "^2.0.252",
+		"next": "14.2.5",
+		"next-safe": "^3.5.0",
+		"nodemailer": "^6.9.14",
+		"pdf-lib": "^1.17.1",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-social-icons": "^6.17.0",
+		"sass": "^1.77.8",
+		"sharp": "^0.32.6",
+		"zod": "^3.23.8"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/nodemailer": "^6.4.15",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8",
+		"eslint-config-next": "^14.2.5",
+		"typescript": "^5"
+	},
+	"resolutions": {
+		"next": "^13.0.0",
+		"eslint": "^8.56.0"
+	}
+}

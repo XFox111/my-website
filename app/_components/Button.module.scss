@@ -1,0 +1,63 @@
+@import "../theme.scss";
+
+.button
+{
+	@include formBase;
+
+	cursor: pointer;
+	gap: $spacingSNudge;
+	justify-content: center;
+	text-align: left;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+
+	&.iconBefore > :first-child,
+	&.iconAfter > :last-child
+	{
+		font-size: $fontSizeBase600;
+		height: $fontSizeBase600;
+		width: $fontSizeBase600;
+	}
+
+	&:not(.content)
+	{
+		min-width: 40px;
+		padding: $spacingXS;
+		justify-content: center;
+	}
+
+	&.secondary
+	{
+		border-color: transparent;
+
+		&:hover,
+		&:focus-visible
+		{
+			border: $strokeWidthThin solid $colorNeutralForeground1;
+			color: $colorNeutralForeground1;
+		}
+	}
+
+	&.primary
+	{
+		background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+
+		&:not(:disabled, [disabled])
+		{
+
+			&:hover,
+			&:focus-visible
+			{
+				color: $colorNeutralForegroundInverted;
+
+				&:active
+				{
+					background-image: linear-gradient($colorNeutralForeground3Pressed, $colorNeutralForeground3Pressed);
+					color: $colorNeutralForegroundInverted2;
+				}
+			}
+		}
+	}
+}

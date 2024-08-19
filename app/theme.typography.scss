@@ -1,0 +1,92 @@
+@mixin caption2($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase100, $fontWeightRegular, $lineHeightBase100);
+}
+
+@mixin caption2Strong($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase100, $fontWeightSemibold, $lineHeightBase100);
+}
+
+@mixin caption1($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase200, $fontWeightRegular, $lineHeightBase200);
+}
+
+@mixin caption1Strong($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase200, $fontWeightSemibold, $lineHeightBase200);
+}
+
+@mixin caption1Stronger($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase200, $fontWeightBold, $lineHeightBase200);
+}
+
+@mixin body1($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase300, $fontWeightRegular, $lineHeightBase300);
+}
+
+@mixin body1Strong($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase300, $fontWeightSemibold, $lineHeightBase300);
+}
+
+@mixin body1Stronger($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase300, $fontWeightBold, $lineHeightBase300);
+}
+
+@mixin body2($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase400, $fontWeightRegular, $lineHeightBase400);
+}
+
+@mixin subtitle2($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase400, $fontWeightSemibold, $lineHeightBase400);
+}
+
+@mixin subtitle2Stronger($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase400, $fontWeightBold, $lineHeightBase400);
+}
+
+@mixin subtitle1($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase500, $fontWeightSemibold, $lineHeightBase500);
+}
+
+@mixin title3($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeBase600, $fontWeightSemibold, $lineHeightBase600);
+}
+
+@mixin title2($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeHero700, $fontWeightSemibold, $lineHeightHero700);
+}
+
+@mixin title1($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeHero800, $fontWeightSemibold, $lineHeightHero800);
+}
+
+@mixin largeTitle($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeHero900, $fontWeightSemibold, $lineHeightHero900);
+}
+
+@mixin display($font: $fontFamilyBase)
+{
+	@include setTypography($font, $fontSizeHero1000, $fontWeightSemibold, $lineHeightHero1000);
+}
+
+@mixin setTypography($fontFamily, $fontSize, $fontWeight, $lineHeight)
+{
+	font-family: $fontFamily;
+	font-size: $fontSize;
+	font-weight: $fontWeight;
+	line-height: $lineHeight;
+}

@@ -1,0 +1,40 @@
+@import "../theme.scss";
+
+.title
+{
+	@include flex(row);
+	align-items: center;
+
+	background-size: 0% $strokeWidthThickest;
+	background-position: 33px 33px; // Some pixel-perfect stuff
+
+	color: $colorNeutralForeground1;
+
+	gap: $spacingS;
+	padding: $spacingNone;
+	padding-right: $spacingS;
+
+	> img
+	{
+		width: 36px;
+		height: 36px;
+	}
+
+	> p
+	{
+		@include title3($fontFamilyBaseAlt);
+
+		> sub
+		{
+			@include caption1($fontFamilyBaseAlt);
+			vertical-align: baseline;
+		}
+	}
+
+	&:hover,
+	&:focus-visible
+	{
+		background-size: 100% $strokeWidthThickest;
+		color: $colorNeutralForeground1;
+	}
+}

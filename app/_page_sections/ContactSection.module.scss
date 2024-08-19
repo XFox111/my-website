@@ -1,0 +1,91 @@
+@import "../theme.scss";
+
+.section
+{
+	@include flex(column);
+	gap: $spacingXXXL;
+
+	@include body1;
+
+	h2
+	{
+		text-align: center;
+	}
+
+	.content
+	{
+		@include centerTwo;
+
+		.container
+		{
+			@include flex(column);
+			gap: $spacingM;
+		}
+
+		.contacts
+		{
+			align-items: flex-end;
+			text-align: right;
+		}
+
+		.textarea
+		{
+			min-width: 100%;
+			min-height: 160px;
+			max-width: 60vw;
+			resize: both;
+		}
+
+		.formToolbar
+		{
+			@include flex(row);
+			justify-content: flex-end;
+
+			@media screen and (max-width: 460px)
+			{
+				flex-flow: column;
+				row-gap: $spacingM;
+				align-items: flex-end;
+
+				.status > span
+				{
+					@include body1($fontFamilyBaseAlt);
+				}
+			}
+
+			.status
+			{
+				@include flex(row);
+				@include align(center, flex-end);
+				@include body2($fontFamilyBaseAlt);
+
+				height: 40px;
+				width: 0;
+				overflow: hidden;
+
+				> span
+				{
+					margin: $spacingS $spacingM;
+					text-wrap: nowrap;
+				}
+
+				color: $colorNeutralForegroundStaticInverted;
+				background-color: $colorStatusDangerBackground3;
+
+				transition-property: width;
+				transition-duration: $durationNormal;
+				transition-timing-function: $curveEasyEaseMax;
+
+				&:is(.error, .success)
+				{
+					width: 100%;
+				}
+
+				&.success
+				{
+					background-color: $colorStatusSuccessBackground3;
+				}
+			}
+		}
+	}
+}

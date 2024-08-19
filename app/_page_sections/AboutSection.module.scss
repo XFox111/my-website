@@ -1,0 +1,26 @@
+@import "../theme.scss";
+
+.section
+{
+	@include centerTwo;
+	@include body2($fontFamilyBaseAlt);
+	color: $colorNeutralForeground2;
+	align-items: center;
+
+	> div:first-child
+	{
+		@include flex(column);
+		gap: $spacingM;
+	}
+
+	> img
+	{
+		height: auto;
+		width: 100%;
+		max-width: 400px;
+		justify-self: center;
+
+		border-radius: $borderRadiusMedium;
+		box-shadow: $shadow2;
+	}
+}

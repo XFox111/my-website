@@ -1,0 +1,51 @@
+@import "../theme.scss";
+
+.section
+{
+	@include centerTwo;
+	align-items: center;
+
+	.illustrations
+	{
+		justify-self: center;
+		position: relative;
+
+		img
+		{
+			width: 100%;
+			max-height: 600px;
+
+			@include slideIn;
+		}
+
+		// [SPECIAL]
+		.whatsThis
+		{
+			position: absolute;
+			cursor: pointer;
+
+			bottom: calc(50% - 20px + 13.5%);
+			left: 40%;
+			width: 20%;
+			height: 40px;
+
+			@media screen and (max-width: 1400px)
+			{
+				bottom: calc(50% - 20px + 6vw)
+			}
+		}
+	}
+
+	.list
+	{
+		.cta
+		{
+			align-self: flex-end;
+		}
+
+		@media screen and (max-width: 860px)
+		{
+			grid-row: 1;
+		}
+	}
+}

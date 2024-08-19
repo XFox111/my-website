@@ -1,0 +1,36 @@
+@import "../theme.scss";
+
+.page
+{
+	@include maxCenter;
+	padding: $spacingXL $spacingM;
+	color: $colorNeutralForeground2;
+	margin-bottom: 64px;
+
+	h1
+	{
+		@include largeTitle($fontFamilyBaseAlt);
+		color: $colorNeutralForeground1;
+	}
+
+	h2
+	{
+		@include title2($fontFamilyBaseAlt);
+		color: $colorNeutralForeground1;
+	}
+
+	&,
+	article,
+	section
+	{
+		@include flex(column);
+		align-items: flex-start;
+		gap: $spacingM;
+
+		ul,
+		ol
+		{
+			padding: revert;
+		}
+	}
+}

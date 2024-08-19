@@ -1,0 +1,37 @@
+@import "../theme.scss";
+
+.navigation
+{
+	@include flex(row);
+	align-items: center;
+
+	.link
+	{
+		@include body2($fontFamilyBaseAlt);
+		color: inherit;
+		padding: $spacingSNudge $spacingM;
+
+		@include flex(column);
+
+		> i
+		{
+			height: $strokeWidthThick;
+			background-color: $colorNeutralForeground1;
+			border-radius: $borderRadiusSmall;
+			width: 0;
+
+			transition: width $durationNormal $curveEasyEaseMax;
+		}
+
+		&:hover, &:focus-visible
+		{
+			color: $colorNeutralForegroundInverted;
+
+			> i
+			{
+				width: 100%;
+				background-color: $colorNeutralForegroundInverted;
+			}
+		}
+	}
+}

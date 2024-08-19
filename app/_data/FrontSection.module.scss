@@ -1,0 +1,72 @@
+@import "../theme.scss";
+
+.section
+{
+	@include centerTwo;
+	min-height: 75vh;
+	align-items: end;
+
+	.content
+	{
+		@include flex(column);
+		@include subtitle1($fontFamilyBaseAlt);
+		gap: $spacingXL;
+
+		h1
+		{
+			@include display($fontFamilyBaseAlt);
+		}
+
+		h2
+		{
+			@include title2($fontFamilyBaseAlt);
+		}
+
+		.ctaButtons
+		{
+			@include flex(row, wrap);
+			gap: $spacingS;
+		}
+	}
+
+	.highlight
+	{
+		color: $colorNeutralForegroundInverted;
+		background-color: $colorNeutralBackgroundInverted;
+		padding: $spacingXXS $spacingNone;
+
+		&::selection
+		{
+			color: $colorNeutralForegroundInverted;
+			background-color: $colorBrandForeground1;
+		}
+	}
+
+	.illustrations
+	{
+		justify-self: center;
+		position: relative;
+
+		margin-right: 48px;
+		margin-bottom: 12px;
+
+		.main
+		{
+			border-radius: $borderRadiusCircular;
+			max-width: 512px;
+			width: 100%;
+			height: auto;
+		}
+
+		.secondary
+		{
+			position: absolute;
+			bottom: -12px;
+			left: calc(60% + 48px);
+
+			width: 100%;
+			max-width: 40%;
+			height: auto;
+		}
+	}
+}

@@ -1,0 +1,81 @@
+@import "../theme.scss";
+
+.footer
+{
+	@include flex(row);
+	@include align(flex-end, space-between);
+
+	.info
+	{
+		@include caption1;
+		@include flex(column);
+		gap: $spacingS;
+		padding: $spacingM;
+		color: $colorNeutralForeground2;
+
+		.copyright
+		{
+			@include body2($fontFamilyBaseAlt);
+			color: $colorNeutralForeground1;
+		}
+
+		.nextjs
+		{
+			@include flex(row);
+			gap: $spacingXS;
+			align-items: flex-end;
+
+			> a
+			{
+				padding: $spacingXXS;
+				padding-bottom: $spacingNone;
+
+				> img
+				{
+					height: 16px;
+					width: auto;
+					transition: filter $durationFast $curveEasyEaseMax;
+				}
+
+				&:hover,
+				&:focus-visible
+				{
+					> img
+					{
+						filter: invert(1);
+					}
+				}
+			}
+		}
+	}
+
+	.illustration
+	{
+		@include flex(column);
+
+		justify-content: flex-end;
+		align-self: flex-end;
+		height: 100px;
+		max-width: 100%;
+
+		z-index: -1;
+
+		> img
+		{
+			max-width: 100%;
+			width: auto;
+			max-height: 280px;
+		}
+	}
+
+	@media screen and (max-width: 1024px)
+	{
+		flex-flow: column;
+		align-items: flex-start;
+
+		.info
+		{
+			margin-right: 20%;
+		}
+	}
+}

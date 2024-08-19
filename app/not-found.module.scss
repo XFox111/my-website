@@ -1,0 +1,59 @@
+@import "./theme.scss";
+
+.page
+{
+	@include maxCenter;
+	padding: $spacingXXXL $spacingXL;
+
+	@include flex(row, wrap);
+	@include align(center, center);
+	gap: $spacingXXXL;
+
+	.illustration
+	{
+		@include flex(column);
+		flex-grow: 1;
+		max-width: 620px;
+
+		> h1
+		{
+			@include largeTitle($fontFamilyBaseAlt);
+			margin: 0 16px;
+			line-height: $fontSizeHero900;
+		}
+
+		> img
+		{
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.content
+	{
+		@include flex(column);
+		gap: $spacingM;
+		align-items: flex-start;
+
+		.caption
+		{
+			position: relative;
+
+			> h2
+			{
+				@include title2($fontFamilyBaseAlt);
+			}
+
+			// [SPECIAL]
+			> img
+			{
+				position: absolute;
+				bottom: 4px;
+				left: 10px;
+				width: auto;
+				height: 68px;
+				pointer-events: none;
+			}
+		}
+	}
+}

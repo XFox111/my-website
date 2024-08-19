@@ -1,0 +1,89 @@
+@import "../theme.scss";
+
+.page
+{
+	@include flex(column);
+	@include align(center, center);
+	@include subtitle1($fontFamilyBaseAlt);
+	text-align: center;
+	gap: $spacingXXXL;
+
+	h1
+	{
+		@include title1($fontFamilyBaseAlt);
+	}
+
+	.resumeButtons
+	{
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: $spacingXL;
+
+		.button
+		{
+			flex-flow: column;
+			text-align: center;
+
+			.image
+			{
+				height: 128px;
+				width: auto;
+			}
+		}
+
+		@media screen and (max-width: 860px)
+		{
+			grid-auto-flow: row;
+
+			.button
+			{
+				flex-flow: row;
+				justify-content: flex-start;
+				text-align: left;
+
+				.image
+				{
+					width: 48px;
+					height: 48px;
+				}
+			}
+		}
+	}
+
+	.linkedin
+	{
+		position: relative;
+		background-image: none;
+		overflow: clip;
+
+		> i
+		{
+			height: 32px !important;
+			width: 32px !important;
+		}
+
+		.circle
+		{
+			position: absolute;
+			height: 32px;
+			width: 32px;
+			border-radius: $borderRadiusCircular;
+			left: 16px;
+			z-index: -1;
+
+			background-color: var(--network-color);
+			transition: transform $durationFast $curveEasyEaseMax;
+		}
+
+		&:not(:disabled):hover
+		{
+			color: $colorNeutralForegroundStaticInverted;
+
+			.circle
+			{
+				transform: scale(1100%);
+			}
+		}
+	}
+}

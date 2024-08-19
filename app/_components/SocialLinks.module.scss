@@ -1,0 +1,64 @@
+@import "../theme.scss";
+
+.socials
+{
+	@include flex(row);
+	align-items: center;
+	gap: $spacingS;
+
+	.link
+	{
+		background-image: none;
+		padding: $spacingNone;
+		border-radius: $borderRadiusCircular;
+
+		--bg-color: var(--network-color);
+		--icon-color: var(--colorNeutralForegroundStaticInverted);
+
+		// Icon
+		g:first-child
+		{
+			fill: var(--icon-color) !important;
+		}
+
+		// Mask
+		g:last-child
+		{
+			fill: var(--bg-color) !important;
+		}
+
+		&:hover,
+		&:focus-visible
+		{
+			--icon-color: var(--network-color);
+			--bg-color: transparent;
+
+			&:active
+			{
+				--bg-color: var(--colorNeutralBackground1Pressed);
+			}
+		}
+
+		// Since GitHub has dark brand color, we need to invert it in dark mode
+		&.github
+		{
+			@media (prefers-color-scheme: dark)
+			{
+				--bg-color: var(--colorNeutralForegroundStaticInverted);
+				--icon-color: var(--network-color);
+
+				&:hover,
+				&:focus-visible
+				{
+					--bg-color: transparent;
+					--icon-color: var(--colorNeutralForegroundStaticInverted);
+
+					&:active
+					{
+						--bg-color: var(--colorNeutralBackground1Pressed);
+					}
+				}
+			}
+		}
+	}
+}

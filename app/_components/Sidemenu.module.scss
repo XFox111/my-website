@@ -1,0 +1,74 @@
+@import "../theme.scss";
+
+.dialog
+{
+	max-height: unset;
+	max-width: 320px;
+	width: 100%;
+	height: 100%;
+
+	padding: $spacingNone;
+	margin: $spacingNone;
+	margin-left: auto;
+	background-color: $colorNeutralBackground1;
+	box-shadow: $shadow16;
+	color: unset;
+	border: none;
+
+	&::backdrop
+	{
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+
+		// Since colors use variables, and dialog is rendered outside of the regular DOM,
+		// we need to specify them as literals (or add variables to the dialog scope, but that's too complicated).
+		background-color: light-dark(rgba(255, 255, 255, 0.5), rgba(26, 26, 26, 0.5));
+	}
+
+	.wrapper
+	{
+		height: 100%;
+
+		@include flex(column);
+		@include align(flex-end, center);
+		gap: $spacingXXXL;
+		padding: $spacingXXXL;
+
+		> header
+		{
+			@include flex(row);
+			align-items: center;
+			gap: $spacingL;
+
+			> h3
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+			}
+		}
+
+		.navigation
+		{
+			flex-flow: column;
+			align-items: flex-end;
+
+			.link
+			{
+				align-items: end;
+				background-position-x: 100%;
+			}
+		}
+	}
+
+	transition: right $durationNormal $curveEasyEaseMax;
+	right: -350px;
+
+	&.show
+	{
+		right: 0;
+	}
+}
+
+body:has(dialog.menu[open])
+{
+	overflow: hidden;
+}

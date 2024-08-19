@@ -1,0 +1,92 @@
+@import "./theme.scss";
+
+:root
+{
+	scroll-behavior: smooth;
+
+	@media (prefers-color-scheme: light)
+	{
+		@include lightTheme;
+	}
+
+	@media (prefers-color-scheme: dark)
+	{
+		@include darkTheme;
+	}
+}
+
+*
+{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body
+{
+	@include flex(column);
+	@include body1;
+
+	min-width: 300px;
+	min-height: 100vh;
+
+	color-scheme: light dark;
+
+	> main
+	{
+		@include maxCenter;
+		flex-grow: 1;
+		padding: $spacingXXL;
+		margin-top: 56px;
+	}
+
+	font-synthesis: none;
+	text-rendering: geometricPrecision;
+
+	background-color: $colorNeutralBackground1;
+	color: $colorNeutralForeground1;
+
+	::selection
+	{
+		background-color: $colorNeutralBackgroundInverted;
+		color: $colorNeutralForegroundInverted;
+	}
+
+	[hidden]
+	{
+		display: none !important;
+	}
+}
+
+a
+{
+	text-decoration: none;
+	color: $colorBrandForeground1;
+
+	background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+
+	transition-property: background-size, color;
+	transition-duration: $durationFaster;
+	transition-timing-function: $curveEasyEaseMax;
+
+	&:hover,
+	&:focus-visible
+	{
+		background-size: 100% 100%;
+		color: $colorNeutralForegroundInverted;
+	}
+}
+
+input,
+textarea
+{
+	@include formBase;
+}
+
+// [SPECIAL] case for 404 page
+main.not-found + footer > .illustration
+{
+	display: none;
+}

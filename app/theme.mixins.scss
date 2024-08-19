@@ -1,0 +1,117 @@
+@mixin maxCenter($maxWidth: 1400px)
+{
+	align-self: center;
+	width: 100%;
+	max-width: $maxWidth;
+}
+
+@mixin centerTwo
+{
+	@include maxCenter;
+
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	gap: $spacingXXXL;
+
+	@media screen and (max-width: 860px)
+	{
+		grid-auto-flow: row;
+	}
+}
+
+@mixin flex($direction: row, $wrap: nowrap)
+{
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+}
+
+@mixin align($align: flex-start, $justify: flex-start)
+{
+	align-items: $align;
+	justify-content: $justify;
+}
+
+@mixin formBase
+{
+	@include body2($fontFamilyBaseAlt);
+
+	display: flex;
+	align-items: center;
+
+	box-sizing: border-box;
+	padding: $spacingXS $spacingL;
+	min-width: 96px;
+	min-height: 40px;
+
+	background-image: linear-gradient($colorNeutralBackground1Hover, $colorNeutralBackground1Hover);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	background-color: transparent;
+
+	color: $colorNeutralForeground1;
+	text-decoration: none;
+
+	border: $strokeWidthThin solid $colorNeutralForeground1;
+
+	transition-property: background-image, background-size, background-color, color, border;
+	transition-duration: $durationFast;
+	transition-timing-function: $curveEasyEaseMax;
+
+	&:not(:disabled, [disabled])
+	{
+		&:not([type=submit]):user-invalid
+		{
+			background-image: linear-gradient($colorStatusDangerBackground1, $colorStatusDangerBackground1);
+			border-color: $colorStatusDangerBorder1;
+		}
+
+		&:not([type=submit]):user-valid
+		{
+			background-image: linear-gradient($colorStatusSuccessBackground1, $colorStatusSuccessBackground1);
+			border-color: $colorStatusSuccessBorder1;
+		}
+
+		&:hover,
+		&:focus-visible
+		{
+			background-size: 100% 100%;
+
+			&:active
+			{
+				background-image: linear-gradient($colorNeutralBackground1Pressed, $colorNeutralBackground1Pressed);
+			}
+		}
+	}
+
+	&:disabled,
+	&[disabled]
+	{
+		color: $colorNeutralForegroundDisabled;
+		border-color: $colorNeutralStrokeDisabled;
+		background-color: $colorNeutralBackgroundInvertedDisabled;
+
+		cursor: not-allowed;
+	}
+}
+
+@mixin slideIn($offset: 32px, $duration: $durationFast)
+{
+	animation: slideIn $duration $curveEasyEaseMax;
+
+	@keyframes slideIn
+	{
+		from
+		{
+			opacity: 0;
+			transform: translateX($offset);
+		}
+
+		to
+		{
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}

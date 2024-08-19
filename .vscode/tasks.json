@@ -1,0 +1,60 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "yarn: build",
+			"detail": "Build project"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "yarn: install",
+			"detail": "Restore dependencies"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "yarn: dev",
+			"detail": "Start development server"
+		},
+		{
+			"type": "npm",
+			"script": "lint",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "yarn: lint",
+			"detail": "Run ESLint"
+		},
+		{
+			"type": "shell",
+			"command": "docker",
+			"args": [
+				"build",
+				"-t",
+				"my-website",
+				"./"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
+			"problemMatcher": [],
+			"label": "docker: build",
+			"detail": "Build a Docker image"
+		},
+	]
+}

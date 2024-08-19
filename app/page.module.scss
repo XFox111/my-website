@@ -1,0 +1,26 @@
+@import "./theme.scss";
+
+.page
+{
+	@include flex(column);
+	max-width: unset;
+	gap: 8vw; // Bigger gap on bigger devices
+
+	h2
+	{
+		@include title1($fontFamilyBaseAlt);
+		color: $colorNeutralForeground1;
+	}
+
+	h3
+	{
+		@include title2($fontFamilyBaseAlt);
+		color: $colorNeutralForeground1;
+	}
+
+	section
+	{
+		padding: $spacingM;
+		padding-top: calc($spacingM + 56px); // spacingM + header height
+	}
+}

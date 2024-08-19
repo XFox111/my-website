@@ -1,0 +1,98 @@
+@import "../theme.scss";
+
+.section
+{
+	@include centerTwo;
+
+	.listItem
+	{
+		background-position: right;
+	}
+
+	.descriptions
+	{
+		@include body2($fontFamilyBaseAlt);
+		display: grid;
+		overflow-x: visible;
+		min-height: 760px;
+
+		@media screen and (max-width: 860px)
+		{
+			min-height: unset;
+			padding-top: calc(56px + $spacingXL);
+		}
+
+		img
+		{
+			width: 100%;
+			height: auto;
+		}
+
+		.defaultImg
+		{
+			@include slideIn;
+			align-self: center;
+		}
+
+		.projectItem
+		{
+			@include flex(column);
+			max-width: 600px;
+			justify-self: center;
+			gap: $spacingM;
+
+			@include slideIn;
+
+			@media (prefers-color-scheme: light)
+			{
+				> img[data-theme=dark]
+				{
+					display: none;
+				}
+			}
+
+			@media (prefers-color-scheme: dark)
+			{
+				> img[data-theme=light]
+				{
+					display: none;
+				}
+			}
+
+			p
+			{
+				color: $colorNeutralForeground2;
+			}
+
+			> h4
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+			}
+
+			.stack
+			{
+				@include flex(row, wrap);
+				gap: $spacingL;
+				@include body1;
+
+				.item
+				{
+					@include flex(row);
+					align-items: center;
+					gap: $spacingSNudge;
+
+					> svg
+					{
+						width: 24px;
+						height: 24px;
+					}
+				}
+			}
+		}
+	}
+
+	.cta
+	{
+		align-self: flex-end;
+	}
+}

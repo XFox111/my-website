@@ -1,0 +1,242 @@
+@import "../theme.scss";
+
+.section
+{
+	@include flex(column);
+	gap: $spacingXXXL;
+
+	h2
+	{
+		text-align: center;
+	}
+
+	// Properties shared between horizontal and vertical timelines
+	.timeline
+	{
+		@include maxCenter(1600px);
+		display: grid;
+		position: relative;
+
+		.line
+		{
+			z-index: -1;
+			position: absolute;
+			display: grid;
+
+			> *
+			{
+				grid-row: 1;
+				grid-column: 1;
+			}
+
+			.strip
+			{
+				border-radius: $borderRadiusMedium;
+			}
+
+			.trailHorizontal
+			{
+				width: 100%;
+				height: auto;
+			}
+
+			.trailVertical
+			{
+				height: 100%;
+				width: auto;
+			}
+		}
+
+		.item
+		{
+			display: grid;
+
+			.year
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+			}
+
+			> i
+			{
+				display: block;
+				height: 32px;
+				width: 32px;
+
+				border: $strokeWidthThickest solid $colorNeutralForeground1;
+				border-radius: $borderRadiusCircular;
+				background-color: $colorNeutralForeground1;
+				box-shadow: inset 0 0 0 16px $colorNeutralBackground1;
+			}
+
+			.description
+			{
+				p
+				{
+					@include body2($fontFamilyBaseAlt);
+					color: $colorNeutralForeground3;
+				}
+
+				.title
+				{
+					@include subtitle1($fontFamilyBaseAlt);
+				}
+			}
+		}
+
+		// Vertical timeline
+		@media screen and (max-width: 860px)
+		{
+			gap: $spacingXXXL;
+
+			.line
+			{
+				height: 100%;
+				width: 8px;
+				left: 88px;
+				justify-content: center;
+				justify-items: center;
+
+				.strip
+				{
+					width: 8px;
+					height: 100%;
+					background-image:
+						repeating-linear-gradient($colorNeutralForeground1 0 $spacingM, transparent 0 $spacingXXL);
+				}
+
+				.trailHorizontal
+				{
+					display: none;
+				}
+			}
+
+			.item
+			{
+				grid-template-columns: 64px auto 1fr;
+				padding: $spacingXXXL $spacingNone;
+				gap: $spacingM;
+				align-items: center;
+			}
+		}
+
+		// Horizontal timeline
+		@media screen and (min-width: 861px)
+		{
+			grid-auto-flow: column;
+
+			.line
+			{
+				bottom: 72px;
+				width: 100%;
+				height: 8px;
+				align-content: center;
+				align-items: center;
+
+				.strip
+				{
+					height: 8px;
+					background-image:
+						repeating-linear-gradient(90deg, $colorNeutralForeground1 0 $spacingM, transparent 0 $spacingXXL);
+				}
+
+				.trailVertical
+				{
+					display: none;
+				}
+			}
+
+			.item
+			{
+				grid-template-rows: 128px auto 48px;
+				padding: $spacingNone $spacingM;
+				row-gap: $spacingM;
+
+				.year
+				{
+					grid-row: 3/3;
+				}
+
+				> i
+				{
+					grid-row: 2/2;
+					transition: box-shadow $durationNormal $curveEasyEaseMax;
+				}
+
+				h3,
+				p
+				{
+					transition-property: font-size, line-height, opacity;
+					transition-duration: $durationNormal;
+					transition-timing-function: $curveEasyEaseMax;
+				}
+
+				.description
+				{
+					grid-row: 1/1;
+					align-self: self-end;
+
+					p
+					{
+						font-size: 0;
+						opacity: 0;
+					}
+
+					@media screen and (max-width: 1200px)
+					{
+						.title
+						{
+							opacity: 0;
+							font-size: 0;
+						}
+					}
+				}
+			}
+
+			// When there's something hovered or focused inside the timeline
+			&:has(:hover, :focus-visible, :focus-within) .item
+			{
+
+				// Item that is being hovered or focused
+				&:is(:hover, :focus-visible, :focus-within)
+				{
+
+					.year,
+					.title
+					{
+						@include title1($fontFamilyBaseAlt);
+						opacity: 1;
+					}
+
+					> i
+					{
+						box-shadow: inset 0 0 0 0 $colorNeutralBackground1;
+					}
+
+					.description > p
+					{
+						@include subtitle2($fontFamilyBaseAlt);
+						opacity: 1;
+					}
+				}
+
+				// Other not focused items
+				&:not(:hover, :focus-visible, :focus-within)
+				{
+
+					.year,
+					.title
+					{
+						@include body1($fontFamilyBaseAlt);
+						color: $colorNeutralForeground3;
+
+						@media screen and (max-width: 1200px)
+						{
+							opacity: 0;
+							font-size: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
