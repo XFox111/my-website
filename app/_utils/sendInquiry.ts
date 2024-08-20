@@ -37,12 +37,23 @@ export default async function sendInquiry(_: FormStatus, formData: FormData): Pr
 			message: "Invalid request"
 		};
 
-	await mailClient.sendMail({
-		from: process.env.SMTP_FROM_EMAIL,
-		to: process.env.SMTP_TO_EMAIL,
-		subject: `${canonicalName.hostname}: Contact Inquiry`,
-		text: getTemplate(data)
-	});
+	try
+	{
+		await mailClient.sendMail({
+			from: process.env.SMTP_FROM_EMAIL,
+			to: process.env.SMTP_TO_EMAIL,
+			subject: `${canonicalName.hostname}: Contact Inquiry`,
+			text: getTemplate(data)
+		});
+	}
+	catch (ex)
+	{
+		console.error(ex);
+
+		return {
+			status: "error"
+		};
+	}
 
 	return {
 		status: "success"
