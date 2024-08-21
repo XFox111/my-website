@@ -1,12 +1,12 @@
 "use client";
 
-import { acceptCookies, dismissCookies, getCookieChoice, rejectCookies, requireExcplicitConsent } from "@/_utils/analytics/client";
+import { acceptCookies, dismissCookies, getCookieChoice, rejectCookies } from "@/_utils/analytics/client";
 import { Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useCallback, useEffect, useState } from "react";
 import Button from "./Button";
 import cls from "./CookieBanner.module.scss";
 
-const CookieBanner: React.FC = () =>
+const CookieBanner: React.FC<{ askForConsent: boolean; }> = props =>
 {
 	const [visible, setVisible] = useState(false);
 
@@ -56,7 +56,7 @@ const CookieBanner: React.FC = () =>
 				</p>
 			</Button>
 
-			{ requireExcplicitConsent ?
+			{ props.askForConsent ?
 				<div className={ cls.controls }>
 					<Button onClick={ accept }>Accept</Button>
 					<Button onClick={ reject }>Reject</Button>

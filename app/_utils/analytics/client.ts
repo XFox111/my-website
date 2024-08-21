@@ -17,8 +17,6 @@ export const dismissCookies = (): void =>
 	setCookie("CC", "", 1209600);	// 14 days
 };
 
-export const requireExcplicitConsent: boolean = process.env.NEXT_PUBLIC_CLARITY_CONSENT === "1";
-
 export const getCookieChoice = (): "accepted" | "rejected" | "acknowledged" | "none" =>
 {
 	switch (getCookie("CC"))

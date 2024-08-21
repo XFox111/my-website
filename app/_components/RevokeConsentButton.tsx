@@ -10,7 +10,6 @@ const RevokeConsentButton: React.FC = () =>
 
 	useEffect(() =>
 	{
-		console.log("getCookieChoice", getCookieChoice());
 		setHasConsent(getCookieChoice() === "accepted");
 	}, []);
 
