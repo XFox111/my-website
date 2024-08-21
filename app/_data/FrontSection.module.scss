@@ -50,10 +50,12 @@
 		margin-right: 48px;
 		margin-bottom: 12px;
 
+		width: calc(100% - 48px);
+		max-width: 512px;
+
 		.main
 		{
 			border-radius: $borderRadiusCircular;
-			max-width: 512px;
 			width: 100%;
 			height: auto;
 		}
