@@ -33,4 +33,10 @@
 			padding: revert;
 		}
 	}
+
+	.buttonRow
+	{
+		@include flex(row, wrap);
+		gap: $spacingS;
+	}
 }

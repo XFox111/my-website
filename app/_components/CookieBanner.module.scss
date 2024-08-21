@@ -1,0 +1,83 @@
+@import "../theme.scss";
+
+.banner
+{
+	@include flex(row);
+	position: fixed;
+	left: 0;
+	bottom: 8%;
+	background-color: $colorNeutralBackground2;
+	z-index: 20;
+
+	.learnMore
+	{
+		gap: $spacingL;
+		padding: $spacingMNudge $spacingL;
+		background-size: $spacingMNudge 100%;
+		flex-grow: 1;
+		justify-content: flex-start;
+
+		p
+		{
+			color: $colorNeutralForeground2;
+			@include body1;
+
+			span
+			{
+				color: $colorNeutralForeground1;
+				@include body2($fontFamilyBaseAlt);
+			}
+		}
+
+		&:hover,
+		&:focus-visible
+		{
+
+			p,
+			p > span
+			{
+				color: $colorNeutralForegroundInverted;
+			}
+		}
+	}
+
+	.dismiss
+	{
+		border-left: none;
+	}
+
+	.controls
+	{
+		display: grid;
+		grid-auto-flow: column;
+
+		@media screen and (min-width: 769px)
+		{
+			> button
+			{
+				border-left: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px)
+	{
+		width: 100%;
+		bottom: 0;
+
+		&:not(:has(> .dismiss))
+		{
+			flex-flow: column;
+
+			.learnMore
+			{
+				border-bottom: none;
+			}
+
+			.controls > button:last-child
+			{
+				border-left: none;
+			}
+		}
+	}
+}

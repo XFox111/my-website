@@ -1,5 +1,6 @@
 import Package from "@/../package.json";
 import Button from "@/_components/Button";
+import RevokeConsentButton from "@/_components/RevokeConsentButton";
 import { canonicalName, getTitle } from "@/_data/metadata";
 import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
 import { analyticsEnabled } from "@/_utils/analytics/server";
@@ -39,12 +40,19 @@ const AttributionPage: React.FC = () => (
 					<p>
 						If "Do Not Track" option is enabled in your browser, the website will not load any tracking code.
 					</p>
-					<Button appearance="secondary"
-						href="https://learn.microsoft.com/clarity/faq#privacy" target="_blank"
-						iconAfter={ <ArrowRight24Regular /> }>
+					<p>
+						If you previously gave your consent to use cookies, you can revoke it by clicking "Revoke my consent" button on this page below (the button is available only if the consent was given). Recorded data will be deleted after 30 day retention period.
+					</p>
 
-						Visit Clarity privacy FAQ
-					</Button>
+					<div className={ cls.buttonRow }>
+						<RevokeConsentButton />
+						<Button appearance="secondary"
+							href="https://learn.microsoft.com/clarity/faq#privacy" target="_blank"
+							iconAfter={ <ArrowRight24Regular /> }>
+
+							Visit Clarity privacy FAQ
+						</Button>
+					</div>
 				</section>
 			}
 

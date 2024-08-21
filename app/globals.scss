@@ -93,3 +93,11 @@ main.not-found + footer > .illustration
 {
 	display: none;
 }
+
+@media screen and (max-width: 768px)
+{
+	body:has(.cookie-banner)
+	{
+		padding-bottom: 110px;
+	}
+}
