@@ -7,13 +7,19 @@ import projects from "@/_data/projects";
 import shared from "@/_styles/gallery.module.scss";
 import { ArrowRight24Regular } from "@fluentui/react-icons";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { networkFor } from "react-social-icons";
 import cls from "./ProjectsSection.module.scss";
 
 const ProjectsSection: React.FC = () =>
 {
 	const [selection, setSelection] = useState<number | undefined>(undefined);
+
+	const select = useCallback((index: number | undefined) =>
+	{
+		setSelection(index);
+		window.clarity?.("set", "checked", "projects");
+	}, []);
 
 	return (
 		<section id="projects" className={ cls.section }>
@@ -25,7 +31,7 @@ const ProjectsSection: React.FC = () =>
 						className={ `${shared.listItem} ${cls.listItem}` }
 						appearance={ selection === index ? "primary" : "secondary" }
 						data-selected={ selection === index }
-						onClick={ () => setSelection(selection == index ? undefined : index) }
+						onClick={ () => select(selection == index ? undefined : index) }
 						aria-label={ `"${project.title}". ${project.subtitle}` }>
 
 						<div className={ shared.content }>

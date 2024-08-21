@@ -34,17 +34,17 @@ const ContactSection: React.FC = () =>
 					<form className={ cls.container } action={ formAction }>
 						<FormStatusTracker onPendingChanged={ setPending } />
 
-						<input name="email" type="email" { ...sharedProps }
+						<input name="email" type="email" { ...sharedProps } data-clarity-mask
 							autoComplete="email" spellCheck="false"
 							maxLength={ 60 }
 							placeholder="Email" />
 
-						<input name="subject" type="text" { ...sharedProps }
+						<input name="subject" type="text" { ...sharedProps } data-clarity-mask
 							autoComplete="off" spellCheck="true"
 							maxLength={ 120 }
 							placeholder="Subject" />
 
-						<textarea name="message" { ...sharedProps } className={ cls.textarea }
+						<textarea name="message" { ...sharedProps } className={ cls.textarea } data-clarity-mask
 							autoComplete="off" spellCheck="true"
 							minLength={ 100 } maxLength={ 2000 }
 							placeholder="Message (min 100 characters)" />

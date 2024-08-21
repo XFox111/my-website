@@ -5,7 +5,7 @@ import skills from "@/_data/skills";
 import shared from "@/_styles/gallery.module.scss";
 import { ArrowDownload24Regular } from "@fluentui/react-icons";
 import Image from "next/image";
-import React, { useId, useState } from "react";
+import React, { useCallback, useId, useState } from "react";
 import cls from "./SkillsSection.module.scss";
 import links from "@/_data/links";
 
@@ -13,6 +13,12 @@ const SkillsSection: React.FC = () =>
 {
 	const [selection, setSelection] = useState<number>(0);
 	const illustrations = useId();
+
+	const select = useCallback((index: number) =>
+	{
+		setSelection(index);
+		window.clarity?.("set", "checked", "skills");
+	}, []);
 
 	return (
 		<section id="skills" className={ cls.section }>
@@ -25,7 +31,13 @@ const SkillsSection: React.FC = () =>
 
 				{ selection === 4 &&
 					// [SPECIAL] It's a surprize tool that will help us later
-					<div role="button" aria-label="Click me" className={ cls.whatsThis } onClick={ () => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ") } />
+					<div role="button" aria-label="Click me"
+						className={ cls.whatsThis }
+						onClick={ () =>
+						{
+							window.clarity?.("event", "ngguu");
+							window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+						} } />
 				}
 			</div>
 			<div className={ `${shared.list} ${cls.list}` }>
@@ -35,7 +47,7 @@ const SkillsSection: React.FC = () =>
 					<Button key={ index } type="button" aria-current={ selection === index } aria-controls={ illustrations }
 						className={ shared.listItem } appearance={ selection === index ? "primary" : "secondary" }
 						data-selected={ selection === index }
-						onClick={ () => setSelection(index) }
+						onClick={ () => select(index) }
 						aria-label={ `${skill.title} skills. Associated stack: ${skill.description}` }
 						icon={ <skill.icon /> } >
 
