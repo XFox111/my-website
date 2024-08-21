@@ -1,5 +1,6 @@
 import Package from "@/../package.json";
 import { footerImage, nextjsLogo } from "@/_assets/illustrations";
+import { analyticsEnabled } from "@/_utils/analytics/server";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,7 +15,7 @@ const Footer: React.FC = () => (
 			<p>
 				This site was created with help of some third-party tools and services.
 			</p>
-			{ process.env.CLARITY_ID &&
+			{ analyticsEnabled() &&
 				<p>
 					This site is using Microsoft Clarity for analytics purposes.<br aria-hidden />
 					By using this site you agree that we and Microsoft can collect and use this data.

@@ -5,6 +5,7 @@ import Script from "next/script";
 import { PropsWithChildren } from "react";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
+import { canLoadAnalytics } from "./_utils/analytics/server";
 import fonts from "./fonts";
 import "./globals.scss";
 
@@ -26,7 +27,7 @@ export default function RootLayout(props: PropsWithChildren)
 
 	return (
 		<html lang="en" className={ fonts.map(i => i.variable).join(" ") }>
-			{ headers.get("Dnt") !== "1" && process.env.CLARITY_ID &&
+			{ canLoadAnalytics() &&
 				// If "Do Not Track" is enabled, or there's no CLARITY_ID set up, we don't load any analytics
 				<Script id="ms-clarity" src="/clarity.js" data-id={ process.env.CLARITY_ID } />
 			}

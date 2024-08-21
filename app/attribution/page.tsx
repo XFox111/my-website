@@ -2,6 +2,7 @@ import Package from "@/../package.json";
 import Button from "@/_components/Button";
 import { canonicalName, getTitle } from "@/_data/metadata";
 import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
+import { analyticsEnabled } from "@/_utils/analytics/server";
 import { ArrowLeft24Regular, ArrowRight24Regular } from "@fluentui/react-icons";
 import { Metadata } from "next";
 import React from "react";
@@ -23,7 +24,7 @@ const AttributionPage: React.FC = () => (
 		<article>
 			<h1>Attrubtions &amp; information</h1>
 
-			{ process.env.CLARITY_ID &&
+			{ analyticsEnabled() &&
 				<section>
 					<h2>Privacy policy</h2>
 					<p>
