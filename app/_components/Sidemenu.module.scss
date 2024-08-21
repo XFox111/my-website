@@ -22,7 +22,12 @@
 
 		// Since colors use variables, and dialog is rendered outside of the regular DOM,
 		// we need to specify them as literals (or add variables to the dialog scope, but that's too complicated).
-		background-color: light-dark(rgba(255, 255, 255, 0.5), rgba(26, 26, 26, 0.5));
+		background-color: rgba(255, 255, 255, 0.5);
+
+		@media (prefers-color-scheme: dark)
+		{
+			background-color: rgba(26, 26, 26, 0.5);
+		}
 	}
 
 	.wrapper
