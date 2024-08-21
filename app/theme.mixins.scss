@@ -67,12 +67,6 @@
 			border-color: $colorStatusDangerBorder1;
 		}
 
-		&:not([type=submit]):user-valid
-		{
-			background-image: linear-gradient($colorStatusSuccessBackground1, $colorStatusSuccessBackground1);
-			border-color: $colorStatusSuccessBorder1;
-		}
-
 		&:hover,
 		&:focus-visible
 		{
