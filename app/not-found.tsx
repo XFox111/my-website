@@ -1,6 +1,7 @@
 import { textCorrection } from "@/_assets/decorations";
 import { Home24Regular } from "@fluentui/react-icons";
 import { Metadata } from "next";
+import { unstable_noStore } from "next/cache";
 import Image from "next/image";
 import React from "react";
 import { notFoundImage } from "./_assets/illustrations";
@@ -8,11 +9,14 @@ import Button from "./_components/Button";
 import { canonicalName, getTitle } from "./_data/metadata";
 import cls from "./not-found.module.scss";
 
-export const metadata: Metadata =
+export async function generateMetadata(): Promise<Metadata>
 {
-	title: getTitle("Page not found", canonicalName.hostname),
-	robots: "noindex"
-};
+	unstable_noStore();
+	return {
+		title: getTitle("Page not found", canonicalName.hostname),
+		robots: "noindex"
+	};
+}
 
 // [SPECIAL]
 

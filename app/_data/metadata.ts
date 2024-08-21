@@ -1,7 +1,8 @@
+import Package from "@/../package.json";
 import { Metadata } from "next";
+import { unstable_noStore } from "next/cache";
 import bio from "./bio";
 import socials from "./socials";
-import Package from "@/../package.json";
 
 export const canonicalName: URL = new URL(`https://${process.env.DOMAIN_NAME}`);
 const baseTitle: string = "Eugene Fox - Software developer";
@@ -12,37 +13,40 @@ const keywords: string[] = ["Eugene Fox", "software developer", ".net", "react",
 export const getTitle = (pageTitle: string, customBase?: string): string =>
 	pageTitle + " - " + (customBase ?? baseTitle);
 
-export const metadata: Metadata =
+export async function generateMetadata(): Promise<Metadata>
 {
-	title: baseTitle,
-	description: bio[0],
-	metadataBase: canonicalName,
-	openGraph:
-	{
+	unstable_noStore();
+	return {
 		title: baseTitle,
 		description: bio[0],
-		type: "profile",
-		firstName: Package.author.name.split(" ")[0],
-		lastName: Package.author.name.split(" ")[1],
-		gender,
-		username: socials["Twitter"].username,
-		siteName: canonicalName.hostname,
-		locale: "en_US"
-	},
-	twitter:
-	{
-		site: socials["Twitter"].username,
-		card: "summary_large_image"
-	},
-	alternates:
-	{
-		canonical: canonicalName.href
-	},
-	authors: [
+		metadataBase: canonicalName,
+		openGraph:
 		{
-			name: Package.author.name,
-			url: socials["LinkedIn"].href
-		}
-	],
-	keywords
-};
+			title: baseTitle,
+			description: bio[0],
+			type: "profile",
+			firstName: Package.author.name.split(" ")[0],
+			lastName: Package.author.name.split(" ")[1],
+			gender,
+			username: socials["Twitter"].username,
+			siteName: canonicalName.hostname,
+			locale: "en_US"
+		},
+		twitter:
+		{
+			site: socials["Twitter"].username,
+			card: "summary_large_image"
+		},
+		alternates:
+		{
+			canonical: canonicalName.href
+		},
+		authors: [
+			{
+				name: Package.author.name,
+				url: socials["LinkedIn"].href
+			}
+		],
+		keywords
+	};
+}

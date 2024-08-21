@@ -6,14 +6,18 @@ import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
 import { analyticsEnabled } from "@/_utils/analytics/server";
 import { ArrowLeft24Regular, ArrowRight24Regular } from "@fluentui/react-icons";
 import { Metadata } from "next";
+import { unstable_noStore } from "next/cache";
 import React from "react";
 import cls from "./page.module.scss";
 
-export const metadata: Metadata =
+export async function generateMetadata(): Promise<Metadata>
 {
-	title: getTitle("Attributions & information", canonicalName.hostname),
-	robots: "noindex"
-};
+	unstable_noStore();
+	return {
+		title: getTitle("Attributions & information", canonicalName.hostname),
+		robots: "noindex"
+	};
+}
 
 const AttributionPage: React.FC = () => (
 	<main className={ cls.page }>

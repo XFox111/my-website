@@ -1,5 +1,5 @@
-import { metadata as myMetadata } from "@/_data/metadata";
-import type { Metadata, Viewport } from "next";
+export { generateMetadata } from "@/_data/metadata";
+import type { Viewport } from "next";
 import Script from "next/script";
 import { PropsWithChildren } from "react";
 import CookieBanner from "./_components/CookieBanner";
@@ -18,8 +18,6 @@ export const viewport: Viewport =
 		],
 	colorScheme: "light dark"
 };
-
-export const metadata: Metadata = myMetadata;
 
 export default function RootLayout(props: PropsWithChildren)
 {
