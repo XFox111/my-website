@@ -1,11 +1,11 @@
 import Package from "@/../package.json";
 import Button from "@/_components/Button";
 import { canonicalName, getTitle } from "@/_data/metadata";
+import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
 import { ArrowLeft24Regular, ArrowRight24Regular } from "@fluentui/react-icons";
 import { Metadata } from "next";
 import React from "react";
 import cls from "./page.module.scss";
-import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
 
 export const metadata: Metadata =
 {
@@ -32,10 +32,8 @@ const AttributionPage: React.FC = () => (
 					</p>
 					<p>
 						As the website owners, we do not collect any personal data.
-					</p>
-					<p>
 						For more information about how Microsoft collects and uses your data,
-						visit the <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a>.
+						see the <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a>.
 					</p>
 					<p>
 						If "Do Not Track" option is enabled in your browser, the website will not load any tracking code.
@@ -62,8 +60,11 @@ const AttributionPage: React.FC = () => (
 				</p>
 				<ul>
 					<li>Educational purposes.</li>
-					<li>Any other purposes that may be considered as fair use.</li>
+					<li>Any other cases that may be deemed as a fair use.</li>
 				</ul>
+				<p>
+					When shared or modified, each copyrighted material must have a proper attribution.
+				</p>
 
 				<Button appearance="secondary"
 					href={ new URL("./blob/main/COPYING", Package.repository.url).href } target="_blank"
@@ -111,8 +112,8 @@ const AttributionPage: React.FC = () => (
 				<h2>Third-party content</h2>
 				<ThirdPartyAttribution />
 				<p>
-					Source code of this website has a list of dependency libraries which are subjects to their individual licenses and terms.
-					License text can be found for each denpendency library individually in its own designated source code repository.
+					Source code of this website has a list of dependencies which are subjects to their individual licenses and terms.
+					License text can be found for each dependency library individually in their own designated source code repositories.
 				</p>
 				<Button appearance="secondary"
 					href={ new URL("./network/dependencies", Package.repository.url).href } target="_blank"
