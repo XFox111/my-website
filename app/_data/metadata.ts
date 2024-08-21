@@ -3,7 +3,7 @@ import bio from "./bio";
 import socials from "./socials";
 import Package from "@/../package.json";
 
-export const canonicalName: URL = new URL("https://xfox111.net");
+export const canonicalName: URL = new URL(`https://${process.env.DOMAIN_NAME}`);
 const baseTitle: string = "Eugene Fox - Software developer";
 
 const gender: string = "male";
