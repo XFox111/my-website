@@ -1,12 +1,13 @@
 "use client";
 
+import links from "@/_data/links";
+import socials from "@/_data/socials";
 import { Dismiss24Regular, Navigation24Regular } from "@fluentui/react-icons";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Button, { ButtonProps } from "./Button";
 import NavigationLinks from "./NavigationLinks";
 import cls from "./Sidemenu.module.scss";
 import SocialLinks from "./SocialLinks";
-import links from "@/_data/links";
 
 const Sidemenu: React.FC<SidemenuProps> = ({ button, ...panelProps }) =>
 {
@@ -70,7 +71,7 @@ const Sidemenu: React.FC<SidemenuProps> = ({ button, ...panelProps }) =>
 				</header>
 
 				<NavigationLinks className={ cls.navigation } links={ { className: cls.link } } />
-				<SocialLinks />
+				<SocialLinks socials={ socials } />
 				<Button className={ cls.resume } as="next" href={ links.resume }>Download resume</Button>
 
 			</div>

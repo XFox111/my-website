@@ -1,5 +1,6 @@
 import TitleLogo from "@/_data/TitleLogo";
 import links from "@/_data/links";
+import socials from "@/_data/socials";
 import React from "react";
 import Button from "./Button";
 import cls from "./Header.module.scss";
@@ -13,7 +14,7 @@ const Header: React.FC = () => (
 			<TitleLogo />
 
 			<NavigationLinks className={ cls.navigation } />
-			<SocialLinks className={ cls.socials } size={ 40 } />
+			<SocialLinks className={ cls.socials } size={ 40 } socials={ socials } />
 
 			<Button className={ cls.resume } as="next" href={ links.resume }>
 				Download resume

@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/_components/Button";
+import SocialLinks from "@/_components/SocialLinks";
 import contacts from "@/_data/contacts";
 import FormStatusTracker from "@/_utils/FormStatusTracker";
 import React, { InputHTMLAttributes, useMemo, useState } from "react";
@@ -83,27 +84,17 @@ const ContactSection: React.FC = () =>
 				<div className={ `${cls.container} ${cls.contacts}` }>
 					<h3>Direct contacts</h3>
 
-					<p>
-						{ Object.entries(socials).map(([name, i]) =>
-							<span key={ name }>
-								<span aria-hidden>{ name + ": " }</span>
-								<a aria-label={ `${name}: ${i.username}` } href={ i.href } target="_blank">
-									{ i.username }
-								</a>
-								<br aria-hidden />
-							</span>
-						) }
+					<SocialLinks socials={ socials } className={ cls.links } />
 
-						{ phone &&
-							<span>
-								<span aria-hidden>Telephone: </span>
-								<a aria-label={ `Telephone: ${phone.text} (${phone.country})` } href={ phone.href }>
-									{ phone.text }
-								</a>
-								<span aria-hidden> ({ phone.country })</span>
-							</span>
-						}
-					</p>
+					{ phone &&
+						<p>
+							<span aria-hidden>Telephone: </span>
+							<a aria-label={ `Telephone: ${phone.text} (${phone.country})` } href={ phone.href }>
+								{ phone.text }
+							</a>
+							<span aria-hidden> ({ phone.country })</span>
+						</p>
+					}
 
 					<Button href={ email.href } target="_blank">
 						{ email.text }

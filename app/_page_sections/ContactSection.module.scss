@@ -26,6 +26,12 @@
 		{
 			align-items: flex-end;
 			text-align: right;
+
+			.links
+			{
+				justify-content: flex-end;
+				flex-wrap: wrap;
+			}
 		}
 
 		.textarea

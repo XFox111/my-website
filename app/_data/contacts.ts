@@ -1,5 +1,5 @@
-import socials, { Socials } from "./socials";
 import Package from "@/../package.json";
+import socials, { Socials } from "./socials";
 
 const contacts: ContactLinks =
 {
@@ -8,21 +8,20 @@ const contacts: ContactLinks =
 		text: Package.author.email,
 		href: "mailto:" + Package.author.email
 	},
-	telephone:
-	{
-		text: "+7 996 929-19-69",
-		href: "tel:79969291969",
-		country: "Russia"
-	},
 	socials:
 	{
 		"LinkedIn": socials["LinkedIn"],
-		"Telegram":
+		"Facebook":
 		{
 			username: "@xfox111",
-			href: "https://t.me/xfox111"
+			href: "https://facebook.com/xfox111"
 		},
-		"Twitter": socials["Twitter"]
+		"WhatsApp":
+		{
+			username: "@xfox111",
+			href: "https://wa.me/79969291969",
+			network: "whatsapp"
+		}
 	}
 };
 
