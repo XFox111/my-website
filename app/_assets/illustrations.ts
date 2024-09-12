@@ -1,7 +1,8 @@
 import { ImageExport } from "./assets";
 import netResume from "./illustrations/dotnet-resume.svg";
 import footer from "./illustrations/footer.svg";
-import foxRuns from "./illustrations/fox_runs.gif";
+import foxRunsDark from "./illustrations/fox_runs-dark.gif";
+import foxRunsLight from "./illustrations/fox_runs-light.gif";
 import fullstackResumeImg from "./illustrations/fullstack-resume.svg";
 import fox from "./illustrations/home-decor.svg";
 import itsMe from "./illustrations/its_me.webp";
@@ -35,9 +36,15 @@ export const footerImage: ImageExport =
 	alt: "A cartoon fox looking at a laptop"
 };
 
-export const spinner: ImageExport =
+export const spinnerDark: ImageExport =
 {
-	src: foxRuns,
+	src: foxRunsDark,
+	alt: "Cute cartoon fox runs to the left"
+};
+
+export const spinnerLight: ImageExport =
+{
+	src: foxRunsLight,
 	alt: "Cute cartoon fox runs to the left"
 };
 
@@ -80,7 +87,8 @@ export const projectsImg: ImageExport =
 const illustrations =
 {
 	footerImage,
-	spinner,
+	spinnerDark,
+	spinnerLight,
 	homeDecor,
 	profilePicture,
 	aboutPicture,

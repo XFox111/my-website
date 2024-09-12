@@ -10,5 +10,21 @@
 	{
 		width: 300px;
 		height: auto;
+
+		@media (prefers-color-scheme: dark)
+		{
+			&.light
+			{
+				display: none;
+			}
+		}
+
+		@media (prefers-color-scheme: light)
+		{
+			&.dark
+			{
+				display: none;
+			}
+		}
 	}
 }
