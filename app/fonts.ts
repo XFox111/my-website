@@ -14,7 +14,7 @@ const UbuntuMonoFont = Ubuntu_Mono({
 });
 
 const UbuntuFont = Ubuntu({
-	weight: "400",
+	weight: ["400", "700"],
 	subsets: ["latin"],
 	variable: "--font-base"
 });

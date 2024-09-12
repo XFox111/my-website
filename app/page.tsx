@@ -1,4 +1,5 @@
 import React from "react";
+import AlertMessage from "./_components/AlertMessage";
 import FrontSection from "./_data/FrontSection";
 import AboutSection from "./_page_sections/AboutSection";
 import ContactSection from "./_page_sections/ContactSection";
@@ -10,13 +11,17 @@ import cls from "./page.module.scss";
 const HomePage: React.FC = () => (
 	<main className={ cls.page }>
 
-		<FrontSection />
+		<AlertMessage />
 
-		<SkillsSection />
-		<ProjectsSection />
-		<ExperienceSection />
-		<AboutSection />
-		<ContactSection />
+		<article>
+			<FrontSection />
+
+			<SkillsSection />
+			<ProjectsSection />
+			<ExperienceSection />
+			<AboutSection />
+			<ContactSection />
+		</article>
 	</main>
 );
 

@@ -1,0 +1,23 @@
+@import "../theme.scss";
+
+.alertBox
+{
+	@include maxCenter;
+	@include flex(row);
+	align-items: center;
+	gap: $spacingM;
+
+	border: 2px solid $colorStatusWarningBorderActive;
+	padding: $spacingS $spacingM;
+
+	.icon
+	{
+		font-size: $fontSizeHero900;
+		color: $colorStatusWarningForeground1;
+	}
+
+	.title
+	{
+		@include body1Stronger;
+	}
+}

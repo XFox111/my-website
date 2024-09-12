@@ -3,8 +3,14 @@
 .page
 {
 	@include flex(column);
+	gap: $spacingXL;
 	max-width: unset;
-	gap: 8vw; // Bigger gap on bigger devices
+
+	> article
+	{
+		@include flex(column);
+		gap: 8vw; // Bigger gap on bigger devices
+	}
 
 	h2
 	{
