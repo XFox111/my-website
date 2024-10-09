@@ -77,8 +77,6 @@ jobs:
       - uses: actions/attest-build-provenance@v1
         if: github.event_name != 'pull_request' || github.event.inputs.push == 'true'
         with:
-          subject-name: |
-            index.docker.io/${{ github.repository }}
-            ghcr.io/${{ github.repository }}
+          subject-name: index.docker.io/${{ github.repository }}
           subject-digest: ${{ steps.builder.outputs.digest }}
           push-to-registry: true
