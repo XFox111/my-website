@@ -30,7 +30,7 @@
 		"react-dom": "^18",
 		"react-social-icons": "^6.18.0",
 		"sass": "^1.77.8",
-		"sharp": "^0.32.6",
+		"sharp": "^0.33.5",
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
