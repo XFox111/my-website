@@ -35,6 +35,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -62,7 +68,17 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: docker/build-push-action@v6
+        id: builder
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' || github.event.inputs.push == 'true' }}
           tags: ${{ steps.meta.outputs.tags }}
+
+      - uses: actions/attest-build-provenance@v1
+        if: github.event_name != 'pull_request' || github.event.inputs.push == 'true'
+        with:
+          subject-name: |
+            index.docker.io/${{ github.repository }}
+            ghcr.io/${{ github.repository }}
+          subject-digest: ${{ steps.builder.outputs.digest }}
+          push-to-registry: true
