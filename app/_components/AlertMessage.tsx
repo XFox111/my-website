@@ -18,24 +18,31 @@ const AlertMessage: React.FC = async () =>
 	if (!process.env.ALERT_TEXT_URL)
 		return null;
 
-	const response: Response = await fetch(process.env.ALERT_TEXT_URL, { cache: "no-cache" });
-	const alertText: string = await response.text();
+	try
+	{
+		const response: Response = await fetch(process.env.ALERT_TEXT_URL, { cache: "no-cache" });
+		const alertText: string = await response.text();
 
-	if (!response.ok || !alertText)
-		return null;
+		if (!response.ok || !alertText)
+			return null;
 
-	const title: string = alertText.split("\n", 1)[0];
-	const message: string = alertText.substring(title.length);
+		const title: string = alertText.split("\n", 1)[0];
+		const message: string = alertText.substring(title.length);
 
-	return (
-		<div role="alert" className={ cls.alertBox } aria-label={ alertText }>
-			<ChatWarningRegular className={ cls.icon } />
-			<div>
-				<p className={ cls.title }>{ title }</p>
-				<p dangerouslySetInnerHTML={ { __html: message } } />
+		return (
+			<div role="alert" className={ cls.alertBox } aria-label={ alertText }>
+				<ChatWarningRegular className={ cls.icon } />
+				<div>
+					<p className={ cls.title }>{ title }</p>
+					<p dangerouslySetInnerHTML={ { __html: message } } />
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
+	catch
+	{
+		return null;
+	}
 };
 
 export default AlertMessage;
