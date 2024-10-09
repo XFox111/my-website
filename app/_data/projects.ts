@@ -19,9 +19,9 @@ const projects: Project[] =
 			subtitle: "QR code authentication on any website",
 			description:
 				[
-					"During one of the classes at university I struggled to log into my account on a lab computer. I have long random passwords, so I had to type it in manually from my phone which took quite some time. I thought that there must be a better way to do this.",
-					"So I came up with this idea where you can easily send your credentials to any computer by simply scanning a QR code with a password manager app.",
-					"After testing it out I tried to make a startup out of it but sadly it didn't work. Still use it ocasiounally though."
+					"During one of the classes at university I struggled to log into my account on a lab computer. I have long random passwords, so I had to type them manually from my phone which took about 5 minutes. I thought that there must be a better way to do this.",
+					"So, I came up with this idea where you can easily send your credentials to any computer by simply scanning a QR code with a password manager app.",
+					"In the end, I have created a big web service with mobile app and a customer portal, that could authenticate users on any website, and any device within a few seconds."
 				],
 			image: ezlogImg,
 			link: "https://ezlog.app/about",
@@ -42,8 +42,8 @@ const projects: Project[] =
 			subtitle: "Browser extension inspired by Edge's \"Tabs aside\" and Collections features",
 			description:
 				[
-					"Initially built on pure JS/CSS this extension was designed to recreate \"Tabs aside\" feature that Microsoft introduced in their EdgeHTML-based Microsoft Edge browser, but removed it in subsequent Chromium-based version.",
-					"Later it was rewritten in ReactJS and TypeScript and got new and unique features, yet still maintaining that original asthetics."
+					"Initially built on pure JS/CSS this extension was designed to recreate the \"Tabs aside\" feature that Microsoft introduced in their EdgeHTML-based Microsoft Edge browser but removed it in subsequent Chromium-based version.",
+					"Later I rewrote it in ReactJS and TypeScript, and added new and unique features, yet still maintaining that original aesthetics."
 				],
 			image: tabsAsideLight,
 			imageDark: tabsAsideDark,
@@ -60,7 +60,7 @@ const projects: Project[] =
 		},
 		{
 			title: "SimpleOTP",
-			subtitle: "Lightweight and simple .NET library for OTP implementation",
+			subtitle: "Simple yet powerfull .NET library for OTP implementation",
 			description:
 				[
 					"Initially created during EasyLogon development, this library was designed as a simple, yet flexible solution for one-time password authenticators and validators.",
@@ -82,7 +82,7 @@ const projects: Project[] =
 			description:
 				[
 					"Small pet project that I developed while my favorite password generator website was down.",
-					"Basically a playground, where I try out new technologies and approaches to web development."
+					"Basically, a playground, where I try out new technologies and approaches to web development."
 				],
 			image: passwordGeneratorLight,
 			imageDark: passwordGeneratorDark,
@@ -124,7 +124,7 @@ const projects: Project[] =
 				[
 					"[2019]",
 					"My first published app.",
-					"I like to watch videos while working on my projects, but at the time YouTube didn't have a proper picture-in-picture mode and overall had a lot of issues with the UX, so this was my way to fix this.",
+					"I like to watch videos while working on my projects, but at the time YouTube didn not have a proper picture-in-picture mode and overall had a lot of issues with the UX, so this was my way to fix this.",
 					"Unfortunately, Google doesn't like third-party YouTube clients."
 				],
 			image: foxTubeLight,
@@ -146,7 +146,7 @@ const projects: Project[] =
 				[
 					"[2018]",
 					"My earliest attempt in software development.",
-					"Basically this program analyzes pre-recorded CCTV footage by comparing different frames and using some simple algorithms and provides user with a set of timecodes where a motion was detected.",
+					"Basically, this program analyzes pre-recorded CCTV footage by comparing different frames and using some simple algorithms and provides user with a set of timecodes where a motion was detected.",
 				],
 			image: motionDecoderLight,
 			imageDark: motionDecoderDark,

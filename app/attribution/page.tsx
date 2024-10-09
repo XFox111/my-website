@@ -27,7 +27,7 @@ const AttributionPage: React.FC = () => (
 		</Button>
 
 		<article>
-			<h1>Attrubtions &amp; information</h1>
+			<h1>Attributions &amp; information</h1>
 
 			{ analyticsEnabled() &&
 				<section>
@@ -37,15 +37,15 @@ const AttributionPage: React.FC = () => (
 						Website usage data is captured using first and third-party cookies and other tracking technologies for site optimization purposes and general statistics collection.
 					</p>
 					<p>
-						As the website owners, we do not collect any personal data.
+						As website owners, we do not collect any personal data.
 						For more information about how Microsoft collects and uses your data,
 						see the <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a>.
 					</p>
 					<p>
-						If "Do Not Track" option is enabled in your browser, the website will not load any tracking code.
+						If the "Do Not Track" option is enabled in your browser, the website will not load any tracking code.
 					</p>
 					<p>
-						If you previously gave your consent to use cookies, you can revoke it by clicking "Revoke my consent" button on this page below (the button is available only if the consent was given). Recorded data will be deleted after 30 day retention period.
+						If you previously gave your consent to use cookies, you can revoke it by clicking "Revoke my consent" button on this page below (the button is available only if the consent was given). Recorded data will be deleted after 30-day retention period.
 					</p>
 
 					<div className={ cls.buttonRow }>
@@ -66,14 +66,14 @@ const AttributionPage: React.FC = () => (
 					Copyright &copy; { new Date().getFullYear() } { Package.author.name }. Some rights reserved.
 				</p>
 				<p>
-					Text and graphical material of this website is a subject to general copyright law. You must obtain a written permission from the author in order to use any copyrighted material.
+					Text and graphical material of this website is a subject to general copyright law. You must obtain written permission from the author to use any copyrighted material.
 				</p>
 				<p>
 					You may use copyrighted material without excplicit permission in following cases:
 				</p>
 				<ul>
 					<li>Educational purposes.</li>
-					<li>Any other cases that may be deemed as a fair use.</li>
+					<li>Any other cases that may be deemed as fair use.</li>
 				</ul>
 				<p>
 					When shared or modified, each copyrighted material must have a proper attribution.
@@ -125,7 +125,7 @@ const AttributionPage: React.FC = () => (
 				<h2>Third-party content</h2>
 				<ThirdPartyAttribution />
 				<p>
-					Source code of this website has a list of dependencies which are subjects to their individual licenses and terms.
+					Source code of this website has a list of dependencies which are subject to their individual licenses and terms.
 					License text can be found for each dependency library individually in their own designated source code repositories.
 				</p>
 				<Button appearance="secondary"
