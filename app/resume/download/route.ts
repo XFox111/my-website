@@ -30,7 +30,7 @@ export async function GET(req: NextRequest): Promise<Response>
 		const [page, refs]: PDFPage[] = await newDoc.copyPages(srcDoc, [resume.pageIndex, srcDoc.getPageCount() - 1]);
 		newDoc.addPage(page);
 
-		if (process.env.RESUME_HAS_REFS)
+		if (process.env.RESUME_HAS_REFS === "true")
 			newDoc.addPage(refs);
 
 		// Serialize the new PDF document
