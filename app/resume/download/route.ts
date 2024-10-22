@@ -27,8 +27,11 @@ export async function GET(req: NextRequest): Promise<Response>
 
 		// Create a new PDF document with the specified page
 		const newDoc: PDFDocument = await PDFDocument.create();
-		const [page]: PDFPage[] = await newDoc.copyPages(srcDoc, [resume.pageIndex]);
+		const [page, refs]: PDFPage[] = await newDoc.copyPages(srcDoc, [resume.pageIndex, srcDoc.getPageCount() - 1]);
 		newDoc.addPage(page);
+
+		if (process.env.RESUME_HAS_REFS)
+			newDoc.addPage(refs);
 
 		// Serialize the new PDF document
 		const pdfBytes: Uint8Array = await newDoc.save();
