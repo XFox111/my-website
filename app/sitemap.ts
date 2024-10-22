@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
+import { unstable_noStore } from "next/cache";
 import { canonicalName } from "./_data/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap
 {
+	unstable_noStore();
 	return [
 		{
 			url: canonicalName.href,
