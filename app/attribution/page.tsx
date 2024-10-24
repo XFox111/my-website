@@ -3,7 +3,7 @@ import Button from "@/_components/Button";
 import RevokeConsentButton from "@/_components/RevokeConsentButton";
 import { canonicalName, getTitle } from "@/_data/metadata";
 import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
-import { analyticsEnabled } from "@/_utils/analytics/server";
+import { analyticsEnabled, requireExplicitConsent } from "@/_utils/analytics/server";
 import { ArrowLeft24Regular, ArrowRight24Regular } from "@fluentui/react-icons";
 import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
@@ -42,14 +42,20 @@ const AttributionPage: React.FC = () => (
 						see the <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a>.
 					</p>
 					<p>
-						If the "Do Not Track" option is enabled in your browser, the website will not load any tracking code.
+						If the "Do Not Track" option is enabled in your browser,
+						the website will not execute any tracking code.
 					</p>
-					<p>
-						If you previously gave your consent to use cookies, you can revoke it by clicking "Revoke my consent" button on this page below (the button is available only if the consent was given). Recorded data will be deleted after 30-day retention period.
-					</p>
+					{ requireExplicitConsent() &&
+						<p>
+							If you previously gave your consent to use cookies,
+							you can revoke it by clicking "Revoke my consent" button on this page below
+							(the button is available only if the consent was given).
+							Recorded data will be deleted after 30-day retention period.
+						</p>
+					}
 
 					<div className={ cls.buttonRow }>
-						<RevokeConsentButton />
+						{ requireExplicitConsent() && <RevokeConsentButton /> }
 						<Button appearance="secondary"
 							href="https://learn.microsoft.com/clarity/faq#privacy" target="_blank"
 							iconAfter={ <ArrowRight24Regular /> }>

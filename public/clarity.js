@@ -30,7 +30,8 @@
 	/** @type {string | undefined} */
 	const id = document.getElementById("ms-clarity")?.dataset.id;
 
-	if (!id)
+	// If "Do Not Track" is enabled, or there's no CLARITY_ID set up, we don't load any analytics
+	if (!id || navigator.doNotTrack === "1")
 		return;
 
 	window["clarity"] ??= function ()

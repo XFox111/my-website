@@ -12,11 +12,14 @@ const CookieBanner: React.FC<{ askForConsent: boolean; }> = props =>
 
 	useEffect(() =>
 	{
+		if (navigator.doNotTrack === "1")
+			return;
+
 		const choice = getCookieChoice();
 		setVisible(choice === "none");
 
 		// Since Clarity cookies expiration dates extend well beyond 60 days,
-		// we need to terminate them manually once our consent tracking cookie expires.
+		// we need to terminate them manually once our consent tracking cookie expired.
 		if (choice !== "accepted")
 			window.clarity?.("consent", false);
 	}, []);
