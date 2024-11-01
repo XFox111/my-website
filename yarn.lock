@@ -63,10 +63,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@fluentui/react-icons@^2.0.260":
-  version "2.0.260"
-  resolved "https://registry.yarnpkg.com/@fluentui/react-icons/-/react-icons-2.0.260.tgz#5a4b483472099f185420a605c5f27b87df7f394a"
-  integrity sha512-5lmkXukfnkeFG3rWCCf5nX5Sn2jsqR0IDJJ7FUwWdx9C4Jd+zfbh9PdzWnFSR/kpQBFwvpkxyyau3w8tqQK77Q==
+"@fluentui/react-icons@^2.0.264":
+  version "2.0.264"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-icons/-/react-icons-2.0.264.tgz#d4cfeea7f06a18fe166208622f32ed89852f9a2d"
+  integrity sha512-Rhjx5vYmTzbe6q/50qBy9G4jpFwJQuBA4oAaluG2Pw9Cb50cz8O3ZQVRopNIi65xdAwuR0jTWPf869Iy1G6/sA==
   dependencies:
     "@griffel/react" "^1.0.0"
     tslib "^2.1.0"
