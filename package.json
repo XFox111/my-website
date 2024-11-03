@@ -29,7 +29,7 @@
 		"react": "^18",
 		"react-dom": "^18",
 		"react-social-icons": "^6.18.0",
-		"sass": "^1.79.4",
+		"sass": "^1.80.6",
 		"sharp": "^0.33.5",
 		"zod": "^3.23.8"
 	},
