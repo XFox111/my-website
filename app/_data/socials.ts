@@ -12,11 +12,11 @@ const socials: Socials =
 		href: "https://www.linkedin.com/in/xfox/",
 		username: "@xfox"
 	},
-	"Twitter":
+	"BlueSky":
 	{
-		href: "https://twitter.com/xfox111",
-		username: "@xfox111"
-	},
+		href: "https://bsky.app/profile/xfox111.net",
+		username: "@xfox111.net",
+	}
 };
 
 export default socials;

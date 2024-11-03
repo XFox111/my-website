@@ -28,13 +28,12 @@ export async function generateMetadata(): Promise<Metadata>
 			firstName: Package.author.name.split(" ")[0],
 			lastName: Package.author.name.split(" ")[1],
 			gender,
-			username: socials["Twitter"].username,
 			siteName: canonicalName.hostname,
 			locale: "en_US"
 		},
 		twitter:
 		{
-			site: socials["Twitter"].username,
+			site: "@xfox111",
 			card: "summary_large_image"
 		},
 		alternates:
