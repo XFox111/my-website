@@ -31,7 +31,7 @@
 		"react-social-icons": "^6.18.0",
 		"sass": "^1.81.0",
 		"sharp": "^0.33.5",
-		"zod": "^3.23.8"
+		"zod": "^3.24.1"
 	},
 	"devDependencies": {
 		"@types/node": "^22",
