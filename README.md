@@ -101,4 +101,4 @@ This repository is partially licensed under [MIT license](/LICENSE).
 [![GitHub followers](https://img.shields.io/github/followers/xfox111?label=Follow%20@xfox111&style=social)](https://github.com/xfox111)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-%40xfox111-orange)](https://buymeacoffee.com/xfox111)
 
-> ©2024 Eugene Fox. Some rights reserved
+> ©2025 Eugene Fox. Some rights reserved
