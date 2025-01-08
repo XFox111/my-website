@@ -47,7 +47,9 @@ jobs:
           images: |
             ${{ github.repository }}
             ghcr.io/${{ github.repository }}
-          tags: latest
+          tags: |
+            latest
+            type=schedule,pattern={{date 'YYYYMMDD'}}
 
       - name: "Login to Docker Hub"
         if: github.event_name != 'pull_request' || github.event.inputs.push == 'true'
