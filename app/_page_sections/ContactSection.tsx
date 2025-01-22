@@ -4,10 +4,12 @@ import Button from "@/_components/Button";
 import SocialLinks from "@/_components/SocialLinks";
 import contacts from "@/_data/contacts";
 import FormStatusTracker from "@/_utils/FormStatusTracker";
-import React, { InputHTMLAttributes, useMemo, useState } from "react";
+import React, { InputHTMLAttributes, useEffect, useMemo, useState } from "react";
 import { useFormState } from "react-dom";
+import Turnstile from "react-turnstile";
 import sendInquiry, { FormStatus } from "../_utils/sendInquiry";
 import cls from "./ContactSection.module.scss";
+import { getSitekey } from "@/_utils/turnstile";
 
 const defaultState: FormStatus = { status: "idle" };
 
@@ -16,12 +18,18 @@ const ContactSection: React.FC = () =>
 	const [pending, setPending] = useState<boolean>(false);
 	const [{ status, message }, formAction] = useFormState<FormStatus, FormData>(sendInquiry, defaultState);
 	const { telephone: phone, email, socials } = contacts;
+	const [cfSitekey, setCfSitekey] = useState<string | undefined | null>(null);
 
 	const sharedProps: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> = useMemo(() => ({
 		required: true,
 		disabled: pending,
 		readOnly: status === "success"
 	}), [status, pending]);
+
+	useEffect(() =>
+	{
+		getSitekey().then(sitekey => setCfSitekey(sitekey));
+	}, []);
 
 	return (
 		<section id="contacts" className={ cls.section }>
@@ -52,6 +60,16 @@ const ContactSection: React.FC = () =>
 
 						<input name="timezone" type="hidden" readOnly
 							value={ Intl.DateTimeFormat().resolvedOptions().timeZone } />
+
+						<div>
+							{ cfSitekey &&
+								<Turnstile sitekey={ cfSitekey } size="flexible" action="contact_form" />
+							}
+
+							<p className={ cls.disclaimer }>
+								*Using this form does not guarantee I will respond to your request
+							</p>
+						</div>
 
 						<div className={ cls.formToolbar }>
 							<div className={ `${cls.status} ${pending ? "" : cls[status]}` }>
