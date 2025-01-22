@@ -3,6 +3,7 @@
 import { canonicalName } from "@/_data/metadata";
 import nodemailer from "nodemailer";
 import { z } from "zod";
+import { verifyTurnstile } from "./turnstile";
 
 const schema = z.object({
 	email: z.string().email().max(60),
@@ -24,6 +25,32 @@ const mailClient = nodemailer.createTransport({
 
 export default async function sendInquiry(_: FormStatus, formData: FormData): Promise<FormStatus>
 {
+	const cfToken = formData.get("cf-turnstile-response")?.toString();
+
+	if (!cfToken)
+		return {
+			status: "error",
+			message: "You must complete the challenge"
+		};
+
+	const [isValid, error] = await verifyTurnstile(cfToken);
+
+	if (!isValid)
+	{
+		if (error === "timeout-or-duplicate")
+			return {
+				status: "error",
+				message: "Challenge has expired. Try again"
+			};
+
+		console.error(error);
+
+		return {
+			status: "error",
+			message: "Something went wrong"
+		};
+	}
+
 	const { success, data } = schema.safeParse({
 		email: formData.get("email"),
 		subject: formData.get("subject"),

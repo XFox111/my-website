@@ -23,14 +23,16 @@ const nextConfig = {
 					contentSecurityPolicy:
 					{
 						"script-src": isDev ?
-							"'self' 'unsafe-inline' https://*.clarity.ms https://c.bing.com 'unsafe-eval'" :
-							"'self' 'unsafe-inline' https://*.clarity.ms https://c.bing.com",
+							"'self' 'unsafe-inline' https://*.clarity.ms https://c.bing.com https://*.cloudflare.com 'unsafe-eval'" :
+							"'self' 'unsafe-inline' https://*.clarity.ms https://c.bing.com https://*.cloudflare.com",
 
 						"connect-src": isDev ?
 							"'self' https://*.clarity.ms https://c.bing.com webpack://*" :
 							"'self' https://*.clarity.ms https://c.bing.com",
 
 						"style-src": "'self' 'unsafe-inline'",
+
+						"frame-src": "https://*.cloudflare.com 'none'",
 
 						// @ts-ignore
 						"prefetch-src": false
