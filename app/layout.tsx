@@ -7,7 +7,7 @@ import Footer from "./_components/Footer";
 import Header from "./_components/Header";
 import { analyticsEnabled, requireExplicitConsent } from "./_utils/analytics/server";
 import fonts from "./fonts";
-import "./globals.scss";
+import "./_styles/globals.scss";
 
 export const viewport: Viewport =
 {

@@ -1,11 +1,12 @@
-@import "../theme.scss";
+@use "@/_styles/theme" as *;
 
 .section
 {
-	@include centerTwo;
 	@include body2($fontFamilyBaseAlt);
 	color: $colorNeutralForeground2;
 	align-items: center;
+
+	@include centerTwo;
 
 	> div:first-child
 	{

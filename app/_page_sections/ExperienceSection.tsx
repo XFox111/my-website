@@ -37,7 +37,7 @@ const ExperienceSection: React.FC = () => (
 
 function getAriaLabel(item: WorkplaceEntry): string
 {
-	let str: string[] = [];
+	const str: string[] = [];
 
 	if (item.year)
 		str.push(`${item.year} -`);

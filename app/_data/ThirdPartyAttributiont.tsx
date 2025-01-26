@@ -3,7 +3,7 @@ import React from "react";
 const ThirdPartyAttribution: React.FC = () => <>
 	<p>
 		Iconography, typography, and color palette of this website are based on
-		Microsoft's <a target="_blank" href="https://fluentui.dev/">Fluent Design System</a> licensed under
+		Microsoft&apos;s <a target="_blank" href="https://fluentui.dev/">Fluent Design System</a> licensed under
 		the <a target="_blank" href="https://github.com/microsoft/fluentui/blob/main/LICENSE">MIT License</a>.
 	</p>
 	<p>

@@ -3,28 +3,31 @@
 import Button from "@/_components/Button";
 import SocialLinks from "@/_components/SocialLinks";
 import contacts from "@/_data/contacts";
-import FormStatusTracker from "@/_utils/FormStatusTracker";
-import React, { InputHTMLAttributes, useEffect, useMemo, useState } from "react";
-import { useFormState } from "react-dom";
+import { getSitekey } from "@/_utils/turnstile";
+import React, { InputHTMLAttributes, useActionState, useEffect, useMemo, useState } from "react";
 import Turnstile from "react-turnstile";
 import sendInquiry, { FormStatus } from "../_utils/sendInquiry";
 import cls from "./ContactSection.module.scss";
-import { getSitekey } from "@/_utils/turnstile";
 
 const defaultState: FormStatus = { status: "idle" };
 
 const ContactSection: React.FC = () =>
 {
-	const [pending, setPending] = useState<boolean>(false);
-	const [{ status, message }, formAction] = useFormState<FormStatus, FormData>(sendInquiry, defaultState);
+	// Added state-backing for the form fields to prevent it from resetting on submit
+	// See https://github.com/facebook/react/issues/29034
+	// FIXME: Remove form state once #29034 is fixed
+	const [form, setForm] = useState<{ email: string, subject: string, message: string; }>({ email: "", subject: "", message: "" });
+
+	const [{ status, message }, formAction, isPending] = useActionState<FormStatus, FormData>(sendInquiry, defaultState);
 	const { telephone: phone, email, socials } = contacts;
 	const [cfSitekey, setCfSitekey] = useState<string | undefined | null>(null);
 
 	const sharedProps: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> = useMemo(() => ({
 		required: true,
-		disabled: pending,
-		readOnly: status === "success"
-	}), [status, pending]);
+		disabled: isPending,
+		readOnly: status === "success",
+		"data-clarity-mask": true
+	}), [status, isPending]);
 
 	useEffect(() =>
 	{
@@ -33,7 +36,7 @@ const ContactSection: React.FC = () =>
 
 	return (
 		<section id="contacts" className={ cls.section }>
-			<h2>Let's get in touch</h2>
+			<h2>Let&apos;s get in touch</h2>
 
 			<div className={ cls.content }>
 
@@ -41,19 +44,20 @@ const ContactSection: React.FC = () =>
 					<h3>Inquiries, requests or proposals</h3>
 
 					<form className={ cls.container } action={ formAction }>
-						<FormStatusTracker onPendingChanged={ setPending } />
-
-						<input name="email" type="email" { ...sharedProps } data-clarity-mask
+						<input name="email" type="email" { ...sharedProps }
+							value={ form.email } onChange={ e => setForm({ ...form, email: e.target.value }) }
 							autoComplete="email" spellCheck="false"
 							maxLength={ 60 }
 							placeholder="Email" />
 
-						<input name="subject" type="text" { ...sharedProps } data-clarity-mask
+						<input name="subject" type="text" { ...sharedProps }
+							value={ form.subject } onChange={ e => setForm({ ...form, subject: e.target.value }) }
 							autoComplete="off" spellCheck="true"
 							maxLength={ 120 }
 							placeholder="Subject" />
 
-						<textarea name="message" { ...sharedProps } className={ cls.textarea } data-clarity-mask
+						<textarea name="message" { ...sharedProps } className={ cls.textarea }
+							value={ form.message } onChange={ e => setForm({ ...form, message: e.target.value }) }
 							autoComplete="off" spellCheck="true"
 							minLength={ 100 } maxLength={ 2000 }
 							placeholder="Message (min 100 characters)" />
@@ -72,18 +76,18 @@ const ContactSection: React.FC = () =>
 						</div>
 
 						<div className={ cls.formToolbar }>
-							<div className={ `${cls.status} ${pending ? "" : cls[status]}` }>
-								{ pending &&
+							<div className={ `${cls.status} ${isPending ? "" : cls[status]}` }>
+								{ isPending &&
 									<span role="alert" aria-live="assertive">
 										Sending
 									</span>
 								}
-								{ !pending && status === "success" &&
+								{ !isPending && status === "success" &&
 									<span role="alert" aria-live="assertive">
 										Message successfully sent
 									</span>
 								}
-								{ !pending && status === "error" &&
+								{ !isPending && status === "error" &&
 									<span role="alert" aria-live="assertive">
 										{ message ?? "Something went wrong" }
 									</span>
@@ -91,7 +95,7 @@ const ContactSection: React.FC = () =>
 							</div>
 
 							{ status !== "success" &&
-								<Button type="submit" disabled={ pending }>
+								<Button type="submit" disabled={ isPending }>
 									Submit
 								</Button>
 							}

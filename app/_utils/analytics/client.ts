@@ -35,9 +35,9 @@ function setCookie(name: string, value: string | number, maxAge: number): void
 
 function getCookie(name: string): string | undefined
 {
-	let cookieName = name + "=";
-	let rawCookies = decodeURIComponent(window.document.cookie);
-	let cookies = rawCookies.split(";");
+	const cookieName = name + "=";
+	const rawCookies = decodeURIComponent(window.document.cookie);
+	const cookies = rawCookies.split(";");
 
 	for (const cookie of cookies)
 		if (cookie.trim().startsWith(cookieName))

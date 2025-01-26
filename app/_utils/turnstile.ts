@@ -13,12 +13,11 @@ export async function verifyTurnstile(token: string): Promise<[false, TurnstileE
 		return [true];
 
 	const formData = new FormData();
-
-	console.log(headers().get("CF-Connecting-IP"));
+	const headerList = await headers();
 
 	formData.append("secret", process.env.CF_SECRET);
 	formData.append("response", token);
-	formData.append("remoteip", headers().get("CF-Connecting-IP") ?? "");
+	formData.append("remoteip", headerList.get("CF-Connecting-IP") ?? "");
 
 	const response = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify",
 		{
