@@ -1,3 +1,6 @@
+@use "tokens" as *;
+@use "typography" as *;
+
 @mixin maxCenter($maxWidth: 1400px)
 {
 	align-self: center;

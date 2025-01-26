@@ -1,3 +1,5 @@
+@use "tokens" as *;
+
 @mixin caption2($font: $fontFamilyBase)
 {
 	@include setTypography($font, $fontSizeBase100, $fontWeightRegular, $lineHeightBase100);

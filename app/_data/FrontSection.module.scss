@@ -1,10 +1,11 @@
-@import "../theme.scss";
+@use "@/_styles/theme" as *;
 
 .section
 {
-	@include centerTwo;
 	min-height: 75vh;
 	align-items: end;
+
+	@include centerTwo;
 
 	.content
 	{

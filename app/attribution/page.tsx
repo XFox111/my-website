@@ -42,13 +42,13 @@ const AttributionPage: React.FC = () => (
 						see the <a href="https://privacy.microsoft.com/privacystatement" target="_blank">Microsoft Privacy Statement</a>.
 					</p>
 					<p>
-						If the "Do Not Track" option is enabled in your browser,
+						If the &quot;Do Not Track&quot; option is enabled in your browser,
 						the website will not execute any tracking code.
 					</p>
 					{ requireExplicitConsent() &&
 						<p>
 							If you previously gave your consent to use cookies,
-							you can revoke it by clicking "Revoke my consent" button on this page below
+							you can revoke it by clicking &quot;Revoke my consent&quot; button on this page below
 							(the button is available only if the consent was given).
 							Recorded data will be deleted after 30-day retention period.
 						</p>
@@ -99,7 +99,7 @@ const AttributionPage: React.FC = () => (
 				<p>Copyright &copy; { new Date().getFullYear() } { Package.author.name }</p>
 				<p>
 					Permission is hereby granted, free of charge, to any person obtaining a copy
-					of this software and associated documentation files (the "Software"), to deal
+					of this software and associated documentation files (the &quot;Software&quot;), to deal
 					in the Software without restriction, including without limitation the rights
 					to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 					copies of the Software, and to permit persons to whom the Software is
@@ -110,7 +110,7 @@ const AttributionPage: React.FC = () => (
 					copies or substantial portions of the Software.
 				</p>
 				<p>
-					THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+					THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 					IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 					FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 					AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER

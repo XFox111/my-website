@@ -1,4 +1,4 @@
-@import "./theme.scss";
+@use "./theme" as *;
 
 :root
 {
@@ -35,6 +35,12 @@ body
 	max-width: 100vw;
 	overflow-x: hidden;
 
+	font-synthesis: none;
+	text-rendering: geometricPrecision;
+
+	background-color: $colorNeutralBackground1;
+	color: $colorNeutralForeground1;
+
 	> main
 	{
 		@include maxCenter;
@@ -42,12 +48,6 @@ body
 		padding: $spacingXXL;
 		margin-top: 56px;
 	}
-
-	font-synthesis: none;
-	text-rendering: geometricPrecision;
-
-	background-color: $colorNeutralBackground1;
-	color: $colorNeutralForeground1;
 
 	::selection
 	{

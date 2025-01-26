@@ -43,8 +43,6 @@ export default async function sendInquiry(_: FormStatus, formData: FormData): Pr
 				message: "Challenge has expired. Try again"
 			};
 
-		console.error(error);
-
 		return {
 			status: "error",
 			message: "Something went wrong"
