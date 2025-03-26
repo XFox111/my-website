@@ -6,7 +6,7 @@ on:
     paths-ignore:
       - '.devcontainer/*'
       - '.github/*'
-      - '!.github/workdlows/ci.yml'
+      - '!.github/workflows/ci.yml'
       - '.vscode/*'
       - '**.md'
       - '.env*'
@@ -17,7 +17,7 @@ on:
     paths-ignore:
       - '.devcontainer/*'
       - '.github/*'
-      - '!.github/workdlows/ci.yml'
+      - '!.github/workflows/ci.yml'
       - '.vscode/*'
       - '**.md'
       - '.env*'
