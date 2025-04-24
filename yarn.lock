@@ -106,10 +106,10 @@
     "@eslint/core" "^0.10.0"
     levn "^0.4.1"
 
-"@fluentui/react-icons@^2.0.274":
-  version "2.0.274"
-  resolved "https://registry.yarnpkg.com/@fluentui/react-icons/-/react-icons-2.0.274.tgz#b60180c9d4baa0423e85ea6a5193fe89b846b144"
-  integrity sha512-URmKlK8yS8f+RNsqi1pHBiL91V8RFBJlIBrPnsm8GcZsZv3vhA8k9jUinGyiMKgcsgcUulGPT/T7JUOLGEE+oQ==
+"@fluentui/react-icons@^2.0.297":
+  version "2.0.297"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-icons/-/react-icons-2.0.297.tgz#c13d0ca5aac3242e6d56277283d52fd6981c2ae5"
+  integrity sha512-nMAZqWDHKzlVgs9OaeE7FNp+RHHskC3NaKftyIQmnFhPb34YEuNGABsi00dDpwxT5H4ZedmeqqCnWz+XSz0G0A==
   dependencies:
     "@griffel/react" "^1.0.0"
     tslib "^2.1.0"
