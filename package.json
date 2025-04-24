@@ -22,7 +22,7 @@
 	},
 	"dependencies": {
 		"@fluentui/react-icons": "^2.0.274",
-		"next": "^15.2.3",
+		"next": "^15.3.1",
 		"nodemailer": "^6.10.0",
 		"pdf-lib": "^1.17.1",
 		"react": "^19.1.0",
