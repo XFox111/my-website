@@ -21,15 +21,22 @@ const ResumePage: React.FC = () => (
 		<h1>Who are you looking for?</h1>
 		<div className={ cls.resumeButtons }>
 			{ resumeList.map(i =>
-				<Button key={ i.key } className={ cls.button }
-					href={ `/resume/download?type=${i.key}` } download
-					icon={
-						<Image className={ cls.image } src={ i.image.src } priority draggable={ false }
-							aria-hidden alt={ i.image.alt } />
-					}>
+				<div key={ i.key } className={ cls.buttonContainer }>
+					<Button className={ cls.button }
+						href={ `/resume/download?type=${i.key}` } download
+						icon={
+							<Image className={ cls.image } src={ i.image.src } priority draggable={ false }
+								aria-hidden alt={ i.image.alt } />
+						}>
 
-					{ i.label }
-				</Button>
+						{ i.label }
+					</Button>
+					{ process.env.ATS_RESUME_URL &&
+						<a className={ cls.atsLink } href={ `/resume/download?type=${i.key}&ats=true` } download>
+							ATS-compatible version
+						</a>
+					}
+				</div>
 			) }
 		</div>
 

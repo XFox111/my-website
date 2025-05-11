@@ -5,18 +5,22 @@ import { PDFDocument, PDFPage } from "pdf-lib";
 export async function GET(req: NextRequest): Promise<Response>
 {
 	const type: string | null = req.nextUrl.searchParams.get("type");
+	const isAts: boolean = req.nextUrl.searchParams.get("ats") === "true";
 	const resume: Resume | undefined = findResume(type);
+	const url: string | undefined = isAts ? process.env.ATS_RESUME_URL : process.env.RESUME_URL;
 
 	if (!resume)
 		return error(400, "'type' parameter is invalid");
 
-	if (!process.env.RESUME_URL)
+	const fileName: string = (isAts ? "(ATS) " + resume.fileName : resume.fileName).replaceAll("\"", "'");
+
+	if (!url)
 		return error(500, "Cannot find file location.");
 
 	try
 	{
 		// Fetch the PDF file from the remote URL using the fetch API
-		const response: Response = await fetch(process.env.RESUME_URL as string);
+		const response: Response = await fetch(url);
 
 		if (!response.ok)
 			return error(500, "Failed to fetch PDF file");
@@ -30,7 +34,7 @@ export async function GET(req: NextRequest): Promise<Response>
 		const [page, refs]: PDFPage[] = await newDoc.copyPages(srcDoc, [resume.pageIndex, srcDoc.getPageCount() - 1]);
 		newDoc.addPage(page);
 
-		if (process.env.RESUME_HAS_REFS === "true")
+		if (process.env.RESUME_HAS_REFS === "true" && isAts)
 			newDoc.addPage(refs);
 
 		// Serialize the new PDF document
@@ -43,7 +47,7 @@ export async function GET(req: NextRequest): Promise<Response>
 				// Set response headers for PDF file
 				headers: {
 					"Content-Type": "application/pdf",
-					"Content-Disposition": `inline; filename="${resume.fileName.replaceAll("\"", "'")}.pdf"`
+					"Content-Disposition": `inline; filename="${fileName}.pdf"`
 				}
 			}
 		);

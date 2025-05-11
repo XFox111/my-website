@@ -20,6 +20,16 @@
 		grid-auto-columns: 1fr;
 		gap: $spacingXL;
 
+		.buttonContainer
+		{
+			@include flex(column);
+		}
+
+		.atsLink
+		{
+			@include body1();
+		}
+
 		.button
 		{
 			flex-flow: column;
