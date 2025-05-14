@@ -51,7 +51,7 @@ function generateCspPolicy(isDev)
 		"manifest-src": "'self'",
 		"media-src": "'self'",
 		"object-src": "'none'",
-		"script-src": "'self' https://*.clarity.ms https://c.bing.com https://*.cloudflare.com 'unsafe-inline'",
+		"script-src": "'self' https://*.clarity.ms https://c.bing.com https://*.cloudflare.com https://*.cloudflareinsights.com 'unsafe-inline'",
 		"style-src": "'self' 'unsafe-inline'",
 		"worker-src": "'self'"
 	};
