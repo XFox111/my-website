@@ -12,6 +12,7 @@ on:
       - '.env*'
       - 'LICENSE'
       - 'COPYING'
+      - '.git*'
   pull_request:
     branches: [ "main", "deps" ]
     paths-ignore:
@@ -23,6 +24,7 @@ on:
       - '.env*'
       - 'LICENSE'
       - 'COPYING'
+      - '.git*'
   workflow_dispatch:
     inputs:
       push:
