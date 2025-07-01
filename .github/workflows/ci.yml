@@ -13,7 +13,7 @@ on:
       - 'LICENSE'
       - 'COPYING'
   pull_request:
-    branches: [ "main", "deps" ]
+    branches: [ "main", "next" ]
     paths-ignore:
       - '.devcontainer/*'
       - '.github/*'
