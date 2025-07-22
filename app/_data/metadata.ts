@@ -1,7 +1,7 @@
 import Package from "@/../package.json";
 import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
-import bio from "./bio";
+import { bioPremise } from "./bio";
 import socials from "./socials";
 
 export const canonicalName: URL = new URL(`https://${process.env.DOMAIN_NAME}`);
@@ -18,12 +18,12 @@ export async function generateMetadata(): Promise<Metadata>
 	unstable_noStore();
 	return {
 		title: baseTitle,
-		description: bio[0],
+		description: bioPremise,
 		metadataBase: canonicalName,
 		openGraph:
 		{
 			title: baseTitle,
-			description: bio[0],
+			description: bioPremise,
 			type: "profile",
 			firstName: Package.author.name.split(" ")[0],
 			lastName: Package.author.name.split(" ")[1],
