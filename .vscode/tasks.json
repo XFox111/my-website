@@ -56,5 +56,22 @@
 			"label": "docker: build",
 			"detail": "Build a Docker image"
 		},
+		{
+			"type": "shell",
+			"command": "docker",
+			"args": [
+				"run",
+				"--rm",
+				"--env-file",
+				".env.local",
+				"-p",
+				"3000:3000",
+				"my-website"
+			],
+			"group": "test",
+			"problemMatcher": [],
+			"label": "docker: run",
+			"detail": "Run the Docker container"
+		}
 	]
 }
