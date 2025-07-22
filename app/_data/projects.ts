@@ -24,17 +24,16 @@ const projects: Project[] =
 					"In the end, I have created a big web service with mobile app and a customer portal, that could authenticate users on any website, and any device within a few seconds."
 				],
 			image: ezlogImg,
-			link: "https://ezlog.app/about",
+			link: "https://github.com/xfox111/easylogon-web",
 			stack:
 				[
 					{ text: "C#/TypeScript", icon: ic.Code24Regular },
 					{ text: ".NET 6", icon: ic.Server24Regular },
-					{ text: "ReactJS", icon: ic.PhoneDesktop24Regular },
+					{ text: "React/Vite", icon: ic.PhoneDesktop24Regular },
 					{ text: "Xamarin.Forms", icon: ic.Phone24Regular },
 					{ text: "SQL Server", icon: ic.Database24Regular },
 					{ text: "Azure DevOps", icon: ic.Branch24Regular },
-					{ text: "Azure Pipelines/AppCenter", icon: ic.FlashFlow24Regular },
-					{ text: "AppCenter", icon: ic.HeartPulse24Regular }
+					{ text: "Azure Pipelines/GitHub Actions", icon: ic.FlashFlow24Regular }
 				]
 		},
 		{
@@ -47,12 +46,12 @@ const projects: Project[] =
 				],
 			image: tabsAsideLight,
 			imageDark: tabsAsideDark,
-			link: "https://github.com/xfox111/TabsAsideExtension",
+			link: "https://github.com/xfox111/TabsAsideExtension/tree/next",
 			stack:
 				[
-					{ text: "ReactJS", icon: ic.Desktop24Regular },
-					{ text: "TypeScript/SASS", icon: ic.Code24Regular },
-					{ text: "Chrome/WebExt", icon: ic.FlashSettings24Regular },
+					{ text: "React/WXT", icon: ic.Desktop24Regular },
+					{ text: "TypeScript", icon: ic.Code24Regular },
+					{ text: "Browser extension", icon: ic.FlashSettings24Regular },
 					{ text: "Fluent UI", icon: ic.Color24Regular },
 					{ text: "GitHub", icon: ic.Branch24Regular },
 					{ text: "GitHub Actions", icon: ic.FlashFlow24Regular },
@@ -91,7 +90,7 @@ const projects: Project[] =
 				[
 					{ text: "React/Vite", icon: ic.Desktop24Regular },
 					{ text: "TypeScript", icon: ic.Code24Regular },
-					{ text: "Chrome/WebExt", icon: ic.FlashSettings24Regular },
+					{ text: "Browser extension", icon: ic.FlashSettings24Regular },
 					{ text: "Fluent UI", icon: ic.Color24Regular },
 					{ text: "GitHub", icon: ic.Branch24Regular },
 					{ text: "GitHub Actions", icon: ic.FlashFlow24Regular },

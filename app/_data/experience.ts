@@ -5,7 +5,7 @@ const experience: WorkplaceEntry[] =
 		{ title: "Software Engineer", place: "[nordcloud]", tech: "ASP.NET, EF Core" },
 		{ title: "CTO", year: "2022", place: "FoxDev Studio", tech: "Unity, Xamarin, .NET, React, Azure" },
 		{ title: "Senior Software Engineer", year: "2023", place: "A-rial", tech: ".NET, React, DevOps" },
-		{ title: "Senior Software Architect", year: "2024", place: "Ubitel", tech: ".NET, React, Embedded devices" },
+		{ title: "Senior Software Architect", year: "2024", place: "A-rial", tech: ".NET, React, Embedded devices" },
 		{ title: "Here", place: "Your company" },
 	];
 
