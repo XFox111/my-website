@@ -9,7 +9,7 @@ const TitleLogo: React.FC = () => (
 		<Image src={ logo }
 			alt="A fox jumping down, and a diagonal stripe in the background, forming letters X and F"
 			aria-hidden
-			priority />
+			loading="eager" />
 		<p>
 			<span>xfox111</span>
 			<sub>.net</sub>

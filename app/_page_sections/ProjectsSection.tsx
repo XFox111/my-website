@@ -51,10 +51,14 @@ const ProjectsSection: React.FC = () =>
 			<div className={ cls.descriptions } aria-live="polite" aria-atomic>
 				{ projects.map((project, index) =>
 					<div key={ index } className={ cls.projectItem } hidden={ selection !== index }>
-						<Image src={ project.image } alt={ project.title } data-theme={ project.imageDark ? "light" : "both" } />
+						<Image
+							src={ project.image } alt={ project.title }
+							data-theme={ project.imageDark ? "light" : "both" }
+							loading="eager" />
+
 						{/* This is a workaround since not all images can be theme-adaptive */ }
 						{ project.imageDark &&
-							<Image src={ project.imageDark } alt="" data-theme="dark" />
+							<Image src={ project.imageDark } alt="" data-theme="dark" loading="eager" />
 						}
 
 						<h3>{ project.title }</h3>
@@ -80,7 +84,7 @@ const ProjectsSection: React.FC = () =>
 					</div>
 				) }
 				<Image className={ cls.defaultImg } hidden={ selection !== undefined }
-					src={ projectsImg.src } alt={ projectsImg.alt } />
+					src={ projectsImg.src } alt={ projectsImg.alt } loading="eager" />
 			</div>
 		</section>
 	);

@@ -23,8 +23,8 @@ const FrontSection: React.FC = () => (
 		</div>
 
 		<div className={ cls.illustrations }>
-			<Image className={ cls.main } src={ profilePicture.src } alt={ profilePicture.alt } priority />
-			<Image className={ cls.secondary } src={ homeDecor.src } alt={ homeDecor.alt } />
+			<Image className={ cls.main } src={ profilePicture.src } alt={ profilePicture.alt } loading="eager" />
+			<Image className={ cls.secondary } src={ homeDecor.src } alt={ homeDecor.alt } loading="eager" />
 		</div>
 	</section>
 );

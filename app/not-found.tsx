@@ -24,7 +24,7 @@ const NotFoundPage: React.FC = () => (
 	<main className={ `${cls.page} not-found` }>
 		<div className={ cls.illustration }>
 			<h1>404...</h1>
-			<Image src={ notFoundImage.src } alt={ notFoundImage.alt } priority />
+			<Image src={ notFoundImage.src } alt={ notFoundImage.alt } loading="eager" />
 		</div>
 		<div className={ cls.content }>
 			<div className={ cls.caption }>

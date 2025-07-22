@@ -25,7 +25,7 @@ const ResumePage: React.FC = () => (
 					<Button className={ cls.button }
 						href={ `/resume/download?type=${i.key}` } download
 						icon={
-							<Image className={ cls.image } src={ i.image.src } priority draggable={ false }
+							<Image className={ cls.image } src={ i.image.src } loading="eager" draggable={ false }
 								aria-hidden alt={ i.image.alt } />
 						}>
 

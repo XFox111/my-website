@@ -5,8 +5,8 @@ import cls from "./loading.module.scss";
 
 const LoadingPage: React.FC = () => (
 	<div className={ cls.root } role="alert" aria-label="Loading page">
-		<Image className={ cls.dark } src={ spinnerDark.src } alt={ spinnerDark.alt } priority unoptimized />
-		<Image className={ cls.light } src={ spinnerLight.src } alt={ spinnerLight.alt } priority unoptimized />
+		<Image className={ cls.dark } src={ spinnerDark.src } alt={ spinnerDark.alt } loading="eager" unoptimized />
+		<Image className={ cls.light } src={ spinnerLight.src } alt={ spinnerLight.alt } loading="eager" unoptimized />
 	</div>
 );
 

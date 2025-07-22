@@ -26,7 +26,7 @@ const SkillsSection: React.FC = () =>
 				{ skills.map((i, index) =>
 					<Image key={ index }
 						src={ i.image.src } alt={ i.image.alt }
-						hidden={ selection !== index } />
+						hidden={ selection !== index } loading="eager" />
 				) }
 
 				{ selection === 4 &&
