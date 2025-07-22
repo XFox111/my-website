@@ -26,15 +26,15 @@ const AlertMessage: React.FC = async () =>
 		if (!response.ok || !alertText)
 			return null;
 
-		const title: string = alertText.split("\n", 1)[0];
-		const message: string = alertText.substring(title.length);
+		const title: string = alertText.split("\n", 1)[0].trim();
+		const message: string = alertText.substring(title.length + 1).trim();
 
 		return (
 			<div role="alert" className={ cls.alertBox } aria-label={ alertText }>
 				<ChatWarningRegular className={ cls.icon } />
 				<div>
 					<p className={ cls.title }>{ title }</p>
-					<p dangerouslySetInnerHTML={ { __html: message } } />
+					<p className={ cls.message } dangerouslySetInnerHTML={ { __html: message } } />
 				</div>
 			</div>
 		);
