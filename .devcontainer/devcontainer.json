@@ -2,12 +2,18 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	"name": "my-website",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
-			"dockerDashComposeVersion": "none"
+			"enableNonRootDocker": "true",
+			"moby": "false"
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "latest",
+			"pnpmVersion": "none",
+			"nvmVersion": "latest"
 		}
 	},
 
