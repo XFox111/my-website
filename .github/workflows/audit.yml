@@ -32,6 +32,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: corepack enable
+      - run: yarn install
       - run: yarn npm audit
 
   build:
