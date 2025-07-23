@@ -1,0 +1,45 @@
+name: Audit pipeline
+
+on:
+  push:
+    paths-ignore:
+      - '.devcontainer/*'
+      - '.github/*'
+      - '!.github/workflows/audit.yml'
+      - '.vscode/*'
+      - '**.md'
+      - '.env*'
+      - 'LICENSE'
+      - 'COPYING'
+      - '.git*'
+  pull_request:
+    paths-ignore:
+      - '.devcontainer/*'
+      - '.github/*'
+      - '!.github/workflows/audit.yml'
+      - '.vscode/*'
+      - '**.md'
+      - '.env*'
+      - 'LICENSE'
+      - 'COPYING'
+      - '.git*'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    container: node:24
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn npm audit
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          tags: "my-website:ci"

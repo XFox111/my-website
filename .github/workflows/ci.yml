@@ -1,37 +1,10 @@
 name: "CI pipeline"
 
 on:
-  push:
-    branches: [ "main" ]
-    paths-ignore:
-      - '.devcontainer/*'
-      - '.github/*'
-      - '!.github/workflows/ci.yml'
-      - '.vscode/*'
-      - '**.md'
-      - '.env*'
-      - 'LICENSE'
-      - 'COPYING'
-      - '.git*'
-  pull_request:
-    branches: [ "main", "next" ]
-    paths-ignore:
-      - '.devcontainer/*'
-      - '.github/*'
-      - '!.github/workflows/ci.yml'
-      - '.vscode/*'
-      - '**.md'
-      - '.env*'
-      - 'LICENSE'
-      - 'COPYING'
-      - '.git*'
+  release:
+    types:
+      - published
   workflow_dispatch:
-    inputs:
-      push:
-        type: boolean
-        required: false
-        default: false
-        description: "Push to Docker Hub"
 
 jobs:
   build:
@@ -51,17 +24,15 @@ jobs:
             ghcr.io/${{ github.repository }}
           tags: |
             latest
-            ${{ github.sha }}
+            ${{ github.ref_name }}
 
       - name: "Login to Docker Hub"
-        if: github.event_name != 'pull_request' || github.event.inputs.push == 'true'
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: "Login to GitHub Container Registry"
-        if: github.event_name != 'pull_request' || github.event.inputs.push == 'true'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -71,5 +42,4 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          push: ${{ github.event_name != 'pull_request' || github.event.inputs.push == 'true' }}
           tags: ${{ steps.meta.outputs.tags }}
