@@ -46,7 +46,7 @@ const projects: Project[] =
 				],
 			image: tabsAsideLight,
 			imageDark: tabsAsideDark,
-			link: "https://github.com/xfox111/TabsAsideExtension/tree/next",
+			link: "https://github.com/xfox111/TabsAsideExtension",
 			stack:
 				[
 					{ text: "React/WXT", icon: ic.Desktop24Regular },
