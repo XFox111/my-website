@@ -132,15 +132,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-icons@npm:^2.0.305":
-  version: 2.0.305
-  resolution: "@fluentui/react-icons@npm:2.0.305"
+"@fluentui/react-icons@npm:^2.0.307":
+  version: 2.0.307
+  resolution: "@fluentui/react-icons@npm:2.0.307"
   dependencies:
     "@griffel/react": "npm:^1.0.0"
     tslib: "npm:^2.1.0"
   peerDependencies:
     react: ">=16.8.0 <19.0.0"
-  checksum: 10c0/40ea7a0c438c7ca0c4f277e3d83d87dbe1816a9050e72a28c5061aca611babf978b79088e70ab0b47a3155f44372d8da62ce15f9cb4837c0d14b0a21bc405e31
+  checksum: 10c0/a55951bc17e9a65704c8d25f71b5b9efbdbbf79fce21ba19ca4e35556de7acf5a63feb38adc0967e0f912a398ac6d8e0edfcadea0892fb5ec25f96ed92ac51cb
   languageName: node
   linkType: hard
 
@@ -3648,7 +3648,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-website@workspace:."
   dependencies:
-    "@fluentui/react-icons": "npm:^2.0.305"
+    "@fluentui/react-icons": "npm:^2.0.307"
     "@next/eslint-plugin-next": "npm:^15.3.4"
     "@types/node": "npm:^24.0.8"
     "@types/nodemailer": "npm:^6.4.17"
