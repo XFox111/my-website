@@ -5,7 +5,7 @@ import { PropsWithChildren } from "react";
 import CookieBanner from "./_components/CookieBanner";
 import Footer from "./_components/Footer";
 import Header from "./_components/Header";
-import { analyticsEnabled, requireExplicitConsent } from "./_utils/analytics/server";
+import { analyticsEnabled } from "./_utils/analytics/server";
 import fonts from "./fonts";
 import "./_styles/globals.scss";
 
@@ -28,7 +28,7 @@ export default function RootLayout(props: PropsWithChildren)
 			}
 			<body>
 				{ analyticsEnabled() &&
-					<CookieBanner askForConsent={ requireExplicitConsent() } />
+					<CookieBanner />
 				}
 
 				<Header />

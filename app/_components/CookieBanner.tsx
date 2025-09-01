@@ -1,12 +1,11 @@
 "use client";
 
-import { acceptCookies, dismissCookies, getCookieChoice, rejectCookies } from "@/_utils/analytics/client";
-import { Dismiss24Regular } from "@fluentui/react-icons";
+import { acceptCookies, getCookieChoice, rejectCookies } from "@/_utils/analytics/client";
 import React, { useCallback, useEffect, useState } from "react";
 import Button from "./Button";
 import cls from "./CookieBanner.module.scss";
 
-const CookieBanner: React.FC<{ askForConsent: boolean; }> = props =>
+const CookieBanner: React.FC = () =>
 {
 	const [visible, setVisible] = useState(false);
 
@@ -36,12 +35,6 @@ const CookieBanner: React.FC<{ askForConsent: boolean; }> = props =>
 		setVisible(false);
 	}, []);
 
-	const dismiss = useCallback(() =>
-	{
-		dismissCookies();
-		setVisible(false);
-	}, []);
-
 	if (!visible)
 		return null;
 
@@ -59,16 +52,10 @@ const CookieBanner: React.FC<{ askForConsent: boolean; }> = props =>
 				</p>
 			</Button>
 
-			{ props.askForConsent ?
-				<div className={ cls.controls }>
-					<Button onClick={ accept }>Accept</Button>
-					<Button onClick={ reject }>Reject</Button>
-				</div>
-				:
-				<Button
-					title="Dismiss" icon={ <Dismiss24Regular /> }
-					onClick={ dismiss } className={ cls.dismiss } />
-			}
+			<div className={ cls.controls }>
+				<Button onClick={ accept }>Accept</Button>
+				<Button onClick={ reject }>Reject</Button>
+			</div>
 
 		</div>
 	);
