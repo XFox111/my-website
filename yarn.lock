@@ -976,21 +976,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:15.5.2":
+"@next/eslint-plugin-next@npm:15.5.2, @next/eslint-plugin-next@npm:^15.5.2":
   version: 15.5.2
   resolution: "@next/eslint-plugin-next@npm:15.5.2"
   dependencies:
     fast-glob: "npm:3.3.1"
   checksum: 10c0/5bafb42b15c23f8a1c5460e4eda4cb45b7c07832f80ce734cad138781606cd9c954ee37b93fd2a973b064ea39469dfc1409301cb2c90995ce5226a3b2b07a891
-  languageName: node
-  linkType: hard
-
-"@next/eslint-plugin-next@npm:^15.4.5":
-  version: 15.4.5
-  resolution: "@next/eslint-plugin-next@npm:15.4.5"
-  dependencies:
-    fast-glob: "npm:3.3.1"
-  checksum: 10c0/38f8037d36af3432d1c86e2070c7b4f0f70085ab1080622d91f3f416b306c320e32f22a18680a3df1651faeaa60f61c1a1a1eee4e8d7382b7ee101f6f0ec7571
   languageName: node
   linkType: hard
 
@@ -4857,7 +4848,7 @@ __metadata:
   resolution: "my-website@workspace:."
   dependencies:
     "@fluentui/react-icons": "npm:^2.0.309"
-    "@next/eslint-plugin-next": "npm:^15.4.5"
+    "@next/eslint-plugin-next": "npm:^15.5.2"
     "@types/node": "npm:^24.3.0"
     "@types/nodemailer": "npm:^7.0.1"
     "@types/react": "npm:^19.1.12"
