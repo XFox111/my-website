@@ -17,7 +17,7 @@
 		}
 	},
 
-	"postCreateCommand": "yarn install",
+	"postCreateCommand": "corepack enable && yarn install",
 
 	// Configure tool-specific properties.
 	"customizations": {
