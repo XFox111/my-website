@@ -34,7 +34,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: corepack enable
       - run: yarn install
       - run: yarn npm audit
@@ -46,7 +46,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: docker/build-push-action@v6
         with:
           context: .
