@@ -41,11 +41,6 @@
 		}
 	}
 
-	.dismiss
-	{
-		border-left: none;
-	}
-
 	.controls
 	{
 		display: grid;
@@ -65,19 +60,16 @@
 		width: 100%;
 		bottom: 0;
 
-		&:not(:has(> .dismiss))
+		flex-flow: column;
+
+		.learnMore
 		{
-			flex-flow: column;
+			border-bottom: none;
+		}
 
-			.learnMore
-			{
-				border-bottom: none;
-			}
-
-			.controls > button:last-child
-			{
-				border-left: none;
-			}
+		.controls > button:last-child
+		{
+			border-left: none;
 		}
 	}
 }

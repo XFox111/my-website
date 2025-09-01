@@ -12,18 +12,12 @@ export const rejectCookies = (): void =>
 	window.clarity?.("consent", false);
 };
 
-export const dismissCookies = (): void =>
-{
-	setCookie("CC", "", 1209600);	// 14 days
-};
-
-export const getCookieChoice = (): "accepted" | "rejected" | "acknowledged" | "none" =>
+export const getCookieChoice = (): "accepted" | "rejected" | "none" =>
 {
 	switch (getCookie("CC"))
 	{
 		case "1": return "accepted";
 		case "0": return "rejected";
-		case "": return "acknowledged";
 		default: return "none";
 	}
 };
