@@ -35,7 +35,7 @@ function getCookie(name: string): string | undefined
 
 	for (const cookie of cookies)
 		if (cookie.trim().startsWith(cookieName))
-			return cookie.substring(cookieName.length);
+			return cookie.trim().substring(cookieName.length);
 
 	return undefined;
 }
