@@ -533,10 +533,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.1.2, @babel/runtime@npm:^7.24.8":
+"@babel/runtime@npm:^7.1.2":
   version: 7.27.1
   resolution: "@babel/runtime@npm:7.27.1"
   checksum: 10c0/530a7332f86ac5a7442250456823a930906911d895c0b743bf1852efc88a20a016ed4cd26d442d0ca40ae6d5448111e02a08dd638a4f1064b47d080e2875dc05
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.27.0":
+  version: 7.28.4
+  resolution: "@babel/runtime@npm:7.28.4"
+  checksum: 10c0/792ce7af9750fb9b93879cc9d1db175701c4689da890e6ced242ea0207c9da411ccf16dc04e689cc01158b28d7898c40d75598f4559109f761c12ce01e959bf7
   languageName: node
   linkType: hard
 
@@ -4860,7 +4867,7 @@ __metadata:
     pdf-lib: "npm:^1.17.1"
     react: "npm:^19.1.1"
     react-dom: "npm:^19.1.1"
-    react-social-icons: "npm:^6.24.0"
+    react-social-icons: "npm:^6.25.0"
     react-turnstile: "npm:^1.1.4"
     sass: "npm:^1.91.0"
     sharp: "npm:^0.34.3"
@@ -5355,15 +5362,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-social-icons@npm:^6.24.0":
-  version: 6.24.0
-  resolution: "react-social-icons@npm:6.24.0"
+"react-social-icons@npm:^6.25.0":
+  version: 6.25.0
+  resolution: "react-social-icons@npm:6.25.0"
   dependencies:
-    "@babel/runtime": "npm:^7.24.8"
+    "@babel/runtime": "npm:^7.27.0"
   peerDependencies:
     react: 16.x.x || 17.x.x || 18.x.x || 19.x.x
     react-dom: 16.x.x || 17.x.x || 18.x.x || 19.x.x
-  checksum: 10c0/fc0e2b8beb0e20c6d1e911adab3eac4b1ba18e002b5adf6b1c87f62eff744c0fcf134b024b93b93423dfdcbe57433c2534ebc23ca3202870bde22fe0a5edc4dd
+  checksum: 10c0/745597cb3459018b7294cfc3f0e8ca3b9d337d0990d4f2f5c9d197f6aea997310f9bb410aea4b961994a4f4662a08645eff5e1e99e9b1776cf49c9c3c19f82e5
   languageName: node
   linkType: hard
 
