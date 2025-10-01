@@ -1822,12 +1822,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.12":
-  version: 19.1.12
-  resolution: "@types/react@npm:19.1.12"
+"@types/react@npm:^19.1.16":
+  version: 19.1.16
+  resolution: "@types/react@npm:19.1.16"
   dependencies:
     csstype: "npm:^3.0.2"
-  checksum: 10c0/e35912b43da0caaab5252444bab87a31ca22950cde2822b3b3dc32e39c2d42dad1a4cf7b5dde9783aa2d007f0b2cba6ab9563fc6d2dbcaaa833b35178118767c
+  checksum: 10c0/3d781f715f15f308b601d74142fae77c65679c318a3bb0a319df898f39095e738ba7ed7061cec971b19b6d33969ef9cd50fec92b034024ef3fcc25bb9a2eb3d0
   languageName: node
   linkType: hard
 
@@ -4851,7 +4851,7 @@ __metadata:
     "@next/eslint-plugin-next": "npm:^15.5.2"
     "@types/node": "npm:^24.3.0"
     "@types/nodemailer": "npm:^7.0.1"
-    "@types/react": "npm:^19.1.12"
+    "@types/react": "npm:^19.1.16"
     "@types/react-dom": "npm:^19.1.9"
     eslint: "npm:^9.32.0"
     eslint-config-next: "npm:^15.5.2"
