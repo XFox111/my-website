@@ -21,7 +21,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@fluentui/react-icons": "^2.0.311",
+		"@fluentui/react-icons": "^2.0.313",
 		"next": "^15.5.4",
 		"nodemailer": "^7.0.6",
 		"pdf-lib": "^1.17.1",
