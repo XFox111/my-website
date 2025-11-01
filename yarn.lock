@@ -2027,13 +2027,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/nodemailer@npm:^7.0.2":
-  version: 7.0.2
-  resolution: "@types/nodemailer@npm:7.0.2"
+"@types/nodemailer@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "@types/nodemailer@npm:7.0.3"
   dependencies:
     "@aws-sdk/client-sesv2": "npm:^3.839.0"
     "@types/node": "npm:*"
-  checksum: 10c0/3466f155b87a4543b83d71d4eef91fe47a41b04a277557e71713913fabeef048f9c3149e8a8eff18facf3ed46be7cd6d84b18c560c36904e85b0e6c4c8fe0e77
+  checksum: 10c0/3ee33e21aebf96415dbe5bcbfce078e573a7e542ce707682cd8eb78a48be6f6095bbe7c71f6451c8797861397084a044e45b5afb0ea74b255202094770afdbcd
   languageName: node
   linkType: hard
 
@@ -5081,13 +5081,13 @@ __metadata:
     "@fluentui/react-icons": "npm:^2.0.311"
     "@next/eslint-plugin-next": "npm:^15.5.4"
     "@types/node": "npm:^24.6.2"
-    "@types/nodemailer": "npm:^7.0.2"
+    "@types/nodemailer": "npm:^7.0.3"
     "@types/react": "npm:^19.2.0"
     "@types/react-dom": "npm:^19.2.0"
     eslint: "npm:^9.32.0"
     eslint-config-next: "npm:^15.5.4"
     next: "npm:^15.5.4"
-    nodemailer: "npm:^7.0.6"
+    nodemailer: "npm:^7.0.10"
     pdf-lib: "npm:^1.17.1"
     react: "npm:^19.2.0"
     react-dom: "npm:^19.2.0"
@@ -5212,10 +5212,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nodemailer@npm:^7.0.6":
-  version: 7.0.6
-  resolution: "nodemailer@npm:7.0.6"
-  checksum: 10c0/84d3bdca7baa048df538506726a3e63a116276b9ee1ad1e3cd55a8ccbdbf3dea34af0d9bfbe2fdb63cc83f9abe2dbab1737cd58562955e42cbf6cd46e82da49a
+"nodemailer@npm:^7.0.10":
+  version: 7.0.10
+  resolution: "nodemailer@npm:7.0.10"
+  checksum: 10c0/9bb39bde904397879a6394e5202146167cabc3bd4089c1b0255ce16875e721d1cf132afde25a570fc4cf38f159ba6b6b5411d3b9371775543d38343fbd505101
   languageName: node
   linkType: hard
 
