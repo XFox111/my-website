@@ -9,14 +9,48 @@
 	.illustrations
 	{
 		justify-self: center;
-		position: relative;
+		width: 100%;
 
-		img
+		.item
 		{
-			width: 100%;
-			max-height: 600px;
+			position: relative;
+			@include flex(column);
+			gap: $spacingXXXL;
 
 			@include slideIn;
+
+			img
+			{
+				align-self: flex-end;
+				max-height: 400px;
+				width: auto;
+				max-width: 100%;
+				height: auto;
+			}
+
+			h3
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+				display: none;
+			}
+
+			p
+			{
+				@include subtitle1($fontFamilyBaseAlt);
+			}
+		}
+
+		.mobileNav
+		{
+			margin-top: $spacingM;
+			display: none;
+			gap: $spacingMNudge;
+
+			.next
+			{
+				flex-grow: 1;
+				background-position-x: right;
+			}
 		}
 
 		// [SPECIAL]
@@ -25,28 +59,88 @@
 			position: absolute;
 			cursor: pointer;
 
-			bottom: calc(50% - 20px + 13.5%);
-			left: 40%;
-			width: 20%;
-			height: 40px;
+			right: 214px;
+			top: 81px;
+			width: 60px;
+			height: 25px;
 
-			@media screen and (max-width: 1400px)
+			@media screen and (max-width: 573px)
 			{
-				bottom: calc(50% - 20px + 6vw)
+				right: calc(50% - 30px);
+				top: calc(15vw - 7px);
 			}
+		}
+
+		// [SPECIAL]
+		.sus
+		{
+			position: absolute;
+			cursor: pointer;
+
+			left: 0;
+			top: 200px;
+			width: 90px;
+			height: 100px;
+
+			@media screen and (max-width: 1472px)
+			{
+				top: calc(15vw - 20px);
+				width: calc(8vw - 24px);
+				height: calc(8vw - 17px);
+
+				@media screen and (max-width: 860px)
+				{
+					top: calc(35vw - 65px);
+					width: 12vw;
+					height: 14vw;
+				}
+			}
+
 		}
 	}
 
-	.list
+	.content
 	{
+		@include flex(column);
+		gap: $spacingM;
+
 		.cta
 		{
 			align-self: flex-end;
 		}
+	}
 
-		@media screen and (max-width: 860px)
+	@media screen and (max-width: 860px)
+	{
+		.content
 		{
 			grid-row: 1;
+
+			.list
+			{
+				display: none;
+			}
+		}
+
+		.illustrations
+		{
+			.mobileNav
+			{
+				display: flex;
+			}
+
+			.item
+			{
+				h3
+				{
+					display: block;
+				}
+
+				p
+				{
+					@include subtitle2($fontFamilyBaseAlt);
+				}
+			}
 		}
 	}
 }

@@ -12,7 +12,7 @@ const socials: Socials =
 		href: "https://www.linkedin.com/in/xfox/",
 		username: "@xfox"
 	},
-	"BlueSky":
+	"Bluesky":
 	{
 		href: "https://bsky.app/profile/xfox111.net",
 		username: "@xfox111.net",

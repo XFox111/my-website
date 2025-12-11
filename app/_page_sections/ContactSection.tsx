@@ -36,7 +36,7 @@ const ContactSection: React.FC = () =>
 
 	return (
 		<section id="contacts" className={ cls.section }>
-			<h2>Let&apos;s get in touch</h2>
+			<h2>Let&apos;s get in touch!</h2>
 
 			<div className={ cls.content }>
 

@@ -18,31 +18,32 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@fluentui/react-icons": "^2.0.311",
-		"next": "^15.5.4",
-		"nodemailer": "^7.0.6",
+		"@fluentui/svg-icons": "^1.1.316",
+		"next": "^16.0.8",
+		"nodemailer": "^7.0.11",
 		"pdf-lib": "^1.17.1",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
+		"react": "^19.2.1",
+		"react-dom": "^19.2.1",
 		"react-social-icons": "^6.25.0",
 		"react-turnstile": "^1.1.4",
-		"sharp": "^0.34.4",
-		"zod": "^4.1.11"
+		"sharp": "^0.34.5",
+		"zod": "^4.1.13"
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^15.5.4",
-		"@types/node": "^24.6.2",
-		"@types/nodemailer": "^7.0.2",
-		"@types/react": "^19.2.0",
-		"@types/react-dom": "^19.2.0",
-		"eslint": "^9.32.0",
-		"eslint-config-next": "^15.5.4",
-		"sass": "^1.93.2",
-		"typescript": "~5.9.3",
-		"typescript-eslint": "^8.45.0"
+		"@next/eslint-plugin-next": "^16.0.8",
+		"@svgr/webpack": "^8.1.0",
+		"@types/node": "^24.10.2",
+		"@types/nodemailer": "^7.0.4",
+		"@types/react": "^19.2.7",
+		"@types/react-dom": "^19.2.3",
+		"eslint": "^9.39.1",
+		"eslint-config-next": "^16.0.8",
+		"sass": "^1.95.1",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.49.0"
 	},
 	"packageManager": "yarn@4.9.2"
 }

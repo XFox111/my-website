@@ -30,19 +30,6 @@
 		}
 	}
 
-	.highlight
-	{
-		color: $colorNeutralForegroundInverted;
-		background-color: $colorNeutralBackgroundInverted;
-		padding: $spacingXXS $spacingNone;
-
-		&::selection
-		{
-			color: $colorNeutralForegroundInverted;
-			background-color: $colorBrandForeground1;
-		}
-	}
-
 	.illustrations
 	{
 		justify-self: center;

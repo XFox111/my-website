@@ -2,7 +2,8 @@
 
 import links from "@/_data/links";
 import socials from "@/_data/socials";
-import { Dismiss24Regular, Navigation24Regular } from "@fluentui/react-icons";
+import Dismiss24Regular from "@fluentui/svg-icons/icons/dismiss_24_regular.svg";
+import Navigation24Regular from "@fluentui/svg-icons/icons/navigation_24_regular.svg";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Button, { ButtonProps } from "./Button";
 import NavigationLinks from "./NavigationLinks";

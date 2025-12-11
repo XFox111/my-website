@@ -6,13 +6,13 @@ import cls from "./AboutSection.module.scss";
 
 const AboutSection: React.FC = () => (
 	<section id="about" className={ cls.section }>
-		<div>
+		<Image src={ aboutPicture.src } alt={ aboutPicture.alt } />
+
+		<div className={ cls.content }>
 			<h2>About me</h2>
 
 			<Bio />
 		</div>
-
-		<Image src={ aboutPicture.src } alt={ aboutPicture.alt } />
 	</section>
 );
 

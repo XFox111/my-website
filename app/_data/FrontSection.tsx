@@ -9,12 +9,11 @@ import Package from "@/../package.json";
 const FrontSection: React.FC = () => (
 	<section className={ cls.section }>
 		<div className={ cls.content }>
-			<h1>Hello World!</h1>
-			<h2>{ Package.author.name } is here!</h2>
+			<h1>Hello there!</h1>
+			<h2>My name is <span className="hl">{ Package.author.name }</span></h2>
 			<p role="text">
-				I am a software engineer with extensive experience in<br aria-hidden />
-				<span className={ cls.highlight }>.NET and React development</span><br aria-hidden />
-				and you are on my website!
+				I am a <span className="hl">software engineer</span> from Russia<br aria-hidden /> with extensive experience
+				in <span className="hl">.NET and React</span> development
 			</p>
 			<div className={ cls.ctaButtons }>
 				<Button as="next" href={ links.resume }>Download resume</Button>

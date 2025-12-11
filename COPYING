@@ -3,18 +3,18 @@
 Following files and directories are excempt from MIT license coverage
 and are subjects to general copyright law:
 
-   - /app/_assets
-   - /app/_data
+   - /app/_assets/
+   - /app/_data/
    - /app/apple-icon.png
    - /app/favicon.ico
    - /app/icon.svg
    - /app/opengraph-image.alt.txt
    - /app/opengraph-image.png
 
-You must obtain written permission from the author to use any
-copyrighted material.
+You must obtain written a permission from the author to use any
+copyrighted materials.
 
-You may use copyrighted material without excplicit permission
+You may use copyrighted materials without excplicit permission
 in following cases:
 
    - Educational purposes.

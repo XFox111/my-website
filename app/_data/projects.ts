@@ -9,7 +9,19 @@ import passwordGeneratorLight from "@/_assets/illustrations/projects/PasswordGen
 import simpleOtpImg from "@/_assets/illustrations/projects/SimpleOTP.svg";
 import tabsAsideDark from "@/_assets/illustrations/projects/TabsAside/dark.webp";
 import tabsAsideLight from "@/_assets/illustrations/projects/TabsAside/light.webp";
-import * as ic from "@fluentui/react-icons";
+import Beaker24Regular from "@fluentui/svg-icons/icons/beaker_24_regular.svg";
+import Branch24Regular from "@fluentui/svg-icons/icons/branch_24_regular.svg";
+import Code24Regular from "@fluentui/svg-icons/icons/code_24_regular.svg";
+import Color24Regular from "@fluentui/svg-icons/icons/color_24_regular.svg";
+import Database24Regular from "@fluentui/svg-icons/icons/database_24_regular.svg";
+import Desktop24Regular from "@fluentui/svg-icons/icons/desktop_24_regular.svg";
+import FlashFlow24Regular from "@fluentui/svg-icons/icons/flash_flow_24_regular.svg";
+import FlashSettings24Regular from "@fluentui/svg-icons/icons/flash_settings_24_regular.svg";
+import Globe24Regular from "@fluentui/svg-icons/icons/globe_24_regular.svg";
+import HeartPulse24Regular from "@fluentui/svg-icons/icons/heart_pulse_24_regular.svg";
+import Phone24Regular from "@fluentui/svg-icons/icons/phone_24_regular.svg";
+import PhoneDesktop24Regular from "@fluentui/svg-icons/icons/phone_desktop_24_regular.svg";
+import Server24Regular from "@fluentui/svg-icons/icons/server_24_regular.svg";
 import { StaticImageData } from "next/image";
 
 const projects: Project[] =
@@ -20,20 +32,20 @@ const projects: Project[] =
 			description:
 				[
 					"During one of the classes at university I struggled to log into my account on a lab computer. I have long random passwords, so I had to type them manually from my phone which took about 5 minutes. I thought that there must be a better way to do this.",
-					"So, I came up with this idea where you can easily send your credentials to any computer by simply scanning a QR code with a password manager app.",
+					"So, I came up with this idea where you can easily send your credentials to any computer by simply scanning a QR code with a password manager app (this was before WebAuthn became widely adopted).",
 					"In the end, I have created a big web service with mobile app and a customer portal, that could authenticate users on any website, and any device within a few seconds."
 				],
 			image: ezlogImg,
 			link: "https://github.com/xfox111/easylogon-web",
 			stack:
 				[
-					{ text: "C#/TypeScript", icon: ic.Code24Regular },
-					{ text: ".NET 6", icon: ic.Server24Regular },
-					{ text: "React/Vite", icon: ic.PhoneDesktop24Regular },
-					{ text: "Xamarin.Forms", icon: ic.Phone24Regular },
-					{ text: "SQL Server", icon: ic.Database24Regular },
-					{ text: "Azure DevOps", icon: ic.Branch24Regular },
-					{ text: "Azure Pipelines/GitHub Actions", icon: ic.FlashFlow24Regular }
+					{ text: "C#/TypeScript", icon: Code24Regular },
+					{ text: ".NET 6", icon: Server24Regular },
+					{ text: "React/Vite", icon: PhoneDesktop24Regular },
+					{ text: "Xamarin.Forms", icon: Phone24Regular },
+					{ text: "SQL Server", icon: Database24Regular },
+					{ text: "Azure DevOps", icon: Branch24Regular },
+					{ text: "Azure Pipelines/GitHub Actions", icon: FlashFlow24Regular }
 				]
 		},
 		{
@@ -49,12 +61,12 @@ const projects: Project[] =
 			link: "https://github.com/xfox111/TabsAsideExtension",
 			stack:
 				[
-					{ text: "React/WXT", icon: ic.Desktop24Regular },
-					{ text: "TypeScript", icon: ic.Code24Regular },
-					{ text: "Browser extension", icon: ic.FlashSettings24Regular },
-					{ text: "Fluent UI", icon: ic.Color24Regular },
-					{ text: "GitHub", icon: ic.Branch24Regular },
-					{ text: "GitHub Actions", icon: ic.FlashFlow24Regular },
+					{ text: "React/WXT", icon: Desktop24Regular },
+					{ text: "TypeScript", icon: Code24Regular },
+					{ text: "Browser extension", icon: FlashSettings24Regular },
+					{ text: "Fluent UI", icon: Color24Regular },
+					{ text: "GitHub", icon: Branch24Regular },
+					{ text: "GitHub Actions", icon: FlashFlow24Regular },
 				]
 		},
 		{
@@ -69,10 +81,10 @@ const projects: Project[] =
 			link: "https://github.com/xfox111/SimpleOTP",
 			stack:
 				[
-					{ text: ".NET/C#", icon: ic.Code24Regular },
-					{ text: "MSTest", icon: ic.Beaker24Regular },
-					{ text: "GitHub", icon: ic.Branch24Regular },
-					{ text: "GitHub Actions", icon: ic.FlashFlow24Regular },
+					{ text: ".NET/C#", icon: Code24Regular },
+					{ text: "MSTest", icon: Beaker24Regular },
+					{ text: "GitHub", icon: Branch24Regular },
+					{ text: "GitHub Actions", icon: FlashFlow24Regular },
 				]
 		},
 		{
@@ -88,32 +100,35 @@ const projects: Project[] =
 			link: "https://github.com/xfox111/PasswordGeneratorExtension",
 			stack:
 				[
-					{ text: "React/Vite", icon: ic.Desktop24Regular },
-					{ text: "TypeScript", icon: ic.Code24Regular },
-					{ text: "Browser extension", icon: ic.FlashSettings24Regular },
-					{ text: "Fluent UI", icon: ic.Color24Regular },
-					{ text: "GitHub", icon: ic.Branch24Regular },
-					{ text: "GitHub Actions", icon: ic.FlashFlow24Regular },
+					{ text: "React/Vite", icon: Desktop24Regular },
+					{ text: "TypeScript", icon: Code24Regular },
+					{ text: "Browser extension", icon: FlashSettings24Regular },
+					{ text: "Fluent UI", icon: Color24Regular },
+					{ text: "GitHub", icon: Branch24Regular },
+					{ text: "GitHub Actions", icon: FlashFlow24Regular },
 				]
 		},
 		{
-			title: "GUT.Schedule",
+			title: "GUT.Schedule / Bonch.Calendar",
 			subtitle: "Mobile app that exports Bonch university schedule to e-calendar",
 			description:
 				[
-					"[2019]",
-					"I created this app during my time in Bonch-Bruevich University of Telecommunications as a BS student.",
-					"It was designed to help students to manage their timetable in a more convenient and effective way."
+					"I created this app in 2019 during my time in Bonch-Bruevich University of Telecommunications as a BS student.",
+					"It was designed to help students to manage their timetable in a more convenient and effective way – by exporting their schedule to any calendar app on their Android phones.",
+					"In 2025 I made it into a web-service that can generate web calendars the students can subscribe to directly from their calendar apps, regardless of the platform they are using.",
 				],
 			image: gutScheduleImg,
-			link: "https://github.com/xfox111/GUTSchedule",
+			link: "https://github.com/stars/XFox111/lists/bonch",
 			stack:
 				[
-					{ text: ".NET/C#", icon: ic.Code24Regular },
-					{ text: "Xamarin.Android", icon: ic.Phone24Regular },
-					{ text: "GitHub", icon: ic.Branch24Regular },
-					{ text: "NUnit 3", icon: ic.Beaker24Regular },
-					{ text: "Azure Pipelines", icon: ic.FlashFlow24Regular },
+					{ text: ".NET/C#", icon: Code24Regular },
+					{ text: "Xamarin.Android", icon: Phone24Regular },
+					{ text: "GitHub", icon: Branch24Regular },
+					{ text: "NUnit", icon: Beaker24Regular },
+					{ text: "Azure Pipelines", icon: FlashFlow24Regular },
+					{ text: "React/Vite", icon: Globe24Regular },
+					{ text: "Typescript", icon: Code24Regular },
+					{ text: "GitHub Actions", icon: FlashFlow24Regular },
 				]
 		},
 		{
@@ -123,19 +138,19 @@ const projects: Project[] =
 				[
 					"[2019]",
 					"My first published app.",
-					"I like to watch videos while working on my projects, but at the time YouTube didn not have a proper picture-in-picture mode and overall had a lot of issues with the UX, so this was my way to fix this.",
-					"Unfortunately, Google doesn't like third-party YouTube clients."
+					"I like to watch videos while working on my projects, but at the time YouTube didn't have a proper picture-in-picture mode and overall had a lot of issues with the UX, so this was my way to fix it.",
+					"Unfortunately, Google doesn't like third-party YouTube clients, so soon after publishing, they revoked app's API access :("
 				],
 			image: foxTubeLight,
 			imageDark: foxTubeDark,
 			link: "https://www.youtube.com/watch?v=Mio9FbxmbhM",
 			stack:
 				[
-					{ text: ".NET/C#", icon: ic.Code24Regular },
-					{ text: "UWP", icon: ic.Desktop24Regular },
-					{ text: "Azure DevOps", icon: ic.Branch24Regular },
-					{ text: "AppCenter", icon: ic.HeartPulse24Regular },
-					{ text: "Azure Pipelines", icon: ic.FlashFlow24Regular },
+					{ text: ".NET/C#", icon: Code24Regular },
+					{ text: "UWP", icon: Desktop24Regular },
+					{ text: "Azure DevOps", icon: Branch24Regular },
+					{ text: "AppCenter", icon: HeartPulse24Regular },
+					{ text: "Azure Pipelines", icon: FlashFlow24Regular },
 				]
 		},
 		{
@@ -152,10 +167,10 @@ const projects: Project[] =
 			link: "https://github.com/xfox111/MotionDecoder",
 			stack:
 				[
-					{ text: ".NET/C#", icon: ic.Code24Regular },
-					{ text: "WinForms", icon: ic.Desktop24Regular },
-					{ text: "Accord.NET", icon: ic.FlashSettings24Regular },
-					{ text: "GitHub", icon: ic.Branch24Regular },
+					{ text: ".NET/C#", icon: Code24Regular },
+					{ text: "WinForms", icon: Desktop24Regular },
+					{ text: "Accord.NET", icon: FlashSettings24Regular },
+					{ text: "GitHub", icon: Branch24Regular },
 				]
 		}
 	];
@@ -175,6 +190,6 @@ export type Project =
 
 type TechStackItem =
 	{
-		icon: ic.FluentIcon;
+		icon: React.FC;
 		text: string;
 	};

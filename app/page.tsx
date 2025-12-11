@@ -16,10 +16,10 @@ const HomePage: React.FC = () => (
 		<article>
 			<FrontSection />
 
-			<SkillsSection />
-			<ProjectsSection />
-			<ExperienceSection />
 			<AboutSection />
+			<SkillsSection />
+			<ExperienceSection />
+			<ProjectsSection />
 			<ContactSection />
 		</article>
 	</main>

@@ -4,9 +4,16 @@
 {
 	@include centerTwo;
 
-	.listItem
+	.content
 	{
-		background-position: right;
+		overflow-x: hidden;
+		gap: $spacingM;
+		@include flex(column);
+
+		.listItem
+		{
+			background-position-x: right;
+		}
 	}
 
 	.descriptions
@@ -15,12 +22,6 @@
 		display: grid;
 		overflow-x: visible;
 		min-height: 760px;
-
-		@media screen and (max-width: 860px)
-		{
-			min-height: unset;
-			padding-top: calc(56px + $spacingXL);
-		}
 
 		img
 		{
@@ -33,6 +34,18 @@
 			align-self: center;
 
 			@include slideIn;
+		}
+
+		.mobileNav
+		{
+			margin-top: $spacingL;
+			display: none;
+			gap: $spacingMNudge;
+
+			.next
+			{
+				flex-grow: 1;
+			}
 		}
 
 		.projectItem
@@ -95,5 +108,23 @@
 	.cta
 	{
 		align-self: flex-end;
+	}
+
+	@media screen and (max-width: 860px)
+	{
+		.descriptions
+		{
+			min-height: unset;
+
+			.mobileNav
+			{
+				display: flex;
+			}
+		}
+
+		.list
+		{
+			display: none;
+		}
 	}
 }

@@ -28,6 +28,50 @@ const nextConfig = {
 					]
 			}
 		];
+	},
+
+	turbopack:
+	{
+		rules:
+		{
+			"*.svg":
+			{
+				condition:
+				{
+					// apply only for @fluentui/svg-icons package
+					path: /node_modules[\\/]@fluentui[\\/]svg-icons[\\/]/
+				},
+				as: "*.js",
+				loaders:
+					[
+						{
+							loader: "@svgr/webpack",
+							options:
+							{
+								icon: true,
+								expandProps: true,
+								svgoConfig:
+								{
+									plugins:
+										[
+											{
+												name: "preset-default",
+												params:
+												{
+													overrides:
+													{
+														cleanupIds: true,
+														removeViewBox: false
+													}
+												}
+											}
+										]
+								}
+							}
+						}
+					]
+			}
+		}
 	}
 };
 

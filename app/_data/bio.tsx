@@ -1,13 +1,10 @@
-export const Bio: React.FC = () => (
-	<>
-		<p>{ bioPremise }</p>
-		<p>My journey as a programmer started in 2018 from a silly free-time hobby. Since then, I have released a couple of personal projects, some of which have become quite popular.</p>
-		<p>Graduated from <a href="https://sut.ru/eng" target="_blank">Bonch-Bruevich University of Telecommunications</a> in 2023 where I got my Bachelor&apos;s degree in computer science. It was fun. Took part in a number of hackathons (usually first place for us) as well as science conferences (including those hosted by IEEE). In 2025 got Master&apos;s in Radiotechnology.</p>
-		<p>Also, before graduation I managed to work in several different companies in different IT fields (mostly software development, of course).</p>
-		<p>Out-of-box thinking, and constant self-improvement is my life strategy. New tool released? - Yes, please! GitHub is hosting another conference? - Sign me up! There is a new challenging task to complete? - Oh, boy, here we go again! So many things to learn, so little time to spare...</p>
-		<p>Overall, enthusiastic, fast learning and energetic person. Love coding and creating something new. Like to draw and compose music. Aviasim enthusiast. Proud member of the furry community.</p>
-	</>
-);
+export const Bio: React.FC = () => <>
+	<p>I am a software engineer who loves desiging and building complex services, creating nice intuitive applications, and solving engineering challenges.</p>
+	<p>I started programming in 2018 because I am not a good artist, and programming allows to bring my visions and ideas to life. My specialty is React and .NET in web development, but I always look out for other fields and tools as well.</p>
+	<p>Thanks to my quick adaptation and communication skills, I can either be a good team player, or handle tasks independently.</p>
+	<p>Graduated from <a href="https://sut.ru/eng" target="_blank">Bonch-Bruevich University of Telecommunications</a>. In 2023 received Bachelor&apos;s degree in Computer science, then in 2025 – Master&apos;s in Radiotechnology. Despite that, I began my career path much earlier and consider myself a self-taught developer.</p>
+	<p>In my free time I like to play some instruments, pilot a 737 in a flightsim, or just keep working, but on my own pet projects.</p>
+</>;
 
 export const bioPremise: string = "My name is Eugene Fox. I am a professional software developer primarily focused on .NET and React projects.";
 
