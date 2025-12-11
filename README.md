@@ -33,7 +33,6 @@ This repository contains the source code for my personal website, built using Ne
 
 For development you can use [Dev Containers](https://devcontainers.io/) or [GitHub Codespaces](https://github.com/features/codespaces). Otherwise you will need to install following tools:
 - [Node.js](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/)
 - [Docker](https://www.docker.com/)
 
 
@@ -41,10 +40,10 @@ For development you can use [Dev Containers](https://devcontainers.io/) or [GitH
 
 Here're some commonly used commands:
 ```bash
-yarn install		# Install dependencies
-yarn dev			# Start the development server at http://localhost:3000
-yarn lint			# Lint the project with ESLint
-yarn build			# Build the project for production
+npm install			# Install dependencies
+npm run dev			# Start the development server at http://localhost:3000
+npm run lint		# Lint the project with ESLint
+npm run build		# Build the project for production
 ```
 
 To build a Docker image, run:

@@ -66,7 +66,7 @@ const experience: WorkplaceEntry[] =
 			year: "2025",
 			description: <>
 				<p>Designing and implementing large-scale distributed WLAN controller system</p>
-				<p className="hl">Stack: ASP.NET (RESTFul API), MongoDB, Postges (EF Core), RabbitMQ (MassTransit), MQTT, Docker.</p>
+				<p className="hl">Stack: React, ASP.NET (RESTFul API), MongoDB, Postges (EF Core), RabbitMQ (MassTransit), MQTT, Docker.</p>
 				<ul>
 					<li>Designed an architecture of a new event-driven microservice-based system to replace legacy monolith from scratch (HLD + LLD).</li>
 					<li>Wrote a comprehensive techref for each of 16 components.</li>

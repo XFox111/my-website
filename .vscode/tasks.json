@@ -9,7 +9,7 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
-			"label": "yarn: build",
+			"label": "npm: build",
 			"detail": "Build project"
 		},
 		{
@@ -17,7 +17,7 @@
 			"script": "install",
 			"group": "build",
 			"problemMatcher": [],
-			"label": "yarn: install",
+			"label": "npm: install",
 			"detail": "Restore dependencies"
 		},
 		{
@@ -28,7 +28,7 @@
 				"isDefault": true
 			},
 			"problemMatcher": [],
-			"label": "yarn: dev",
+			"label": "npm: dev",
 			"detail": "Start development server"
 		},
 		{
@@ -36,7 +36,7 @@
 			"script": "lint",
 			"group": "test",
 			"problemMatcher": [],
-			"label": "yarn: lint",
+			"label": "npm: lint",
 			"detail": "Run ESLint"
 		},
 		{

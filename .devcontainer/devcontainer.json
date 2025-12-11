@@ -14,13 +14,10 @@
 			"version": "latest",
 			"pnpmVersion": "none",
 			"nvmVersion": "latest"
-		},
-		"ghcr.io/devcontainers-extra/features/corepack:1": {
-			"version": "latest"
 		}
 	},
 
-	"postCreateCommand": "corepack enable && yarn install",
+	"postCreateCommand": "npm install",
 
 	// Configure tool-specific properties.
 	"customizations": {

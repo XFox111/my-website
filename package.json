@@ -44,6 +44,5 @@
 		"sass": "^1.95.1",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0"
-	},
-	"packageManager": "yarn@4.9.2"
+	}
 }
