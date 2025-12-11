@@ -15,6 +15,7 @@ const CookieBanner: React.FC = () =>
 			return;
 
 		const choice = getCookieChoice();
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setVisible(choice === "none");
 
 		// Since Clarity cookies expiration dates extend well beyond 60 days,

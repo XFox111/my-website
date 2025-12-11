@@ -68,7 +68,7 @@
 				box-shadow: inset 0 0 0 16px $colorNeutralBackground1;
 			}
 
-			.description
+			.info
 			{
 				p
 				{
@@ -113,9 +113,16 @@
 			.item
 			{
 				grid-template-columns: 64px auto 1fr;
+				grid-template-rows: auto auto;
 				padding: $spacingXXXL $spacingNone;
 				gap: $spacingM;
 				align-items: center;
+
+				.description
+				{
+					grid-row: 2/2;
+					grid-column: 3/4;
+				}
 			}
 		}
 
@@ -126,7 +133,7 @@
 
 			.line
 			{
-				bottom: 72px;
+				bottom: 132px;
 				width: 100%;
 				height: 8px;
 				align-content: center;
@@ -147,9 +154,10 @@
 
 			.item
 			{
-				grid-template-rows: 128px auto 48px;
+				grid-template-rows: 128px auto 48px 48px;
 				padding: $spacingNone $spacingM;
 				row-gap: $spacingM;
+				cursor: pointer;
 
 				.year
 				{
@@ -171,6 +179,23 @@
 				}
 
 				.description
+				{
+					grid-row: 4/4;
+
+					transition-property: font-size, line-height, opacity;
+					transition-duration: $durationNormal;
+					transition-timing-function: $curveEasyEaseMax;
+
+					font-size: 0;
+					opacity: 0;
+
+					p
+					{
+						margin-bottom: $spacingSNudge;
+					}
+				}
+
+				.info
 				{
 					grid-row: 1/1;
 					align-self: self-end;
@@ -197,7 +222,7 @@
 			{
 
 				// Item that is being hovered or focused
-				&:is(:hover, :focus-visible, :focus-within)
+				&:is(:focus-visible, :focus-within)
 				{
 
 					.year,
@@ -207,16 +232,27 @@
 						opacity: 1;
 					}
 
-					> i
+					.description
 					{
-						box-shadow: inset 0 0 0 0 $colorNeutralBackground1;
+						@include body2($fontFamilyBaseAlt);
+						opacity: 1;
 					}
 
-					.description > p
+					.info > p
 					{
 						@include subtitle2($fontFamilyBaseAlt);
 						opacity: 1;
 					}
+
+					.year
+					{
+						font-size: $fontSizeHero800 !important;
+					}
+				}
+
+				&:is(:hover, :focus-visible, :focus-within) > i
+				{
+					box-shadow: inset 0 0 0 0 $colorNeutralBackground1;
 				}
 
 				// Other not focused items
@@ -228,12 +264,27 @@
 					{
 						@include body1($fontFamilyBaseAlt);
 						color: $colorNeutralForeground3;
+					}
 
-						@media screen and (max-width: 1200px)
+					@media screen and (max-width: 1200px)
+					{
+						.title
 						{
 							opacity: 0;
 							font-size: 0;
 						}
+					}
+				}
+			}
+
+			@media screen and (max-width: 1400px)
+			{
+				&:has(:focus-visible, :focus-within) .item:not(:focus-visible, :focus-within)
+				{
+					.title
+					{
+						opacity: 0;
+						font-size: 0;
 					}
 				}
 			}

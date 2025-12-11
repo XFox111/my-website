@@ -8,7 +8,7 @@
 
 	@include centerTwo;
 
-	> div:first-child
+	.content
 	{
 		@include flex(column);
 		gap: $spacingM;

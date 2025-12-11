@@ -88,8 +88,26 @@ textarea
 	@include formBase;
 }
 
+.hl
+{
+	color: $colorNeutralForegroundInverted;
+	background-color: $colorNeutralBackgroundInverted;
+	padding: $spacingXXS $spacingXXS;
+
+	&::selection
+	{
+		color: $colorNeutralForegroundInverted;
+		background-color: $colorBrandForeground1;
+	}
+}
+
+svg
+{
+	fill: currentColor;
+}
+
 // [SPECIAL] case for 404 page
-main.not-found + footer > .illustration
+body:has(.not-found) footer .illustration
 {
 	display: none;
 }

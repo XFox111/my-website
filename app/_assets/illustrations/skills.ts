@@ -6,6 +6,7 @@ import designSkills from "./skills/design-skills.svg";
 import devopsSkills from "./skills/devops-skills.svg";
 import dotnetSkills from "./skills/dotnet-skills.svg";
 import nodejsSkills from "./skills/nodejs-skills.svg";
+import securitySkills from "./skills/security-skills.svg";
 
 export const admin: ImageExport =
 {
@@ -49,6 +50,12 @@ export const nodejs: ImageExport =
 	alt: "Cartoon fox lifted by balloons representing TypeScript, JavaScript, and React, with a laptop below."
 };
 
+export const security: ImageExport =
+{
+	src: securitySkills,
+	alt: ""
+};
+
 const skills =
 {
 	nodejs,
@@ -58,6 +65,7 @@ const skills =
 	design,
 	devops,
 	admin,
+	security,
 };
 
 export default skills;

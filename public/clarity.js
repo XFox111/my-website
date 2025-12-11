@@ -34,10 +34,13 @@
 	if (!id || navigator.doNotTrack === "1")
 		return;
 
-	window["clarity"] ??= function ()
+	// @ts-expect-error -- Clarity adds itself to the window object
+	window.clarity ??= function ()
 	{
-		window["clarity"].q ??= [];
-		window["clarity"].q.push(arguments);
+		// @ts-expect-error -- Clarity adds itself to the window object
+		window.clarity.q ??= [];
+		// @ts-expect-error -- Clarity adds itself to the window object
+		window.clarity.q.push(arguments);
 	};
 
 	/** @type {HTMLScriptElement} */

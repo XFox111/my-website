@@ -4,7 +4,8 @@ import RevokeConsentButton from "@/_components/RevokeConsentButton";
 import { canonicalName, getTitle } from "@/_data/metadata";
 import ThirdPartyAttribution from "@/_data/ThirdPartyAttributiont";
 import { analyticsEnabled } from "@/_utils/analytics/server";
-import { ArrowLeft24Regular, ArrowRight24Regular } from "@fluentui/react-icons";
+import ArrowLeft24Regular from "@fluentui/svg-icons/icons/arrow_left_24_regular.svg";
+import ArrowRight24Regular from "@fluentui/svg-icons/icons/arrow_right_24_regular.svg";
 import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
 import React from "react";
@@ -70,10 +71,10 @@ const AttributionPage: React.FC = () => (
 					Copyright &copy; { new Date().getFullYear() } { Package.author.name }. Some rights reserved.
 				</p>
 				<p>
-					Text and graphical material of this website is a subject to general copyright law. You must obtain written permission from the author to use any copyrighted material.
+					Text and graphical materials of this website are a subject to general copyright law. You must obtain a written permission from the author to use any copyrighted materials.
 				</p>
 				<p>
-					You may use copyrighted material without excplicit permission in following cases:
+					You may use copyrighted materials without excplicit permission in following cases:
 				</p>
 				<ul>
 					<li>Educational purposes.</li>

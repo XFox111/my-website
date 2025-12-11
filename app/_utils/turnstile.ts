@@ -29,9 +29,9 @@ export async function verifyTurnstile(token: string): Promise<[false, TurnstileE
 	const result: TurnstileValidationResponse = await response.json();
 
 	if (result.success)
-		return [result.success];
+		return [true];
 	else
-		return [result.success, result["error-codes"][0]];
+		return [false, result["error-codes"][0]];
 }
 
 export type TurnstileValidationResponse =

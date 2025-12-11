@@ -22,16 +22,23 @@ const ExperienceSection: React.FC = () => (
 				<div className={ cls.item } key={ index }
 					tabIndex={ 0 } role="listitem" aria-label={ getAriaLabel(i) }>
 
-					<p aria-hidden className={ cls.year }>{ i.year }</p>
-					<i />
 					<div className={ cls.description }>
+						{ i.description }
+					</div>
+					<p aria-hidden className={ cls.year } style={ index > 0 && experience[index - 1].year === i.year ? { fontSize: 0 } : undefined }>
+						{ i.year }
+					</p>
+					<i />
+					<div className={ cls.info }>
 						<p aria-hidden>{ i.place }</p>
 						<h3 aria-hidden className={ cls.title }>{ i.title }</h3>
-						<p aria-hidden={ !!i.tech }>{ i.tech ?? <Link href="#contacts">Contact me</Link> }</p>
+						<p aria-hidden={ !!i.summary }>{ i.summary ?? <Link href="#contacts">Contact me</Link> }</p>
 					</div>
 				</div>
 			) }
 		</div>
+
+		{/* <p>Deserunt esse irure duis magna irure. Eiusmod voluptate amet et elit adipisicing ut. Nulla minim elit anim mollit nisi amet est et magna veniam. Qui deserunt eiusmod laboris ex. Ex aute duis duis incididunt quis adipisicing dolor sit aliqua consectetur eu fugiat. Fugiat ipsum dolor elit ad commodo aliquip anim anim nostrud. Lorem adipisicing ex quis veniam aute amet cupidatat reprehenderit do laborum minim laboris sunt.</p> */}
 	</section>
 );
 
@@ -47,8 +54,8 @@ function getAriaLabel(item: WorkplaceEntry): string
 	if (item.place)
 		str.push(`at ${item.place}`);
 
-	if (item.tech)
-		return str.join(" ") + `. ${item.tech}`;
+	if (item.summary)
+		return str.join(" ") + `. ${item.summary}`;
 	else
 		return str.join(" ");
 

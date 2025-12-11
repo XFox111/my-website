@@ -1,6 +1,6 @@
+import ChatWarningRegular from "@fluentui/svg-icons/icons/chat_warning_24_regular.svg";
 import React from "react";
 import cls from "./AlertMessage.module.scss";
-import { ChatWarningRegular } from "@fluentui/react-icons";
 
 /**
  * This alert box displays a custom message at the top of the homepage.
@@ -13,7 +13,7 @@ import { ChatWarningRegular } from "@fluentui/react-icons";
  * - The file located at ALERT_TEXT_URL is accessible, not empty, and returns successfull HTTP status code (2xx)
  */
 
-const AlertMessage: React.FC = async () =>
+async function fetchAlert(): Promise<[string, string, string] | null>
 {
 	if (!process.env.ALERT_TEXT_URL)
 		return null;
@@ -29,20 +29,32 @@ const AlertMessage: React.FC = async () =>
 		const title: string = alertText.split("\n", 1)[0].trim();
 		const message: string = alertText.substring(title.length + 1).trim();
 
-		return (
-			<div role="alert" className={ cls.alertBox } aria-label={ alertText }>
-				<ChatWarningRegular className={ cls.icon } />
-				<div>
-					<p className={ cls.title }>{ title }</p>
-					<p className={ cls.message } dangerouslySetInnerHTML={ { __html: message } } />
-				</div>
-			</div>
-		);
+		return [alertText, title, message];
 	}
 	catch
 	{
 		return null;
 	}
+}
+
+const AlertMessage: React.FC = async () =>
+{
+	const result = await fetchAlert();
+
+	if (!result)
+		return null;
+
+	const [alertText, title, message] = result;
+
+	return (
+		<div role="alert" className={ cls.alertBox } aria-label={ alertText }>
+			<ChatWarningRegular className={ cls.icon } />
+			<div>
+				<p className={ cls.title }>{ title }</p>
+				<p className={ cls.message } dangerouslySetInnerHTML={ { __html: message } } />
+			</div>
+		</div>
+	);
 };
 
 export default AlertMessage;

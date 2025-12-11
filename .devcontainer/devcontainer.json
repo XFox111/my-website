@@ -6,9 +6,9 @@
 
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"installDockerBuildx": true,
 			"version": "latest",
-			"enableNonRootDocker": "true",
-			"moby": "false"
+			"dockerDashComposeVersion": "v2"
 		},
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "latest",
@@ -17,7 +17,7 @@
 		}
 	},
 
-	"postCreateCommand": "corepack enable && yarn install",
+	"postCreateCommand": "npm install",
 
 	// Configure tool-specific properties.
 	"customizations": {

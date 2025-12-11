@@ -1,5 +1,5 @@
 import { textCorrection } from "@/_assets/decorations";
-import { Home24Regular } from "@fluentui/react-icons";
+import Home24Regular from "@fluentui/svg-icons/icons/home_24_regular.svg";
 import { Metadata } from "next";
 import { unstable_noStore } from "next/cache";
 import Image from "next/image";
