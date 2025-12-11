@@ -35,13 +35,13 @@
 	"devDependencies": {
 		"@next/eslint-plugin-next": "^16.0.8",
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^24.10.2",
+		"@types/node": "^25.0.0",
 		"@types/nodemailer": "^7.0.4",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
 		"eslint": "^9.39.1",
 		"eslint-config-next": "^16.0.8",
-		"sass": "^1.95.1",
+		"sass": "^1.96.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.49.0"
 	}
