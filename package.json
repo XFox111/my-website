@@ -21,28 +21,28 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@fluentui/svg-icons": "^1.1.326",
-		"next": "^16.2.6",
-		"nodemailer": "^8.0.7",
+		"@fluentui/svg-icons": "^1.1.328",
+		"next": "^16.2.7",
+		"nodemailer": "^8.0.10",
 		"pdf-lib": "^1.17.1",
-		"react": "^19.2.6",
-		"react-dom": "^19.2.6",
+		"react": "^19.2.7",
+		"react-dom": "^19.2.7",
 		"react-social-icons": "^6.26.0",
 		"react-turnstile": "^1.1.5",
 		"sharp": "^0.34.5",
 		"zod": "^4.4.3"
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^16.2.6",
+		"@next/eslint-plugin-next": "^16.2.7",
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^25.7.0",
+		"@types/node": "^25.9.1",
 		"@types/nodemailer": "^8.0.0",
-		"@types/react": "^19.2.14",
+		"@types/react": "^19.2.16",
 		"@types/react-dom": "^19.2.3",
 		"eslint": "^9.39.1",
-		"eslint-config-next": "^16.2.6",
-		"sass": "^1.99.0",
+		"eslint-config-next": "^16.2.7",
+		"sass": "^1.100.0",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.51.0"
+		"typescript-eslint": "^8.60.1"
 	}
 }
