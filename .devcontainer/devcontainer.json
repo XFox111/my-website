@@ -5,7 +5,7 @@
 	"image": "mcr.microsoft.com/devcontainers/base:bookworm",
 
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:3": {
+		"ghcr.io/devcontainers/features/docker-in-docker:4": {
 			"installDockerBuildx": true,
 			"version": "latest",
 			"dockerDashComposeVersion": "v2"
