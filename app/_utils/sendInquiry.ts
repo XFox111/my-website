@@ -6,7 +6,7 @@ import { z } from "zod";
 import { verifyTurnstile } from "./turnstile";
 
 const schema = z.object({
-	email: z.string().email().max(60),
+	email: z.email().max(60),
 	subject: z.string().max(120),
 	message: z.string().min(100).max(2000),
 	timezone: z.string().optional()
