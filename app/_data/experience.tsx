@@ -29,7 +29,7 @@ const experience: WorkplaceEntry[] =
 			</ul>
 		},
 		{
-			place: "A-rial, Saint-Petersburg, RU",
+			place: "Ubitel, Saint-Petersburg, RU",
 			title: "Software Engineer",
 			summary: "Legacy software support and DevOps",
 			year: "2023",

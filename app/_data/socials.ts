@@ -5,17 +5,20 @@ const socials: Socials =
 	"GitHub":
 	{
 		href: Package.author.url,
-		username: "@xfox111"
+		username: "@xfox111",
+		network: "github"
 	},
 	"LinkedIn":
 	{
-		href: "https://www.linkedin.com/in/xfox/",
-		username: "@xfox"
+		href: "https://at.xfox111.net/linkedin",
+		username: "@xfox",
+		network: "linkedin"
 	},
 	"Bluesky":
 	{
-		href: "https://bsky.app/profile/xfox111.net",
+		href: "https://at.xfox111.net/bluesky",
 		username: "@xfox111.net",
+		network: "bsky.app"
 	}
 };
 

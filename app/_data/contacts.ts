@@ -14,12 +14,12 @@ const contacts: ContactLinks =
 		"Facebook":
 		{
 			username: "@xfox111",
-			href: "https://facebook.com/xfox111"
+			href: "https://at.xfox111.net/facebook"
 		},
 		"WhatsApp":
 		{
 			username: "@xfox111",
-			href: "https://wa.me/79969291969",
+			href: "https://at.xfox111.net/whatsapp",
 			network: "whatsapp"
 		}
 	}

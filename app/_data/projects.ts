@@ -2,14 +2,15 @@ import ezlogImg from "@/_assets/illustrations/projects/EasyLogon.svg";
 import foxTubeDark from "@/_assets/illustrations/projects/FoxTube/FoxTube-dark.webp";
 import foxTubeLight from "@/_assets/illustrations/projects/FoxTube/FoxTube-light.webp";
 import gutScheduleImg from "@/_assets/illustrations/projects/GUTSchedule.svg";
-import motionDecoderDark from "@/_assets/illustrations/projects/MotionDecoder/MotionDecoder-dark.webp";
-import motionDecoderLight from "@/_assets/illustrations/projects/MotionDecoder/MotionDecoder-light.webp";
 import passwordGeneratorDark from "@/_assets/illustrations/projects/PasswordGenerator/PasswordGeneratorExtension-dark.webp";
 import passwordGeneratorLight from "@/_assets/illustrations/projects/PasswordGenerator/PasswordGeneratorExtension-light.webp";
+import sstaticDark from "@/_assets/illustrations/projects/sstatic/sstatic-dark.webp";
+import sstaticLight from "@/_assets/illustrations/projects/sstatic/sstatic-light.webp";
 import simpleOtpImg from "@/_assets/illustrations/projects/SimpleOTP.svg";
 import tabsAsideDark from "@/_assets/illustrations/projects/TabsAside/dark.webp";
 import tabsAsideLight from "@/_assets/illustrations/projects/TabsAside/light.webp";
 import Beaker24Regular from "@fluentui/svg-icons/icons/beaker_24_regular.svg";
+import Box24Regular from "@fluentui/svg-icons/icons/box_24_regular.svg";
 import Branch24Regular from "@fluentui/svg-icons/icons/branch_24_regular.svg";
 import Code24Regular from "@fluentui/svg-icons/icons/code_24_regular.svg";
 import Color24Regular from "@fluentui/svg-icons/icons/color_24_regular.svg";
@@ -26,6 +27,27 @@ import { StaticImageData } from "next/image";
 
 const projects: Project[] =
 	[
+		{
+			title: "sstatic",
+			subtitle: "A simple self-hosted URL shortener and a static file server",
+			description:
+				[
+					"After you set up your domain and a personal website, it is only natural to want to make the most out of it, like sharing files (like resumes), or creating short personalized links that would lead to your online profiles.",
+					"sstatic lets you do exactly that. With a clean intuitive UI, OIDC support and analyics connectors, it makes sstatic a perfect companion service for your website that seamlessly integrates into your existing infrastructure."
+				],
+			image: sstaticLight,
+			imageDark: sstaticDark,
+			link: "https://sstatic.xfox111.net",
+			stack:
+				[
+					{ text: "C#/TypeScript", icon: Code24Regular },
+					{ text: ".NET 10", icon: Server24Regular },
+					{ text: "React/Vite", icon: PhoneDesktop24Regular },
+					{ text: "SQLite + Entity Framework", icon: Database24Regular },
+					{ text: "Docker", icon: Box24Regular },
+					{ text: "GitHub Actions", icon: FlashFlow24Regular }
+				]
+		},
 		{
 			title: "EasyLogon",
 			subtitle: "QR code authentication on any website",
@@ -151,26 +173,6 @@ const projects: Project[] =
 					{ text: "Azure DevOps", icon: Branch24Regular },
 					{ text: "AppCenter", icon: HeartPulse24Regular },
 					{ text: "Azure Pipelines", icon: FlashFlow24Regular },
-				]
-		},
-		{
-			title: "MotionDecoder",
-			subtitle: "CCTV footage analysis tool",
-			description:
-				[
-					"[2018]",
-					"My earliest attempt in software development.",
-					"Basically, this program analyzes pre-recorded CCTV footage by comparing different frames and using some simple algorithms and provides user with a set of timecodes where a motion was detected.",
-				],
-			image: motionDecoderLight,
-			imageDark: motionDecoderDark,
-			link: "https://github.com/xfox111/MotionDecoder",
-			stack:
-				[
-					{ text: ".NET/C#", icon: Code24Regular },
-					{ text: "WinForms", icon: Desktop24Regular },
-					{ text: "Accord.NET", icon: FlashSettings24Regular },
-					{ text: "GitHub", icon: Branch24Regular },
 				]
 		}
 	];
