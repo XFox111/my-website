@@ -67,7 +67,8 @@ export default async function sendInquiry(_: FormStatus, formData: FormData): Pr
 		await mailClient.sendMail({
 			from: process.env.SMTP_FROM_EMAIL,
 			to: process.env.SMTP_TO_EMAIL,
-			subject: `${canonicalName.hostname}: Contact Inquiry`,
+			cc: data.email,
+			subject: `[Contact Inquiry (${canonicalName.hostname})]: ${data.subject}`,
 			text: getTemplate(data)
 		});
 	}
@@ -85,15 +86,21 @@ export default async function sendInquiry(_: FormStatus, formData: FormData): Pr
 	};
 }
 
-const getTemplate = (data: InquiryData): string => (
-	`From: ${data.email}
-Received on: ${new Date()}
-Sender timezone: ${data.timezone ?? "Unknown"}
+function getTemplate(data: InquiryData): string
+{
+	const timeFormatter = new Intl.DateTimeFormat("en-US", {
+		timeZone: data.timezone ?? "Etc/GMT",
+		dateStyle: "full",
+		timeStyle: "long"
+	});
+	const timezone: string = data.timezone ?? "Unknown";
 
-Subject: ${data.subject}
-
-${data.message}`
-);
+	return (
+		`From: ${data.email}\n` +
+		`Sender time: ${timeFormatter.format(new Date())} (${timezone})\n` +
+		`\n${data.message}\n`
+	);
+}
 
 export type FormStatus =
 	{
