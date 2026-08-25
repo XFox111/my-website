@@ -15,7 +15,7 @@ updates:
       interval: monthly
     rebase-strategy: disabled
     groups:
-      all:
+      npm:
         patterns:
           - "*"
 
@@ -28,7 +28,7 @@ updates:
       interval: monthly
     rebase-strategy: disabled
     groups:
-      all:
+      github-actions:
         patterns:
           - "*"
 
@@ -41,7 +41,7 @@ updates:
       interval: monthly
     rebase-strategy: disabled
     groups:
-      all:
+      devcontainers:
         patterns:
           - "*"
 
@@ -54,6 +54,6 @@ updates:
       interval: monthly
     rebase-strategy: disabled
     groups:
-      all:
+      docker:
         patterns:
           - "*"
