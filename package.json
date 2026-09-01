@@ -21,29 +21,29 @@
 		"lint": "eslint ."
 	},
 	"dependencies": {
-		"@fluentui/svg-icons": "^1.1.338",
-		"next": "^16.3.2",
-		"nodemailer": "^9.0.5",
+		"@fluentui/svg-icons": "^1.1.339",
+		"next": "^16.3.3",
+		"nodemailer": "^9.0.6",
 		"pdf-lib": "^1.17.1",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"react-social-icons": "^6.26.0",
 		"react-turnstile": "^1.1.5",
-		"sharp": "^0.35.3",
-		"zod": "^4.4.3"
+		"sharp": "^0.35.4",
+		"zod": "^4.5.2"
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^16.3.2",
+		"@next/eslint-plugin-next": "^16.3.3",
 		"@svgr/webpack": "^8.1.0",
-		"@types/node": "^26.2.0",
+		"@types/node": "^26.4.0",
 		"@types/nodemailer": "^8.0.1",
 		"@types/react": "^19.2.18",
 		"@types/react-dom": "^19.2.5",
 		"eslint": "^9.39.5",
-		"eslint-config-next": "^16.3.2",
+		"eslint-config-next": "^16.3.3",
 		"sass": "^1.103.1",
 		"typescript": "^6.0.3",
-		"typescript-eslint": "^8.67.0"
+		"typescript-eslint": "^8.68.0"
 	},
 	"allowScripts": {
 		"@parcel/watcher": true,
