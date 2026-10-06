@@ -15,7 +15,6 @@ const schema = z.object({
 const mailClient = nodemailer.createTransport({
 	host: process.env.SMTP_HOST,
 	port: parseInt(process.env.SMTP_PORT!),
-	priority: "high",
 	auth:
 	{
 		user: process.env.SMTP_USER,
@@ -67,6 +66,7 @@ export default async function sendInquiry(_: FormStatus, formData: FormData): Pr
 		await mailClient.sendMail({
 			from: process.env.SMTP_FROM_EMAIL,
 			to: process.env.SMTP_TO_EMAIL,
+			priority: "high",
 			cc: data.email,
 			subject: `[Contact Inquiry (${canonicalName.hostname})]: ${data.subject}`,
 			text: getTemplate(data)
