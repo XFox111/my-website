@@ -1,0 +1,55 @@
+@use "@/styles/tokens" as *;
+
+.link {
+	background-image: none;
+
+	svg {
+		width: 40px;
+		height: 40px;
+		vertical-align: middle;
+		fill-rule: evenodd;
+		border-radius: $borderRadiusCircular;
+
+		path {
+			transition: fill $durationNormal $curveEasyEaseMax;
+		}
+
+		.icon {
+			fill: #ffffff;
+		}
+
+		.mask {
+			fill: attr(data-color type(<color>), currentColor);
+		}
+	}
+
+	&:hover {
+		.icon {
+			fill: attr(data-color type(<color>), currentColor);
+		}
+
+		.mask {
+			fill: $colorNeutralBackground1;
+		}
+	}
+
+	&[data-network="github"] {
+		.icon {
+			fill: attr(data-color type(<color>), currentColor);
+		}
+
+		.mask {
+			fill: #ffffff;
+		}
+
+		&:hover {
+			.icon {
+				fill: white;
+			}
+
+			.mask {
+				fill: attr(data-color type(<color>), currentColor);
+			}
+		}
+	}
+}

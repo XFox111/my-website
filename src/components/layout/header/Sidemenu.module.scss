@@ -1,0 +1,72 @@
+@use "@/styles/tokens" as *;
+
+.dialog {
+	max-height: unset;
+	max-width: 320px;
+	width: 100%;
+	height: 100%;
+
+	// padding: 0;
+	// margin: 0;
+
+	margin-left: auto;
+	background-color: $colorNeutralBackground1;
+	box-shadow: $shadow16;
+	border: none;
+
+	transition: right $durationNormal $curveEasyEaseMax;
+	right: -350px;
+
+	&::backdrop {
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
+
+		// Since colors use variables, and dialog is rendered outside of the regular DOM,
+		// we need to specify them as literals (or add variables to the dialog scope, but that's too complicated).
+		background-color: rgba(255, 255, 255, 0.5);
+
+		@media (prefers-color-scheme: dark) {
+			background-color: rgba(26, 26, 26, 0.5);
+		}
+	}
+
+	.wrapper {
+		height: 100%;
+
+		display: flex;
+		flex-flow: column;
+		align-items: flex-end;
+		justify-content: center;
+		gap: $spacingXXXL;
+		padding: $spacingXXXL;
+
+		header {
+			display: flex;
+			align-items: center;
+			gap: $spacingL;
+		}
+
+		.nav {
+			flex-flow: column;
+			align-items: flex-end;
+
+			a {
+				align-items: end;
+				background-position-x: 100%;
+			}
+		}
+
+		.socials {
+			display: flex;
+			gap: $spacingS;
+		}
+	}
+
+	&.show {
+		right: 0;
+	}
+}
+
+body:has(dialog[open]) {
+	overflow: hidden;
+}

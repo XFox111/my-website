@@ -1,0 +1,65 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+@use "@/styles/mixins";
+
+.list button {
+	background-position-x: right;
+}
+
+.illustrations img {
+	width: 100%;
+	height: auto;
+
+	@media (prefers-color-scheme: dark) {
+		&[data-theme="light"] {
+			display: none;
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		&[data-theme="dark"] {
+			display: none;
+		}
+	}
+}
+
+.item {
+	align-self: start;
+	display: flex;
+	flex-flow: column;
+	gap: $spacingM;
+
+	h3 {
+		@include typography.title2($fontFamilyHero);
+	}
+
+	h4 {
+		@include typography.subtitle1($fontFamilyHero);
+	}
+
+	p {
+		@include typography.body2($fontFamilyHero);
+		color: $colorNeutralForeground2;
+	}
+
+	a {
+		align-self: flex-end;
+	}
+
+	.stack {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacingL;
+
+		> div {
+			display: flex;
+			align-items: center;
+			gap: $spacingSNudge;
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}

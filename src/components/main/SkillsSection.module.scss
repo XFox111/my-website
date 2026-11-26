@@ -1,0 +1,84 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/mixins";
+@use "@/styles/typography";
+
+.section {
+	.illustrations {
+		.item {
+			position: relative;
+			display: flex;
+			flex-flow: column;
+			gap: $spacingXXL;
+
+			img {
+				align-self: flex-end;
+				max-height: 400px;
+				height: auto;
+				max-width: 100%;
+				width: auto;
+			}
+
+			h3 {
+				@include typography.subtitle1($fontFamilyHero);
+				display: none;
+			}
+
+			p {
+				@include typography.subtitle1($fontFamilyHero);
+			}
+
+			// [SPECIAL]
+			.whatsThis {
+				position: absolute;
+				cursor: pointer;
+
+				right: 214px;
+				top: 81px;
+				width: 60px;
+				height: 25px;
+
+				@media screen and (max-width: 573px) {
+					right: calc(50% - 30px);
+					top: calc(15vw - 7px);
+				}
+			}
+
+			// [SPECIAL]
+			.sus {
+				position: absolute;
+				cursor: pointer;
+
+				left: 0;
+				top: 200px;
+				width: 90px;
+				height: 100px;
+
+				@media screen and (max-width: 1472px) {
+					top: calc(15vw - 20px);
+					width: calc(8vw - 24px);
+					height: calc(8vw - 17px);
+
+					@media screen and (max-width: 860px) {
+						top: calc(35vw - 65px);
+						width: 12vw;
+						height: 14vw;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		.illustrations {
+			.item {
+				h3 {
+					display: block;
+				}
+
+				p {
+					@include typography.subtitle2($fontFamilyHero);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,70 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+
+	.text {
+		@include typography.caption1;
+		display: flex;
+		flex-flow: column;
+		gap: $spacingS;
+		padding: $spacingM;
+		color: $colorNeutralForeground2;
+
+		.copyright {
+			@include typography.body2($fontFamilyHero);
+			color: $colorNeutralForeground1;
+		}
+
+		.nextjs {
+			display: flex;
+			gap: $spacingXS;
+			align-items: flex-end;
+
+			a {
+				padding: $spacingXXS;
+				padding-bottom: 0;
+
+				img {
+					height: 16px;
+					width: auto;
+					transition: filter $durationFast $curveEasyEaseMax;
+				}
+
+				&:hover,
+				&:focus-visible {
+					img {
+						filter: invert(1);
+					}
+				}
+			}
+		}
+	}
+
+	.image {
+		display: flex;
+		flex-flow: column;
+		justify-content: flex-end;
+		align-self: flex-end;
+		height: 100px;
+		z-index: -1;
+
+		img {
+			max-width: 100%;
+			width: auto;
+			max-height: 240px;
+		}
+	}
+
+	@media screen and (max-width: 960px) {
+		flex-flow: column;
+		align-items: flex-start;
+
+		.text {
+			margin-right: 20%;
+		}
+	}
+}

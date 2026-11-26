@@ -1,0 +1,93 @@
+@use "@/styles/colors.dark" as dark;
+@use "@/styles/colors.light" as light;
+@use "@/styles/typography";
+@use "@/styles/tokens" as *;
+
+:root {
+	scroll-behavior: smooth;
+
+	@media (prefers-color-scheme: dark) {
+		@include dark.variables;
+	}
+
+	@media (prefers-color-scheme: light) {
+		@include light.variables;
+	}
+}
+
+svg {
+	fill: currentColor;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	min-width: 300px;
+	overflow-x: hidden;
+	font-synthesis: none;
+	text-rendering: geometricPrecision;
+
+	color-scheme: dark light;
+
+	color: $colorNeutralForeground1;
+	background-color: $colorNeutralBackground1;
+
+	@include typography.body1;
+
+	display: flex;
+	flex-flow: column;
+	padding-top: 56px;
+
+	> main {
+		flex-grow: 1;
+	}
+
+	::selection {
+		background-color: $colorNeutralBackgroundInverted;
+		color: $colorNeutralForegroundInverted;
+	}
+}
+
+[hidden] {
+	display: none !important;
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	padding: $spacingSNudge $spacingXL;
+}
+
+a {
+	text-decoration: none;
+	color: $colorBrandForeground1;
+
+	background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+
+	transition-property: background-size, color;
+	transition-duration: $durationFaster;
+	transition-timing-function: $curveEasyEaseMax;
+
+	&:hover,
+	&:focus-visible {
+		background-size: 100% 100%;
+		color: $colorNeutralForegroundInverted;
+	}
+}
+
+.hl {
+	color: $colorNeutralForegroundInverted;
+	background-color: $colorNeutralBackgroundInverted;
+	padding: $spacingXXS $spacingXXS;
+
+	&::selection {
+		color: $colorNeutralForegroundInverted;
+		background-color: $colorBrandForeground1;
+	}
+}

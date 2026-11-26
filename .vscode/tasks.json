@@ -40,14 +40,17 @@
 			"detail": "Run ESLint"
 		},
 		{
+			"type": "npm",
+			"script": "format",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: format",
+			"detail": "Run Prettier"
+		},
+		{
 			"type": "shell",
 			"command": "docker",
-			"args": [
-				"build",
-				"-t",
-				"my-website",
-				"./"
-			],
+			"args": ["build", "-t", "my-website", "."],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
@@ -59,15 +62,7 @@
 		{
 			"type": "shell",
 			"command": "docker",
-			"args": [
-				"run",
-				"--rm",
-				"--env-file",
-				".env.local",
-				"-p",
-				"3000:3000",
-				"my-website"
-			],
+			"args": ["run", "--rm", "--name", "app", "--env-file", ".env.local", "-p", "3000:3000", "my-website"],
 			"group": "test",
 			"problemMatcher": [],
 			"label": "docker: run",

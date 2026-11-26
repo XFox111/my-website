@@ -5,12 +5,8 @@ But in case you have found one, I will be glad if you report it :)
 
 ## Reporting vulnerabilities
 
-Here's a basic guideline on how to do this:
+If you have discovered a security vulnerability in this project, please [create a Security Advisory](https://github.com/xfox111/my-website/security/advisories/new). Do not create a public issue for security vulnerabilities, as this may expose them to the public before fixed.
 
-1. Send an email to opensource@xfox111.net
-1. Give a clear description of the issue, including how to reproduce it and what impact it might have.
-1. If you can, include a proof-of-concept or screenshot showing the problem.
+You can learn more about GitHub Security Advisories at https://docs.github.com/en/code-security/security-advisories/creating-a-security-advisory.
 
-I'll do my best to address any issues and give you an update.
-
-Thank you <3
+Thanks you :3

@@ -1,0 +1,52 @@
+@use "@/styles/tokens" as *;
+
+.header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+
+	display: flex;
+	flex-flow: column;
+
+	background-color: $colorNeutralBackground1;
+	padding: $spacingS $spacingM;
+
+	.container {
+		width: 100%;
+		max-width: 1400px;
+		align-self: center;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		gap: $spacingM;
+
+		.socials {
+			display: flex;
+			gap: $spacingS;
+			flex-grow: 1;
+			justify-content: flex-end;
+		}
+
+		@media screen and (max-width: 1040px) {
+			.nav {
+				display: none;
+			}
+		}
+
+		@media screen and (min-width: 1041px) {
+			.menu {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: 640px) {
+			.socials,
+			.resume {
+				display: none;
+			}
+		}
+	}
+}
