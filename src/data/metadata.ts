@@ -6,8 +6,7 @@ export const title: string = "Eugene Fox - Software developer";
 
 const [firstName, lastName] = Package.author.name.split(" ");
 
-const description: string =
-	"My name is Eugene Fox. I am a professional .NET/React developer.";
+const description: string = "My name is Eugene Fox. I am a professional .NET/React developer.";
 
 export const metadata: Metadata = {
 	title: title,

@@ -7,7 +7,12 @@ export default function SocialLink({ network, ...props }: SocialLinkProps): Reac
 	const icon: SocialIconObject =
 		social_icons.get(network ?? networkFor(props.href)) ?? social_icons.get("sharethis")!;
 	return (
-		<a target="_blank" {...props} className={mergeClasses(cls.link, "social-icon", props.className)} data-network={network}>
+		<a
+			target="_blank"
+			{...props}
+			className={mergeClasses(cls.link, "social-icon", props.className)}
+			data-network={network}
+		>
 			<svg viewBox="0 0 64 64">
 				<path data-color={icon.color} className={cls.icon} d={`M0,0H64V64H0Z${icon.path}`} />
 				<path data-color={icon.color} className={cls.mask} d={icon.path} />
