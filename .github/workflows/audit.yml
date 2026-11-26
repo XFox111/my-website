@@ -2,6 +2,7 @@ name: Audit pipeline
 
 on:
     push:
+        branches: ["main"]
         paths-ignore:
             - ".devcontainer/*"
             - ".github/*"
@@ -13,6 +14,7 @@ on:
             - "COPYING"
             - ".git*"
     pull_request:
+        branches: ["main"]
         paths-ignore:
             - ".devcontainer/*"
             - ".github/*"
@@ -37,7 +39,6 @@ jobs:
             - uses: actions/checkout@v7
             - run: npm install
 
-            - run: npm run format:check
             - run: npm run lint
             - run: npm audit
 
