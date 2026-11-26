@@ -1,0 +1,63 @@
+@use "@/styles/typography";
+@use "@/styles/tokens" as *;
+@use "@/styles/mixins";
+
+.button {
+	@include mixins.formBase;
+
+	display: flex;
+	align-items: center;
+	min-width: 96px;
+	text-decoration: none;
+
+	cursor: pointer;
+	gap: $spacingSNudge;
+	justify-content: center;
+	text-align: left;
+
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+
+	&.iconBefore > :first-child,
+	&.iconAfter > :last-child {
+		font-size: $fontSizeBase600;
+		height: $fontSizeBase600;
+		width: $fontSizeBase600;
+	}
+
+	&:not(.content) {
+		min-width: 40px;
+		padding: $spacingXS;
+		justify-content: center;
+	}
+
+	&.secondary {
+		border-color: transparent;
+	}
+
+	&.primary {
+		background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+	}
+
+	&:not(:disabled, [disabled]) {
+		&:hover,
+		&:focus-visible {
+			&.primary {
+				color: $colorNeutralForegroundInverted;
+
+				&:active {
+					background-image: linear-gradient(
+						$colorNeutralBackgroundInvertedPressed,
+						$colorNeutralBackgroundInvertedPressed
+					);
+				}
+			}
+
+			&.secondary {
+				border-color: $colorNeutralForeground1;
+				color: $colorNeutralForeground1;
+			}
+		}
+	}
+}

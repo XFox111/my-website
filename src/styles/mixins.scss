@@ -1,0 +1,68 @@
+@use "./tokens" as *;
+@use "./typography";
+
+@mixin twoColumns {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	gap: $spacingXXXL;
+
+	@media screen and (max-width: 860px) {
+		grid-auto-flow: row;
+	}
+}
+
+@mixin slideIn {
+	animation: slideIn_keyframes $durationFast $curveEasyEaseMax;
+
+	@keyframes slideIn_keyframes {
+		from {
+			opacity: 0;
+			transform: translateX(32px);
+		}
+
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}
+
+@mixin formBase {
+	@include typography.body2($fontFamilyHero);
+	min-height: 40px;
+	padding: $spacingXS $spacingL;
+
+	background-color: $colorNeutralBackground1;
+	background-image: linear-gradient($colorNeutralBackground1Hover, $colorNeutralBackground1Hover);
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+
+	color: $colorNeutralForeground1;
+	border: $strokeWidthThin solid $colorNeutralForeground1;
+
+	transition-property: background-size, color;
+	transition-duration: $durationFast;
+	transition-timing-function: $curveEasyEaseMax;
+
+	&:disabled,
+	&[disabled] {
+		color: $colorNeutralForegroundDisabled;
+		border-color: $colorNeutralStrokeDisabled;
+		background-color: $colorNeutralBackgroundInvertedDisabled;
+		background-image: none;
+		cursor: not-allowed;
+	}
+
+	&:not(:disabled, [disabled]),
+	&:not(:read-only) {
+		&:hover,
+		&:focus-visible {
+			background-size: 100% 100%;
+
+			&:active {
+				background-image: linear-gradient($colorNeutralBackground1Pressed, $colorNeutralBackground1Pressed);
+			}
+		}
+	}
+}

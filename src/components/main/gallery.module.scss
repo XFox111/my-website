@@ -1,0 +1,126 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+@use "@/styles/mixins";
+
+.section {
+	@include mixins.twoColumns;
+	align-items: center;
+
+	h2 {
+		@include typography.title1($fontFamilyHero);
+	}
+
+	> h2 {
+		text-align: center;
+		display: none;
+	}
+
+	.listContainer {
+		display: flex;
+		flex-flow: column;
+		gap: $spacingM;
+
+		.list {
+			display: flex;
+			flex-flow: column;
+			gap: $spacingM;
+
+			button {
+				justify-content: flex-start;
+				border: $strokeWidthThin solid $colorNeutralForeground1;
+				padding: $spacingS $spacingL;
+
+				svg {
+					width: 32px;
+					height: 32px;
+				}
+
+				> div {
+					display: flex;
+					flex-flow: column;
+					text-align: left;
+
+					span:first-child {
+						@include typography.subtitle1($fontFamilyHero);
+					}
+
+					span:last-child {
+						color: $colorNeutralForeground3;
+					}
+				}
+
+				&[data-selected="true"] {
+					background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+					background-size: $spacingMNudge 100%;
+
+					&:hover,
+					&:focus-visible {
+						background-size: 100% 100%;
+						color: $colorNeutralForegroundInverted;
+
+						&:active {
+							background-image: linear-gradient(
+								$colorNeutralBackgroundInvertedPressed,
+								$colorNeutralBackgroundInvertedPressed
+							);
+						}
+
+						span {
+							color: $colorNeutralForegroundInverted;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.cta {
+		align-self: flex-end;
+	}
+
+	.mobileNav {
+		display: none;
+		flex-flow: column;
+		gap: $spacingMNudge;
+
+		.controls {
+			display: flex;
+			gap: $spacingMNudge;
+
+			button:nth-child(2) {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	.illustrations {
+		width: 100%;
+		display: grid;
+		align-items: center;
+
+		.item {
+			grid-column: 1;
+			grid-row: 1;
+			visibility: collapse;
+
+			&[data-selected="true"] {
+				visibility: visible;
+				@include mixins.slideIn;
+			}
+		}
+	}
+
+	@media screen and (max-width: 860px) {
+		> h2 {
+			display: block;
+		}
+
+		.listContainer {
+			display: none;
+		}
+
+		.mobileNav {
+			display: flex;
+		}
+	}
+}

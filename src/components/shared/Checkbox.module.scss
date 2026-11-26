@@ -1,0 +1,60 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.control {
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+
+	display: flex;
+	align-items: center;
+	gap: $spacingXS;
+
+	@include typography.body2($fontFamilyHero);
+
+	input {
+		width: 0;
+		height: 0;
+		position: relative;
+	}
+
+	&::before {
+		content: "";
+		width: 40px;
+		height: 40px;
+		box-sizing: border-box;
+
+		border: $strokeWidthThin solid $colorNeutralForeground1;
+
+		transition-property: background-size, color;
+		transition-duration: $durationFast;
+		transition-timing-function: $curveEasyEaseMax;
+
+		background-image: linear-gradient($colorNeutralBackgroundInverted, $colorNeutralBackgroundInverted);
+		background-repeat: no-repeat;
+		background-size: 0% 100%;
+	}
+
+	svg {
+		position: absolute;
+		left: 8px;
+		color: transparent;
+	}
+
+	&:hover,
+	&:focus-visible {
+		svg {
+			color: $colorNeutralForeground3;
+		}
+	}
+
+	&:has(input:checked) {
+		svg {
+			color: $colorNeutralForegroundInverted;
+		}
+
+		&::before {
+			background-size: 100% 100%;
+		}
+	}
+}

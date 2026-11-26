@@ -1,0 +1,35 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.title {
+	display: flex;
+	align-items: center;
+
+	background-size: 0% $strokeWidthThickest;
+	background-position: 33px 33px; // some pixel-perfect stuff
+
+	color: $colorNeutralForeground1;
+
+	gap: $spacingS;
+	padding-right: $spacingS;
+
+	img {
+		width: 36px;
+		height: 36px;
+	}
+
+	p {
+		@include typography.title3($fontFamilyHero);
+
+		sub {
+			@include typography.caption1($fontFamilyHero);
+			vertical-align: baseline;
+		}
+	}
+
+	&:hover,
+	&:focus-visible {
+		color: $colorNeutralForeground1;
+		background-size: 100% $strokeWidthThickest;
+	}
+}

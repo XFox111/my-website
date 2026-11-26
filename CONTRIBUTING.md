@@ -5,7 +5,7 @@ Thank you for considering contributing to the project! We welcome your help and 
 ## General guidelines
 
 - **Follow templates:** Use the provided issue and pull request templates to ensure consistency and completeness. Be concise.
-- **Follow Single responisibility principle:** Each contribution must correspond to a single area of work. Don't mix them up (e.g. fixing a bug and adding a new feature in the same PR).
+- **Follow Single responsibility principle:** Each contribution must correspond to a single area of work. Don't mix them up (e.g. fixing a bug and adding a new feature in the same PR).
 - **Code of Conduct:** Be sure to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Contributing Process

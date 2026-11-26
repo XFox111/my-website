@@ -1,0 +1,49 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.page {
+	align-self: center;
+	width: 100%;
+	max-width: 1400px;
+	padding: $spacingXL $spacingM;
+	color: $colorNeutralForeground2;
+	margin-bottom: 64px;
+
+	h1 {
+		@include typography.largeTitle($fontFamilyHero);
+		color: $colorNeutralForeground1;
+	}
+
+	h2 {
+		@include typography.title2($fontFamilyHero);
+		color: $colorNeutralForeground1;
+	}
+
+	&,
+	article,
+	section {
+		display: flex;
+		flex-flow: column;
+		align-items: flex-start;
+		gap: $spacingM;
+	}
+
+	ul,
+	ol {
+		padding: revert;
+	}
+
+	article {
+		gap: $spacingXL;
+
+		section > *:not(h2, ul) {
+			padding: 0 $spacingM;
+		}
+	}
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: $spacingS;
+	}
+}

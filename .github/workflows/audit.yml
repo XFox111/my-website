@@ -1,58 +1,59 @@
 name: Audit pipeline
 
 on:
-  push:
-    paths-ignore:
-      - '.devcontainer/*'
-      - '.github/*'
-      - '!.github/workflows/audit.yml'
-      - '.vscode/*'
-      - '**.md'
-      - '.env*'
-      - 'LICENSE'
-      - 'COPYING'
-      - '.git*'
-  pull_request:
-    paths-ignore:
-      - '.devcontainer/*'
-      - '.github/*'
-      - '!.github/workflows/audit.yml'
-      - '.vscode/*'
-      - '**.md'
-      - '.env*'
-      - 'LICENSE'
-      - 'COPYING'
-      - '.git*'
-  workflow_dispatch:
+    push:
+        paths-ignore:
+            - ".devcontainer/*"
+            - ".github/*"
+            - "!.github/workflows/audit.yml"
+            - ".vscode/*"
+            - "**.md"
+            - ".env*"
+            - "LICENSE"
+            - "COPYING"
+            - ".git*"
+    pull_request:
+        paths-ignore:
+            - ".devcontainer/*"
+            - ".github/*"
+            - "!.github/workflows/audit.yml"
+            - ".vscode/*"
+            - "**.md"
+            - ".env*"
+            - "LICENSE"
+            - "COPYING"
+            - ".git*"
+    workflow_dispatch:
 
 jobs:
-  audit:
-    runs-on: ubuntu-latest
-    container: node:26
+    audit:
+        runs-on: ubuntu-latest
+        container: node:26
 
-    permissions:
-      contents: read
+        permissions:
+            contents: read
 
-    steps:
-      - uses: actions/checkout@v7
+        steps:
+            - uses: actions/checkout@v7
+            - run: npm install
 
-      - run: npm install
+            - run: npm run format:check
+            - run: npm run lint
+            - run: npm audit
 
-      - run: npm run lint
-        continue-on-error: true
+    build:
+        runs-on: ubuntu-latest
 
-      - run: npm audit
+        permissions:
+            contents: read
 
-  build:
-    runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
 
-    permissions:
-      contents: read
+            - name: Populate .env
+              run: echo "NEXT_PUBLIC_TURNSTILE_SITEKEY=3x00000000000000000000FF" >> .env.production
 
-    steps:
-      - uses: actions/checkout@v7
-
-      - uses: docker/build-push-action@v7
-        with:
-          context: .
-          tags: "my-website:ci"
+            - uses: docker/build-push-action@v7
+              with:
+                  context: .
+                  tags: "my-website:ci"

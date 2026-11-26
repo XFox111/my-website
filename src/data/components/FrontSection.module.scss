@@ -1,0 +1,61 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+@use "@/styles/mixins";
+
+.section {
+	min-height: 75vh;
+	align-items: end;
+
+	width: 100%;
+	max-width: 1200px;
+
+	@include mixins.twoColumns;
+
+	.content {
+		display: flex;
+		flex-flow: column;
+		gap: $spacingXL;
+
+		h1 {
+			@include typography.display($fontFamilyHero);
+		}
+
+		h2 {
+			@include typography.title2($fontFamilyHero);
+		}
+
+		p {
+			@include typography.subtitle1($fontFamilyHero);
+		}
+
+		.buttons {
+			display: flex;
+			gap: $spacingS;
+		}
+	}
+
+	.illustrations {
+		justify-self: center;
+		position: relative;
+		margin-right: 48px;
+		margin-bottom: 12px;
+		width: calc(100% - 48px);
+		max-width: 512px;
+
+		.main {
+			border-radius: $borderRadiusCircular;
+			width: 100%;
+			height: auto;
+		}
+
+		.secondary {
+			position: absolute;
+			bottom: -12px;
+			right: -48px;
+
+			width: 100%;
+			max-width: 40%;
+			height: auto;
+		}
+	}
+}

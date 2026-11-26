@@ -1,4 +1,4 @@
-Resolves: #issue_number
+wResolves: #issue_number
 
 # Description
 

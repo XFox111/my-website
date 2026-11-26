@@ -1,0 +1,57 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.page {
+	padding: $spacingXXXL $spacingXL;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: $spacingXXXL;
+
+	.image {
+		display: flex;
+		flex-flow: column;
+		width: 100%;
+		max-width: 540px;
+
+		h1 {
+			@include typography.largeTitle($fontFamilyHero);
+			margin: 0 16px;
+			line-height: $fontSizeHero900;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.text {
+		display: flex;
+		flex-flow: column;
+		align-items: flex-start;
+		gap: $spacingM;
+
+		.caption {
+			position: relative;
+
+			h2 {
+				@include typography.title2($fontFamilyHero);
+			}
+
+			img {
+				position: absolute;
+				bottom: 4px;
+				left: 10px;
+				width: auto;
+				height: 68px;
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+.page:not([style*="display: none"]) ~ footer > div:has(> img) {
+	visibility: hidden !important;
+}

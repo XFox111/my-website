@@ -32,13 +32,14 @@ This repository contains the source code for my personal website, built using Ne
 ### Prerequisites
 
 For development you can use [Dev Containers](https://devcontainers.io/) or [GitHub Codespaces](https://github.com/features/codespaces). Otherwise you will need to install following tools:
+
 - [Node.js](https://nodejs.org/en/)
 - [Docker](https://www.docker.com/)
-
 
 ### Building and debugging
 
 Here're some commonly used commands:
+
 ```bash
 npm install			# Install dependencies
 npm run dev			# Start the development server at http://localhost:3000
@@ -56,32 +57,36 @@ docker build -t <tag_name> .
 > If you use VS Code, you can also use pre-defined tasks for building and debugging.
 
 ## Customization
+
 You can customize the website by modifying its components and styles.
 
 Here's a general checklist of things you need to change:
 
 ### Environment
+
 - [ ] `package.json` (URLs and author information)
 - [ ] `.env.*` (required for website to function)
 
 ### Assets
-- [ ] `/app/favicon.ico`
-- [ ] `/app/icon.svg`
-- [ ] `/app/apple-icon.png`
-- [ ] `/app/opengraph-image.png`
-- [ ] `/app/opengraph-image.alt.txt`
-- [ ] `/app/_assets`
+
+- [ ] `/src/app/favicon.ico`
+- [ ] `/src/app/icon.svg`
+- [ ] `/src/app/apple-icon.png`
+- [ ] `/src/app/opengraph-image.png`
+- [ ] `/src/data/assets`
 
 ### Content
-- [ ] `app/_data` (text information and some page elements)
-- [ ] (optional) `app/attribution/page.tsx` (license and attribution information)
-- [ ] (optional) `app/theme.[light|dark].scss` (color schemes)
-- [ ] (optional) Files marked with `[SPECIAL]` tag (these contain custom elements, which may be not suitable for your needs)
+
+- [ ] `/src/data` (text information and some page elements)
+- [ ] (optional) `/src/app/attribution/page.tsx` (license and attribution information)
+- [ ] (optional) `/src/styles/colors.[light|dark].scss` (color schemes)
+- [ ] (optional) Files and code segments marked with `[SPECIAL]` tag (these contain custom elements, which may be not suitable for your needs)
 
 > [!IMPORTANT]
 > Some of the files are copyrighted and should not be used without permission. See [COPYING](/COPYING).
 
 ## Contributing
+
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
 > [!NOTE]

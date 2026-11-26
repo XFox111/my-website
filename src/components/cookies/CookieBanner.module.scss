@@ -1,0 +1,74 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.banner {
+	position: fixed;
+	left: 0;
+	bottom: 8%;
+	z-index: 20;
+
+	display: flex;
+
+	.learnMore {
+		gap: $spacingL;
+		padding: $spacingMNudge $spacingL;
+		background-size: $spacingMNudge 100%;
+
+		p span {
+			@include typography.body1;
+			color: $colorNeutralForeground2;
+		}
+
+		&:hover,
+		&:focus-visible {
+			p span {
+				color: $colorNeutralForegroundInverted;
+			}
+		}
+	}
+
+	.actions {
+		display: flex;
+		flex-flow: column;
+
+		button {
+			justify-content: flex-start;
+		}
+	}
+
+	@media screen and (min-width: 769px) {
+		.actions button {
+			border-left: none;
+
+			&:first-child {
+				border-bottom: none;
+			}
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		bottom: 0;
+		flex-flow: column;
+
+		.actions {
+			flex-flow: row;
+
+			button {
+				flex-grow: 1;
+				justify-content: center;
+				border-top: none;
+
+				&:first-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.banner ~ footer {
+		margin-bottom: 110px;
+	}
+}

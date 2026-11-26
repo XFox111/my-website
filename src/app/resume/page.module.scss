@@ -1,0 +1,85 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/typography";
+
+.page {
+	display: flex;
+	flex-flow: column;
+	gap: $spacingXXXL;
+
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	h1 {
+		@include typography.title1($fontFamilyHero);
+	}
+
+	p {
+		@include typography.subtitle1($fontFamilyHero);
+	}
+
+	.links {
+		display: grid;
+		grid-auto-flow: column;
+		grid-auto-columns: 1fr;
+		gap: $spacingXL;
+
+		a {
+			flex-flow: column;
+			text-align: center;
+
+			img {
+				height: 128px;
+				width: auto;
+			}
+		}
+
+		@media screen and (max-width: 860px) {
+			grid-auto-flow: row;
+
+			a {
+				flex-flow: row;
+				justify-content: flex-start;
+				text-align: left;
+
+				img {
+					width: 48px;
+					height: 48px;
+				}
+			}
+		}
+	}
+
+	.linkedin {
+		position: relative;
+		background-image: none;
+		overflow: clip;
+
+		i {
+			height: 32px !important;
+			width: 32px !important;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			height: 32px;
+			width: 32px;
+			border-radius: $borderRadiusCircular;
+			left: 16px;
+			z-index: -1;
+
+			background-color: var(--network-color);
+			transition: transform $durationFast $curveEasyEaseMax;
+		}
+
+		&:hover,
+		&:focus-visible {
+			color: $colorNeutralForegroundStaticInverted !important;
+
+			&::after {
+				transform: scale(1100%);
+			}
+		}
+	}
+}

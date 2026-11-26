@@ -1,0 +1,14 @@
+{
+	"dotnet": {
+		"url": "https://at.xfox111.net/resume-dotnet",
+		"urlClassic": "https://at.xfox111.net/resume-dotnet-classic"
+	},
+	"react": {
+		"url": "https://at.xfox111.net/resume-react",
+		"urlClassic": "https://at.xfox111.net/resume-react-classic"
+	},
+	"fullstack": {
+		"url": "https://at.xfox111.net/resume-fullstack",
+		"urlClassic": "https://at.xfox111.net/resume-fullstack-classic"
+	}
+}

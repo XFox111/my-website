@@ -12,8 +12,17 @@
 	"files.eol": "\n",
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
-	"todo-tree.filtering.excludeGlobs": [
-		"**/node_modules/*/**",
-		"README.md"
-	]
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"scss.showErrors": true,
+	"scss.scanImportedFiles": false,
+	"explorer.fileNesting.patterns": {
+		"*.tsx": "${capture}.module.scss"
+	}
 }
