@@ -4,10 +4,10 @@ on:
     push:
         branches: ["main"]
         paths-ignore:
-            - ".devcontainer/*"
-            - ".github/*"
+            - ".devcontainer/**"
+            - ".github/**"
             - "!.github/workflows/audit.yml"
-            - ".vscode/*"
+            - ".vscode/**"
             - "**.md"
             - ".env*"
             - "LICENSE"
@@ -16,10 +16,10 @@ on:
     pull_request:
         branches: ["main"]
         paths-ignore:
-            - ".devcontainer/*"
-            - ".github/*"
+            - ".devcontainer/**"
+            - ".github/**"
             - "!.github/workflows/audit.yml"
-            - ".vscode/*"
+            - ".vscode/**"
             - "**.md"
             - ".env*"
             - "LICENSE"

@@ -18,10 +18,10 @@ on:
             - "**.md"
             - "LICENSE"
             - "COPYING"
-            - ".vscode/*"
-            - ".github/*"
+            - ".vscode/**"
+            - ".github/**"
             - "!.github/workflows/codeql.yml"
-            - ".devcontainer/*"
+            - ".devcontainer/**"
     pull_request:
         # The branches below must be a subset of the branches above
         branches: ["main"]
@@ -29,10 +29,10 @@ on:
             - "**.md"
             - "LICENSE"
             - "COPYING"
-            - ".vscode/*"
-            - ".github/*"
+            - ".vscode/**"
+            - ".github/**"
             - "!.github/workflows/codeql.yml"
-            - ".devcontainer/*"
+            - ".devcontainer/**"
     schedule:
         - cron: "23 22 * * 1"
 
