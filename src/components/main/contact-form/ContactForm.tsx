@@ -2,7 +2,7 @@
 
 import Button from "@/components/shared/Button";
 import { Turnstile } from "next-turnstile";
-import { InputHTMLAttributes, ReactElement, useActionState, useMemo, useState } from "react";
+import { InputHTMLAttributes, ReactElement, useActionState, useEffect, useMemo, useState } from "react";
 import cls from "./ContactForm.module.scss";
 import sendInquiry, { FormResult } from "./sendInquiry";
 
@@ -23,6 +23,10 @@ export default function ContactForm(): ReactElement {
 		});
 		return formAction(formData);
 	}
+
+	useEffect(() => {
+		console.log("NEXT_PUBLIC_TURNSTILE_SITEKEY", process.env.NEXT_PUBLIC_TURNSTILE_SITEKEY);
+	}, []);
 
 	const sharedProps: InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> = useMemo(
 		() => ({

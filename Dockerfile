@@ -45,9 +45,11 @@ COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
 ARG CLARITY_ID
-ARG CF_SITEKEY=3x00000000000000000000FF
+ARG CF_SITEKEY
 
-ENV NODE_ENV=production
+ENV NODE_ENV=production \
+    NEXT_PUBLIC_CLARITY_ID=${CLARITY_ID} \
+    NEXT_PUBLIC_TURNSTILE_SITEKEY=${CF_SITEKEY}
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry

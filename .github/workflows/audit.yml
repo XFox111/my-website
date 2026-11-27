@@ -51,10 +51,9 @@ jobs:
         steps:
             - uses: actions/checkout@v7
 
-            - name: Populate .env
-              run: echo "NEXT_PUBLIC_TURNSTILE_SITEKEY=3x00000000000000000000FF" >> .env.production
-
             - uses: docker/build-push-action@v7
               with:
                   context: .
                   tags: "my-website:ci"
+                  build-args: |
+                      CF_SITEKEY=3x00000000000000000000FF

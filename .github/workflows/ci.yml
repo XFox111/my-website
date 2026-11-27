@@ -15,11 +15,6 @@ jobs:
         steps:
             - uses: actions/checkout@v7
 
-            - name: Populate .env
-              run: |
-                  echo "NEXT_PUBLIC_TURNSTILE_SITEKEY=${{ secrets.CF_SITEKEY}}" >> .env.production \
-                  echo "NEXT_PUBLIC_CLARITY_ID=${{ secrets.CLARITY_ID }}" >> .evn.production
-
             - uses: docker/metadata-action@v6
               id: meta
               with:

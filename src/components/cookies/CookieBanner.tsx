@@ -12,6 +12,8 @@ export default function CookieBanner(): ReactElement {
 	const [show, setShow] = useState<boolean>(false);
 
 	useEffect(() => {
+		console.log("DNT", navigator.doNotTrack);
+		console.log("CLARITY_ID", process.env.NEXT_PUBLIC_CLARITY_ID);
 		if (navigator.doNotTrack === "1" || !process.env.NEXT_PUBLIC_CLARITY_ID) return;
 
 		try {
