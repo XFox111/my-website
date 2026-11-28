@@ -1,16 +1,17 @@
 "use client";
 
 import skills from "@/data/sections/skills";
+import { mergeClasses } from "@/utils/styles";
 import ArrowDownload24Regular from "@fluentui/svg-icons/icons/arrow_download_24_regular.svg";
 import ChevronLeft24Regular from "@fluentui/svg-icons/icons/chevron_left_24_regular.svg";
 import ChevronRight24Regular from "@fluentui/svg-icons/icons/chevron_right_24_regular.svg";
+import Clarity from "@microsoft/clarity";
 import Image from "next/image";
 import { ReactElement, useCallback, useState } from "react";
 import Button from "../shared/Button";
+import ResumeButton from "../shared/ResumeButton";
 import cls from "./SkillsSection.module.scss";
 import gcls from "./gallery.module.scss";
-import { mergeClasses } from "@/utils/styles";
-import Clarity from "@microsoft/clarity";
 
 export default function SkillsSection(): ReactElement {
 	const [selection, setSelection] = useState<number>(0);
@@ -89,7 +90,7 @@ export default function SkillsSection(): ReactElement {
 					))}
 				</div>
 
-				<ResumeButton />
+				<ResumeButton appearance="secondary" icon={<ArrowDownload24Regular />} className={gcls.cta} />
 			</div>
 
 			<div className={gcls.mobileNav}>
@@ -108,7 +109,7 @@ export default function SkillsSection(): ReactElement {
 						</Button>
 					)}
 				</div>
-				<ResumeButton />
+				<ResumeButton appearance="secondary" icon={<ArrowDownload24Regular />} className={gcls.cta} />
 			</div>
 		</section>
 	);
@@ -116,18 +117,4 @@ export default function SkillsSection(): ReactElement {
 
 function Title(): ReactElement {
 	return <h2>My skills &amp; tools</h2>;
-}
-
-function ResumeButton(): ReactElement {
-	return (
-		<Button
-			as="next-link"
-			href="/resume"
-			appearance="secondary"
-			icon={<ArrowDownload24Regular />}
-			className={gcls.cta}
-		>
-			Download resume
-		</Button>
-	);
 }

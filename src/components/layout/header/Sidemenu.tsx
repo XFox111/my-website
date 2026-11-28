@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/shared/Button";
-import { resumeLink } from "@/data/links";
+import ResumeButton from "@/components/shared/ResumeButton";
 import { mergeClasses } from "@/utils/styles";
 import Dismiss24Regular from "@fluentui/svg-icons/icons/dismiss_24_regular.svg";
 import Navigation24Regular from "@fluentui/svg-icons/icons/navigation_24_regular.svg";
@@ -78,9 +78,7 @@ export default function Sidemenu({ button: buttonProps, ...props }: SidemenuProp
 
 					<NavigationLinks className={cls.nav} />
 					<Socials className={cls.socials} />
-					<Button as="next-link" href={resumeLink}>
-						Download resume
-					</Button>
+					<ResumeButton />
 				</div>
 			</dialog>
 		</>

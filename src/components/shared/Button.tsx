@@ -1,6 +1,6 @@
+import Link, { LinkProps } from "next/link";
 import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactElement, ReactNode } from "react";
 import cls from "./Button.module.scss";
-import Link, { LinkProps } from "next/link";
 
 export default function Button({
 	as,
@@ -33,15 +33,15 @@ export default function Button({
 
 export type ButtonProps = (ButtonButtonProps | ButtonAnchorProps | ButtonLinkProps) & ButtonCommonProps;
 
-type ButtonButtonProps = {
+export type ButtonButtonProps = {
 	as: "button";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-type ButtonAnchorProps = {
+export type ButtonAnchorProps = {
 	as: "a";
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
-type ButtonLinkProps = {
+export type ButtonLinkProps = {
 	as: "next-link";
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 } & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps<any>> &
@@ -50,7 +50,7 @@ type ButtonLinkProps = {
 		children?: React.ReactNode | undefined;
 	} & React.RefAttributes<HTMLAnchorElement>;
 
-type ButtonCommonProps = {
+export type ButtonCommonProps = {
 	appearance?: "primary" | "secondary";
 	icon?: ReactNode;
 	iconAfter?: ReactNode;

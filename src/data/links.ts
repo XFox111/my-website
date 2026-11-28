@@ -11,11 +11,12 @@ export const navLinks: { text: string; href: string; target?: "_blank" }[] = [
 	}
 ];
 
-export const resumeLink: string = "/resume";
+export const githubLink: string =
+	"https://at.xfox111.net/github?utm_source=website&utm_medium=website&utm_campaign=default";
 
 export const socials: SocialLinkItem[] = [
 	{
-		href: "https://at.xfox111.net/github?utm_source=website&utm_medium=website&utm_campaign=default",
+		href: githubLink,
 		title: "GitHub",
 		network: "github"
 	},

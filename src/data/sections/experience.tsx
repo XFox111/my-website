@@ -1,4 +1,4 @@
-import Button from "@/components/shared/Button";
+import ResumeButton from "@/components/shared/ResumeButton";
 import { ReactElement } from "react";
 
 const experience: WorkplaceEntry[] = [
@@ -76,11 +76,7 @@ const experience: WorkplaceEntry[] = [
 		title: "Here",
 		summary: "Working on new and exciting projects",
 		year: process.env.NEXT_PUBLIC_BUILD_YEAR,
-		description: (
-			<Button as="next-link" href="/resume">
-				Download resume
-			</Button>
-		)
+		description: <ResumeButton />
 	}
 ];
 

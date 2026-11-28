@@ -1,17 +1,18 @@
 "use client";
 
+import { githubLink } from "@/data/links";
 import projects from "@/data/sections/projects";
 import { mergeClasses } from "@/utils/styles";
 import projectsImage from "@assets/illustrations/pet-projects.svg";
 import ArrowRight24Regular from "@fluentui/svg-icons/icons/arrow_right_24_regular.svg";
 import ChevronLeft24Regular from "@fluentui/svg-icons/icons/chevron_left_24_regular.svg";
 import ChevronRight24Regular from "@fluentui/svg-icons/icons/chevron_right_24_regular.svg";
+import Clarity from "@microsoft/clarity";
 import Image from "next/image";
 import { ReactElement, useCallback, useState } from "react";
 import Button from "../shared/Button";
 import gcls from "./gallery.module.scss";
 import cls from "./ProjectsSection.module.scss";
-import Clarity from "@microsoft/clarity";
 
 export default function ProjectsSection(): ReactElement {
 	const [selection, setSelection] = useState<number>(-1);
@@ -118,7 +119,7 @@ function GithubButton(): ReactElement {
 	return (
 		<Button
 			as="next-link"
-			href="/resume"
+			href={githubLink}
 			appearance="secondary"
 			icon={<ArrowRight24Regular />}
 			className={gcls.cta}

@@ -1,5 +1,6 @@
 import Package from "@//package.json";
 import Button from "@/components/shared/Button";
+import ResumeButton from "@/components/shared/ResumeButton";
 import decor from "@assets/illustrations/home-decor.svg";
 import picture from "@assets/illustrations/its_me.webp";
 import Image from "next/image";
@@ -20,9 +21,7 @@ export default function FrontSection(): ReactElement {
 					with extensive experience in <span className="hl">.NET and React</span> development
 				</p>
 				<div className={cls.buttons}>
-					<Button as="next-link" href="/resume">
-						Download resume
-					</Button>
+					<ResumeButton />
 					<Button as="next-link" href="#contacts" appearance="secondary">
 						Contact me
 					</Button>

@@ -1,5 +1,4 @@
-import Button from "@/components/shared/Button";
-import { resumeLink } from "@/data/links";
+import ResumeButton from "@/components/shared/ResumeButton";
 import { ReactElement } from "react";
 import TitleLogo from "../../../data/components/TitleLogo";
 import cls from "./Header.module.scss";
@@ -14,9 +13,7 @@ export default function Header(): ReactElement {
 				<TitleLogo />
 				<NavigationLinks className={cls.nav} />
 				<Socials className={cls.socials} />
-				<Button as="next-link" href={resumeLink} className={cls.resume}>
-					Download resume
-				</Button>
+				<ResumeButton className={cls.resume} />
 				<Sidemenu button={{ className: cls.menu }} />
 			</div>
 		</header>

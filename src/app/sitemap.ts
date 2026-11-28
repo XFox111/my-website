@@ -12,12 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1
 		},
 		{
-			url: new URL("/resume", canonicalUrl).href,
-			lastModified: date,
-			changeFrequency: "yearly",
-			priority: 0.5
-		},
-		{
 			url: new URL("/attribution", canonicalUrl).href,
 			lastModified: date,
 			changeFrequency: "yearly",
